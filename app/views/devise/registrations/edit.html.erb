@@ -1,32 +1,50 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+  <div class="mycontainer">
+  <div class="row">
+    <div class="devise-box col-lg-6 col-sm-12">
+      <div class="sign-in-form">
+      <%= image_tag('https://uploads-ssl.webflow.com/5eafe775b41a94c727c302e5/5ee23ff0abd872292227d6f6_EQUINOX%20LOGO%20-01%20(1)-p-500.png', class: "logo-home") %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+          <div class="form-inputs">
+            <div class="form-field">
+              <%= f.input :email,
+                          placeholder: "Email",
+                          required: false,
+                          autofocus: true,
+                          label: false,
+                          input_html: { autocomplete: "email" } %>
+            </div>
+            <hr>
+            <div class="form-field">
+              <%= f.input :password,
+                          placeholder: "Password",
+                          required: false,
+                          label: false,
+                          input_html: { autocomplete: "current-password" } %>
+            </div>
+            <hr>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "button-primary" %>
+          </div>
+        <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="hero-banner">
+        <%= image_tag('banner.jpg') %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
 
 <h3>Cancel my account</h3>
 
