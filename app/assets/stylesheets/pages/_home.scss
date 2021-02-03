@@ -2,15 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  img {
-    height: 550px;
-    width: auto;
-    box-shadow:8px 8px 20px 0 rgba(0,0,0,.2)
-  }
+  background-image: url("banner.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: -100px;
 }
 
 .logo-home {
   height: 200px;
   margin-bottom: 20px;
+}
+
+.col-lg-6 {
+  padding:0px;
 }

@@ -6,7 +6,7 @@
     background-color: $bg-color;
     border: none;
     margin-bottom: 5px;
-    color: white;
+    color: black;
     &:focus {
       background-color: $bg-color;
       border: 0.5px solid gray;
@@ -67,7 +67,7 @@ input[type="checkbox"] {
   margin: 0;
 
   input:focus {
-    color: white;
+    color: black;
   }
 }
 
@@ -80,8 +80,9 @@ input[type="checkbox"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  box-shadow:8px 8px 20px 0 rgba(0,0,0,.2);
   .sign-in-form {
-    width: inherit;
     text-align: center;
   }
 }
