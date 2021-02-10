@@ -70,7 +70,6 @@ class FlatDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   landlord
-  bookings
   address
   celula
   catastral

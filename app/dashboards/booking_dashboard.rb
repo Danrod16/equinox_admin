@@ -79,8 +79,6 @@ class BookingDashboard < Administrate::BaseDashboard
   user
   tenant
   deposits
-  receipts
-  invoices
   start_date
   end_date
   deposit_registry
