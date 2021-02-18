@@ -10,7 +10,7 @@ class DepositDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     booking: Field::BelongsTo,
     id: Field::Number,
-    state: Field::String,
+    state: Field::Select.with_options(collection: ['Pendiente','Pagado']),
     amount: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
