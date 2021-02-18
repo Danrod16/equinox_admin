@@ -75,7 +75,7 @@ class LandlordDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how landlords are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(landlord)
-  #   "Landlord ##{landlord.id}"
-  # end
+  def display_resource(landlord)
+    "#{landlord.first_name} #{landlord.last_name}"
+  end
 end
