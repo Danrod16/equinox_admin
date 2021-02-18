@@ -12,7 +12,11 @@ class UserDashboard < Administrate::BaseDashboard
     incidents: Field::HasMany,
     id: Field::Number,
     email: Field::String,
-    encrypted_password: Field::String,
+    first_name: Field::String,
+    last_name: Field::String,
+    photo: Field:: String,
+    role: Field::Select.with_options(collection: ["Agente", "Administrador"]),
+    password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
@@ -35,14 +39,16 @@ class UserDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  photo
+  first_name
+  last_name
   bookings
   incidents
   id
+  role
   email
-  encrypted_password
   reset_password_token
   reset_password_sent_at
-  remember_created_at
   created_at
   updated_at
   ].freeze
@@ -51,13 +57,12 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  bookings
-  incidents
+  first_name
+  last_name
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
+  role
+  photo
+  password
   ].freeze
 
   # COLLECTION_FILTERS
