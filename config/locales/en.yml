@@ -30,4 +30,114 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      booking:
+        one: Reserva
+        other: Reservas
+
+      deposit:
+        one: Deposito
+        other: Depositos
+
+      flat:
+       one: Piso
+       other: Pisos
+
+      incident:
+       one: Incidencia
+       other: Incidencias
+
+      invoice:
+        one: Factura
+        other: Facturas
+
+      landlord:
+        one: Proprietario
+        other: Proprietarios
+
+      receipt:
+        one: Recibo
+        other: Recibos
+
+      tenant:
+        one: Inquilino
+        other: Inquilinos
+
+      user:
+        one: Agente
+        other: Agentes
+
+    attributes:
+        user:
+          password: Contraseña
+          first_name: Nombre
+          last_name: Apellido
+          photo: Foto
+          created_at: Creado en
+
+        booking:
+          start_date: Fecha de inicío
+          end_date: Fecha de salida
+          deposit_registry: Registro de deposito
+          deposit_amount: Cantidad del deposito
+          rent: Alquiler
+          appliencies: Gastos de servicio
+          agency_fee: Comisión de agencia
+          payments: Numero de pagos
+          expiry_date: Fecha de expiración
+          check_in_notes: Notas de check-in
+
+        deposit:
+          state: Estado
+          amount: Cantidad
+          create_at: Creado el
+
+        flat:
+          address: Dirección completa
+          index: Indice de alquiler
+          cee: CEE
+          expenses: Gastos mensuales
+          insurance: Seguro
+          insurance_phone: Telefono del seguro
+          keys: nº de llaves
+          access_terrace: Acceso a terrasa
+          equinox_costs: Costes para equinox
+          photos: Fotos
+          furnished: Amueblado
+          name: Titulo
+
+        incident:
+          state: Estado
+          title: Titulo
+          description: Descripción
+          photo: Foto
+          rules: Reglas del piso
+          total_cost: Coste total
+          notes: Notas
+          created_at: Creado el
+
+        invoice:
+          state: Estado
+          expirry_date: Fecha de expiración
+          created_at: Creado el
+
+        landlord:
+          first_name: Nombre
+          last_name: Apellido
+          photo: Foto
+          dni: DNI
+          notes: Notas
+          created_at: Creado el
+
+        receipt:
+          created_at: Creado el
+
+        tenant:
+          first_name: Nombre
+          last_name: Apellido
+          phone: Telefono de contacto
+          description: Descripción
+          dni: DNI
+          photo: Foto
+          created_at: Creado el

@@ -9,7 +9,6 @@ Rails.application.routes.draw do
       resources :bookings
       resources :tenants
       resources :deposits
-
       root to: "users#index"
     end
   devise_for :users
