@@ -24,7 +24,7 @@ class FlatDashboard < Administrate::BaseDashboard
     keys: Field::Number,
     access_terace: Field::Boolean,
     equinox_costs: Field::Number,
-    photos: Field::String,
+    photos: Field::ActiveStorage.with_options(index_display_preview: true),
     video: Field::String,
     furnished: Field::Boolean,
     created_at: Field::DateTime,
@@ -110,5 +110,9 @@ class FlatDashboard < Administrate::BaseDashboard
   #
   def display_resource(flat)
     "#{flat.name}"
+  end
+
+  def permitted_attributes
+    super + [:photos => []]
   end
 end
