@@ -22,7 +22,7 @@ class TenantDashboard < Administrate::BaseDashboard
     country: Field::String,
     description: Field::Text,
     dni: Field::String,
-    photo: Field::ActiveStorage.with_options(index_display_preview: true),
+    photo: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true, show_preview_size: [200, 200]),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -97,5 +97,9 @@ class TenantDashboard < Administrate::BaseDashboard
   #
   def display_resource(tenant)
     "#{tenant.first_name} #{tenant.last_name}"
+  end
+
+  def permitted_attributes
+    super + [:photo]
   end
 end
