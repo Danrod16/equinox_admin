@@ -12,7 +12,7 @@ class LandlordDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    photo: Field::String,
+    photo: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true, show_preview_size: [200, 200]),
     email: Field::String,
     dni: Field::String,
     notes: Field::Text,
@@ -35,11 +35,11 @@ class LandlordDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  flats
-  id
+  photo
   first_name
   last_name
-  photo
+  flats
+  id
   email
   dni
   notes
@@ -77,5 +77,9 @@ class LandlordDashboard < Administrate::BaseDashboard
   #
   def display_resource(landlord)
     "#{landlord.first_name} #{landlord.last_name}"
+  end
+
+  def permitted_attributes
+    super + [:photo]
   end
 end

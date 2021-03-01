@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :flat
   belongs_to :user
   belongs_to :tenant
-  has_one :deposit
+  has_one :deposit, dependent: :destroy
   has_many :receipts, dependent: :destroy
   has_many :invoices, dependent: :destroy
   after_create :create_invoice

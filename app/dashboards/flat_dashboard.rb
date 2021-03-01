@@ -24,7 +24,7 @@ class FlatDashboard < Administrate::BaseDashboard
     keys: Field::Number,
     access_terace: Field::Boolean,
     equinox_costs: Field::Number,
-    photos: Field::ActiveStorage.with_options(index_display_preview: true),
+    photos: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true),
     video: Field::String,
     furnished: Field::Boolean,
     created_at: Field::DateTime,
