@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_154314) do
-
+ActiveRecord::Schema.define(version: 2021_03_01_135505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +23,6 @@ ActiveRecord::Schema.define(version: 2021_02_18_154314) do
     t.string "contract_type"
     t.integer "deposit_amount"
     t.integer "rent"
-    t.string "appliencies"
-    t.string "itp"
     t.integer "agency_fee"
     t.integer "payments"
     t.string "expiry_date"
@@ -35,6 +32,8 @@ ActiveRecord::Schema.define(version: 2021_02_18_154314) do
     t.bigint "tenant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "itp"
+    t.integer "appliences"
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["tenant_id"], name: "index_bookings_on_tenant_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -125,6 +124,12 @@ ActiveRecord::Schema.define(version: 2021_02_18_154314) do
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "street"
+    t.string "street_2"
+    t.string "number"
+    t.string "postal_code"
+    t.string "city"
+    t.string "country"
   end
 
   create_table "users", force: :cascade do |t|

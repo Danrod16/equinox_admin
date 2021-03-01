@@ -14,9 +14,15 @@ class TenantDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     email: Field::String,
     phone: Field::String,
+    street: Field::String,
+    street_2: Field::String,
+    number: Field::String,
+    postal_code: Field::String,
+    city: Field::String,
+    country: Field::String,
     description: Field::Text,
     dni: Field::String,
-    photo: Field::String,
+    photo: Field::ActiveStorage.with_options(index_display_preview: true),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -41,9 +47,15 @@ class TenantDashboard < Administrate::BaseDashboard
   first_name
   last_name
   email
-  phone
-  description
   dni
+  phone
+  street
+  street_2
+  number
+  postal_code
+  city
+  country
+  description
   photo
   created_at
   updated_at
@@ -53,11 +65,16 @@ class TenantDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  bookings
   first_name
   last_name
   email
   phone
+  street
+  street_2
+  number
+  postal_code
+  city
+  country
   description
   dni
   photo
@@ -78,7 +95,7 @@ class TenantDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how tenants are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(tenant)
-  #   "Tenant ##{tenant.id}"
-  # end
+  def display_resource(tenant)
+    "#{tenant.first_name} #{tenant.last_name}"
+  end
 end

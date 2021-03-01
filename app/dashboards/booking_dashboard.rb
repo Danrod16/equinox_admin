@@ -11,22 +11,22 @@ class BookingDashboard < Administrate::BaseDashboard
     flat: Field::BelongsTo,
     user: Field::BelongsTo,
     tenant: Field::BelongsTo,
-    deposits: Field::HasOne,
+    deposit: Field::HasOne,
     receipts: Field::HasMany,
     invoices: Field::HasMany,
     id: Field::Number,
     start_date: Field::DateTime,
     end_date: Field::DateTime,
     deposit_registry: Field::String,
-    deposit_paid: Field::Boolean,
-    contract_type: Field::String,
-    deposit_amount: Field::Number,
-    rent: Field::Number,
-    appliencies: Field::String,
-    itp: Field::String,
-    agency_fee: Field::Number,
+    # deposit_paid: Field::Boolean,
+    contract_type: Field::Select.with_options(collection: ['Largo Plazo', 'Temporal', 'Otro']),
+    # deposit_amount: Field::Number,
+    rent: Field::Number.with_options(suffix: "€", decimals: 2),
+    appliences: Field::Number.with_options(suffix: "€", decimals: 2),
+    itp: Field::Number.with_options(suffix: "€", decimals: 2),
+    agency_fee: Field::Number.with_options(suffix: "€", decimals: 2),
     payments: Field::Number,
-    expiry_date: Field::String,
+    expiry_date: Field::DateTime,
     check_in_notes: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -41,7 +41,7 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
-  deposits
+  deposit
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -50,18 +50,16 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
-  deposits
+  deposit
   receipts
   invoices
   id
   start_date
   end_date
   deposit_registry
-  deposit_paid
   contract_type
-  deposit_amount
   rent
-  appliencies
+  appliences
   itp
   agency_fee
   payments
@@ -78,15 +76,13 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
-  deposits
+  deposit
   start_date
   end_date
   deposit_registry
-  deposit_paid
   contract_type
-  deposit_amount
   rent
-  appliencies
+  appliences
   itp
   agency_fee
   payments
@@ -109,7 +105,7 @@ class BookingDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how bookings are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(booking)
-  #   "Booking ##{booking.id}"
-  # end
+  def display_resource(booking)
+    "Reserva ##{booking.id}"
+  end
 end

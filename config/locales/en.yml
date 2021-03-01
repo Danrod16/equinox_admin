@@ -137,6 +137,12 @@ en:
           first_name: Nombre
           last_name: Apellido
           phone: Telefono de contacto
+          street: Calle linea 1
+          street_2: Calle linea 2
+          number: Numero
+          postal_code: Codigó postal
+          city: Ciudad
+          country: País
           description: Descripción
           dni: DNI
           photo: Foto

@@ -11,7 +11,7 @@ class DepositDashboard < Administrate::BaseDashboard
     booking: Field::BelongsTo,
     id: Field::Number,
     state: Field::Select.with_options(collection: ['Pendiente','Pagado']),
-    amount: Field::Number,
+    amount: Field::Number.with_options(suffix: "€", decimals: 2),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -63,7 +63,7 @@ class DepositDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how deposits are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(deposit)
-  #   "Deposit ##{deposit.id}"
-  # end
+  def display_resource(deposit)
+    "Deposito: #{deposit.amount}€"
+  end
 end
