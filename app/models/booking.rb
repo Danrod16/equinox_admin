@@ -9,7 +9,11 @@ class Booking < ApplicationRecord
   after_update :update_invoice
 
   def create_invoice
-    Invoice.create(booking_id: self.id, state: "Pendiente", expirry_date: "self.expiry_date")
+    Invoice.create(booking_id: self.id, state: self.state, expirry_date: self.expiry_date)
     Receipt.create(booking_id: self.id)
+  end
+
+  def create_invoice
+    Invoice.update(booking_id: self.id, state: self.state, expirry_date: self.expiry_date)
   end
 end
