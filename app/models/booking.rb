@@ -13,7 +13,7 @@ class Booking < ApplicationRecord
     Receipt.create(booking_id: self.id)
   end
 
-  def create_invoice
+  def update_invoice
     Invoice.update(booking_id: self.id, state: self.state, expirry_date: self.expiry_date)
   end
 end
