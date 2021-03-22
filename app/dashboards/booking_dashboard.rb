@@ -14,6 +14,7 @@ class BookingDashboard < Administrate::BaseDashboard
     deposit: Field::HasOne,
     receipts: Field::HasMany,
     invoices: Field::HasMany,
+    incidents: Field::HasMany,
     id: Field::Number,
     start_date: Field::DateTime,
     end_date: Field::DateTime,
@@ -38,6 +39,7 @@ class BookingDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+  id
   flat
   user
   tenant
@@ -50,9 +52,7 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
-  deposit
-  receipts
-  invoices
+
   id
   start_date
   end_date
@@ -65,6 +65,10 @@ class BookingDashboard < Administrate::BaseDashboard
   payments
   expiry_date
   check_in_notes
+  deposit
+  receipts
+  invoices
+  incidents
   created_at
   updated_at
   ].freeze
