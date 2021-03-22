@@ -81,6 +81,8 @@ en:
           end_date: Fecha de salida
           deposit_registry: Registro de deposito
           deposit_amount: Cantidad del deposito
+          state: Estado de la reserva
+          obligatory_complience: Obligado cumplimiento
           rent: Alquiler
           appliencies: Gastos de servicio
           agency_fee: Comisión de agencia
@@ -113,7 +115,8 @@ en:
           title: Titulo
           description: Descripción
           photo: Foto
-          rules: Reglas del piso
+          total_hours: Horas de trabajo
+          hourly_fee: Honorarios
           total_cost: Coste total
           notes: Notas
           created_at: Creado el

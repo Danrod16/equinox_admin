@@ -17,6 +17,7 @@ class IncidentDashboard < Administrate::BaseDashboard
     photo: Field::ActiveStorage.with_options(show_display_preview: true),
     total_hours: Field::Number,
     total_cost: Field::Number,
+    hourly_fee: Field::Number,
     notes: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -45,7 +46,7 @@ class IncidentDashboard < Administrate::BaseDashboard
   total_hours
   description
   photo
-  total_hours
+  hourly_fee
   total_cost
   notes
   created_at
@@ -61,9 +62,9 @@ class IncidentDashboard < Administrate::BaseDashboard
   state
   title
   total_hours
+  hourly_fee
   description
   photo
-  rules
   total_cost
   notes
   ].freeze
