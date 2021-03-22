@@ -11,12 +11,13 @@ class IncidentDashboard < Administrate::BaseDashboard
     booking: Field::BelongsTo,
     user: Field::BelongsTo,
     id: Field::Number,
-    state: Field::String,
+    state: Field::Select.with_options(collection: ['Pendiente', 'Solucionado']),
     title: Field::String,
     description: Field::Text,
-    photo: Field::String,
-    rules: Field::Text,
+    photo: Field::ActiveStorage.with_options(show_display_preview: true),
+    total_hours: Field::Number,
     total_cost: Field::Number,
+    hourly_fee: Field::Number,
     notes: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -42,9 +43,10 @@ class IncidentDashboard < Administrate::BaseDashboard
   id
   state
   title
+  total_hours
   description
   photo
-  rules
+  hourly_fee
   total_cost
   notes
   created_at
@@ -59,9 +61,10 @@ class IncidentDashboard < Administrate::BaseDashboard
   user
   state
   title
+  total_hours
+  hourly_fee
   description
   photo
-  rules
   total_cost
   notes
   ].freeze
