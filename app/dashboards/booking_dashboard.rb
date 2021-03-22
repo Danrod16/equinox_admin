@@ -11,6 +11,7 @@ class BookingDashboard < Administrate::BaseDashboard
     flat: Field::BelongsTo,
     user: Field::BelongsTo,
     tenant: Field::BelongsTo,
+    state: Field::Select.with_options(collection: ['Abierta', 'Cerrada']),
     deposit: Field::HasOne,
     receipts: Field::HasMany,
     invoices: Field::HasMany,
@@ -43,6 +44,7 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
+  state
   deposit
   ].freeze
 
@@ -52,7 +54,7 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
-
+  state
   id
   start_date
   end_date
@@ -80,6 +82,7 @@ class BookingDashboard < Administrate::BaseDashboard
   flat
   user
   tenant
+  state
   deposit
   start_date
   end_date
