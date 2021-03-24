@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   has_one :deposit, dependent: :destroy
   has_many :receipts, dependent: :destroy
   has_many :invoices, dependent: :destroy
-  has_many :incidents
+  has_many :incidents, dependent: :destroy
   after_create :create_invoice
   after_update :update_invoice
 

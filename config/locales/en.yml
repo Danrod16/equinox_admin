@@ -30,6 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  shared:
+    new: Nuevo
+    edit: editar
   activerecord:
     models:
       booking:
@@ -75,6 +78,10 @@ en:
           last_name: Apellido
           photo: Foto
           created_at: Creado en
+          first_name: Nombre
+          Last_name: Apellido
+          bookings: Reservas
+          incidents: Incidencias
 
         booking:
           start_date: Fecha de inicío
@@ -93,10 +100,16 @@ en:
         deposit:
           state: Estado
           amount: Cantidad
+          token_payment: Paga y señal
           create_at: Creado el
 
         flat:
-          address: Dirección completa
+          street: Calle linea 1
+          street_2: Calle linea 2
+          number: Numero
+          postal_code: Codigó postal
+          city: Ciudad
+          country: País
           index: Indice de alquiler
           cee: CEE
           expenses: Gastos mensuales
@@ -130,8 +143,17 @@ en:
           first_name: Nombre
           last_name: Apellido
           photo: Foto
-          dni: DNI
-          notes: Notas
+          id_number: Numero de identidad
+          id_type: tipo de documento
+          cif: CIF
+          nationality: Nacionalidad
+          street: Calle linea 1
+          street_2: Calle linea 2
+          number: Numero
+          postal_code: Codigó postal
+          city: Ciudad
+          country: País
+          notes: Observaciones
           created_at: Creado el
 
         receipt:
@@ -144,10 +166,14 @@ en:
           street: Calle linea 1
           street_2: Calle linea 2
           number: Numero
+          nationality: Nacionalidad
           postal_code: Codigó postal
           city: Ciudad
           country: País
           description: Descripción
-          dni: DNI
+          id_number: Numero de identidad
+          id_type: tipo de documento
+          cif: CIF
           photo: Foto
+          notes: Observaciones
           created_at: Creado el
