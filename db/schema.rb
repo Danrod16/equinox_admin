@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_03_22_133749) do
-
+ActiveRecord::Schema.define(version: 2021_03_24_113849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,11 +68,11 @@ ActiveRecord::Schema.define(version: 2021_03_22_133749) do
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "token_payment"
     t.index ["booking_id"], name: "index_deposits_on_booking_id"
   end
 
   create_table "flats", force: :cascade do |t|
-    t.text "address"
     t.string "celula"
     t.string "catastral"
     t.integer "index"
@@ -94,6 +92,12 @@ ActiveRecord::Schema.define(version: 2021_03_22_133749) do
     t.boolean "available"
     t.string "name"
     t.string "reference"
+    t.string "street"
+    t.string "street_2"
+    t.string "number"
+    t.string "postal_code"
+    t.string "city"
+    t.string "country"
     t.index ["landlord_id"], name: "index_flats_on_landlord_id"
   end
 
@@ -128,10 +132,19 @@ ActiveRecord::Schema.define(version: 2021_03_22_133749) do
     t.string "last_name"
     t.string "photo"
     t.string "email"
-    t.string "dni"
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "id_number"
+    t.string "id_type"
+    t.string "cif"
+    t.string "street"
+    t.string "street_2"
+    t.string "number"
+    t.string "postal_code"
+    t.string "city"
+    t.string "country"
+    t.string "nationality"
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -147,7 +160,6 @@ ActiveRecord::Schema.define(version: 2021_03_22_133749) do
     t.string "email"
     t.string "phone"
     t.text "description"
-    t.string "dni"
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -157,6 +169,10 @@ ActiveRecord::Schema.define(version: 2021_03_22_133749) do
     t.string "postal_code"
     t.string "city"
     t.string "country"
+    t.string "id_number"
+    t.string "id_type"
+    t.string "cif"
+    t.string "nationality"
   end
 
   create_table "users", force: :cascade do |t|

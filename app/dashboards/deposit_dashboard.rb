@@ -12,6 +12,7 @@ class DepositDashboard < Administrate::BaseDashboard
     id: Field::Number,
     state: Field::Select.with_options(collection: ['Pendiente','Pagado']),
     amount: Field::Number.with_options(suffix: "€", decimals: 2),
+    token_payment: Field::Number.with_options(suffix: "€", decimals: 2),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -35,6 +36,7 @@ class DepositDashboard < Administrate::BaseDashboard
   id
   state
   amount
+  token_payment
   created_at
   updated_at
   ].freeze
@@ -46,6 +48,7 @@ class DepositDashboard < Administrate::BaseDashboard
   booking
   state
   amount
+  token_payment
   ].freeze
 
   # COLLECTION_FILTERS
