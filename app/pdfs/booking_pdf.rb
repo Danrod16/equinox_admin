@@ -11,7 +11,7 @@ class BookingPdf
     if @language == "es"
       generate_booking_es
     else
-      generate_booking_fr
+      generate_booking_eng
     end
   end
   def generate_booking_es
@@ -19,10 +19,10 @@ class BookingPdf
     content_es
     footer_es
   end
-  def generate_booking_fr
+  def generate_booking_eng
     logo
-    content_fr
-    footer_fr
+    content_eng
+    footer_eng
   end
   def logo
     bounding_box([0, cursor], width: 535, height: 82) do
@@ -50,7 +50,7 @@ class BookingPdf
     draw_text "AGENTE", at: [40, 120]
     draw_text "CLIENTE", at: [440, 120]
   end
-  def content_fr
+  def content_eng
   end
   def footer_es
     bounding_box([0, 90], width: 535, height: 90) do
@@ -61,7 +61,7 @@ class BookingPdf
       text "Calle Ronda Sant Pere 40,1-1 Barcelona     Tel.+34 93 140 26 20     Mov. +34 693 808 511     CIF B66863614     AICAT 7838", align: :center
     end
   end
-  def footer_fr
+  def footer_eng
     bounding_box([0, 90], width: 535, height: 90) do
       image "app/assets/images/equinox_logo.png", position: :center, width: 108
       text "<b>INFORMACION DE PROTECCION DE DATOS</b>", inline_format: true, align: :center, size: 10
