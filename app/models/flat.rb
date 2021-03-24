@@ -10,8 +10,4 @@ class Flat < ApplicationRecord
   def street_present?
     self.street_2.empty? ? "" : "#{self.street_2},"
   end
-
-  def contract_length
-    self.end_date - self.start_date
-  end
 end

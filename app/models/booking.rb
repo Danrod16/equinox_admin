@@ -17,4 +17,8 @@ class Booking < ApplicationRecord
   def update_invoice
     Invoice.update(booking_id: self.id, state: self.state, expirry_date: self.expiry_date)
   end
+
+  def contract_length
+    self.end_date.to_date - self.start_date.to_date
+  end
 end
