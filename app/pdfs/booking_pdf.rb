@@ -1,8 +1,8 @@
 class BookingPdf
   include Prawn::View
   include WhatMonth
-  def initialize(language)
-    #@booking = booking
+  def initialize(language, booking)
+    @booking = booking
     @language = language
     @date = Time.now
     check_booking_language
@@ -37,12 +37,12 @@ class BookingPdf
     move_down 10
     text "<b>Documento de Reserva - Arrendamiento de vivienda</b>", inline_format: true, align: :center
     move_down 10
-    text "<b>#{"@booking.tenant.first_name"} #{"@booking.tenant.last_name"}</b> de nacionalidad #{"NACIONALIDAD"} con #{"TIPO DE DOCUMENTO"} Nº #{"@booking.tenant.dni"} en adelante ARRENDATARIO abona la cantidad de <b>#{"MONTO DE LA RESERVA"}€</b> en concepto de reserva. Dicha reserva se ha transferido a la cuenta del propietario y se aplicará a la fianza pactada.", inline_format: true
+    text "<b>#{@booking.tenant.full_name}</b> de nacionalidad #{@booking.tenant.nationality} con #{@booking.tenant.id_type} Nº #{@booking.tenant.id_number} en adelante ARRENDATARIO abona la cantidad de <b>#{@booking.deposit.token_payment}€</b> en concepto de reserva. Dicha reserva se ha transferido a la cuenta del propietario y se aplicará a la fianza pactada.", inline_format: true
     move_down 10
-    text "1.  El contrato de alquiler inicia el #{"FECHA INICIO"} y finaliza el #{"FECHA FINAL"} período de obligado cumplimiento. El contrato tendrá una validez de #{"DURACION DEL CONTRATO"}."
-    text "2.  Urban Equinox percibirá en concepto de honorarios por parte del ARRENDATARIO, <b>#{"HONORARIOS DE LA AGENCIA"}€</b> más IVA(21%), previa emisión y recepción de factura.", inline_format: true
-    text "3.  La renta pactada es de <b>#{"PRECIO ALQUILER"}€</b> al mes + IVA. Los gastos de comunidad e IBI están incluidos en el importe de alquiler. Los consumos de agua, luz y gas corren por cuenta del ARRENDATARIO. La fianza legal <b>#{"TOTAL FIANZA"}€</b>. Al finalizar el contrato se pagará una limpieza del piso y el importe total será facturado y descontado de la fianza.", inline_format: true
-    text "4.  Se cubre un importe por ITP(Impuesto de Transmisiones Patrimonionales) de <b>#{"ITP"}€</b>.", inline_format: true
+    text "1.  El contrato de alquiler inicia el #{@booking.start_date.to_date} y finaliza el #{@booking.end_date} período de obligado cumplimiento. El contrato tendrá una validez de #{@booking.contract_length}."
+    text "2.  Urban Equinox percibirá en concepto de honorarios por parte del ARRENDATARIO, <b>#{@booking.agency_fee}€</b> más IVA(21%), previa emisión y recepción de factura.", inline_format: true
+    text "3.  La renta pactada es de <b>#{@booking.rent}€</b> al mes + IVA. Los gastos de comunidad e IBI están incluidos en el importe de alquiler. Los consumos de agua, luz y gas corren por cuenta del ARRENDATARIO. La fianza legal <b>#{@booking.deposit.amount}€</b>. Al finalizar el contrato se pagará una limpieza del piso y el importe total será facturado y descontado de la fianza.", inline_format: true
+    text "4.  Se cubre un importe por ITP(Impuesto de Transmisiones Patrimonionales) de <b>#{@booking.itp}€</b>.", inline_format: true
     text "5.  En caso de no formalizarse el contrato por causa imputable al ARRENDATARIO durante los próximos 2 días hábiles, éste perderá el 100% de la cantidad entregada en concepto de reserva."
     text "6.  En caso de no formalizarse el contrato de arrendamiento por causa imputable al arrendador y/o durante los próximos 2 días hábiles. Urban Equinox S.L. en nombre del propietario devolverá la cantidad total pagada como reserva en un plazo de 5 días hábiles tras la comunicación de no aceptación de arrendamiento."
     move_down 10

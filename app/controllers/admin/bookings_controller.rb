@@ -9,13 +9,6 @@ module Admin
     #   send_foo_updated_email
     # end
 
-    def show
-      render locals: {
-        page: Administrate::Page::Show.new(dashboard, requested_resource),
-      }
-      @booking = Booking.find(params[:id])
-    end
-
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
     # actions.
