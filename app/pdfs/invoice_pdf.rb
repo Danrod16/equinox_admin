@@ -67,8 +67,8 @@ class InvoicePdf
         end
         stroke_bounds
       end
-      text_box "Honorarios #{"DIRECCION DE LA VIVIENDA EN ALQUILER"}", at: [5, 55], width: 350, height: 100
-      text_box "1.200,00€", at: [390, 55], width: 140, height: 100, align: :right
+      text_box "Honorarios #{@invoice.booking.flat.full_address}", at: [5, 55], width: 350, height: 100
+      text_box "#{@invoice.booking.rent}", at: [390, 55], width: 140, height: 100, align: :right
       stroke_bounds
     end
     bounding_box([270, 320], width: 180, height: 120) do
@@ -87,11 +87,11 @@ class InvoicePdf
     end
     bounding_box([450, 320], width: 80, height: 120) do
       move_down 3
-      text "1.200,00€", align: :right
+      text "#{@invoice.booking.rent}", align: :right
       move_down 5
-      text "250,00€", align: :right
+      text "#{@invoice.iva}", align: :right
       move_down 5
-      text "1.750,00€", align: :right, style: :bold
+      text "#{@invoice.rent_with_iva}", align: :right, style: :bold
       move_down 10
       text "2.500,00€", align: :right
       move_down 5
