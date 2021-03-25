@@ -39,6 +39,10 @@ en:
         one: Reserva
         other: Reservas
 
+      settlement:
+        one: Finiquito
+        other: Finiquitos
+
       deposit:
         one: Deposito
         other: Depositos

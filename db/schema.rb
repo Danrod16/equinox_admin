@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_113849) do
+ActiveRecord::Schema.define(version: 2021_03_25_105955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,13 @@ ActiveRecord::Schema.define(version: 2021_03_24_113849) do
     t.index ["booking_id"], name: "index_receipts_on_booking_id"
   end
 
+  create_table "settlements", force: :cascade do |t|
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_settlements_on_booking_id"
+  end
+
   create_table "tenants", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -201,4 +208,5 @@ ActiveRecord::Schema.define(version: 2021_03_24_113849) do
   add_foreign_key "incidents", "users"
   add_foreign_key "invoices", "bookings"
   add_foreign_key "receipts", "bookings"
+  add_foreign_key "settlements", "bookings"
 end
