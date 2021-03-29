@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :incidents
+  
+  def agent?
+    self.role == "Agente"
+  end
+
+  def admin?
+    self.role == "Administrador"
+  end
 end
