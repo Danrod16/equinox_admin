@@ -12,7 +12,6 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.string :itp
       t.integer :agency_fee
       t.integer :payments
-      t.string :expiry_date
       t.text :check_in_notes
       t.references :flat, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
