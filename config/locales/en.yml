@@ -98,7 +98,6 @@ en:
           appliencies: Gastos de servicio
           agency_fee: Comisión de agencia
           payments: Numero de pagos
-          expiry_date: Fecha de expiración
           check_in_notes: Notas de check-in
 
         deposit:
