@@ -35,6 +35,8 @@ gem 'devise'
 gem 'administrate'
 gem 'prawn'
 gem "pundit"
+gem "chartkick"
+gem 'groupdate'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
