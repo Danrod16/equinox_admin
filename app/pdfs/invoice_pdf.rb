@@ -41,7 +41,7 @@ class InvoicePdf
     end
     draw_text "Factura Nº", at: [0, 585]
     bounding_box([65, 600], width: 200, height: 20) do
-      text "EQX027-2021", align: :center, valign: :center, character_spacing: 1, color: "FFFFFF"
+      text "EQ0#{@invoice.sequence}-#{@invoice.created_at.strftime('%Y')}", align: :center, valign: :center, character_spacing: 1, color: "FFFFFF"
       stroke_bounds
     end
     draw_text "Fecha", at: [400, 585]
@@ -87,17 +87,17 @@ class InvoicePdf
     end
     bounding_box([450, 320], width: 80, height: 120) do
       move_down 3
-      text "#{@invoice.booking.rent}", align: :right
+      text "#{@invoice.booking.rent}€", align: :right
       move_down 5
-      text "#{@invoice.iva}", align: :right
+      text "#{@invoice.iva}€", align: :right
       move_down 5
-      text "#{@invoice.rent_with_iva}", align: :right, style: :bold
+      text "#{@invoice.rent_with_iva}€", align: :right, style: :bold
       move_down 10
-      text "2.500,00€", align: :right
+      text "#{@invoice.fianza}€", align: :right
       move_down 5
-      text "550,00€", align: :right
+      text "#{@invoice.booking.deposit.token_payment}€", align: :right
       move_down 10
-      text "6.250,00€", align: :right, style: :bold
+      text "#{@invoice.total}€", align: :right, style: :bold
     end
     bounding_box([0,160], width: 300, height: 60) do
       font_size 11

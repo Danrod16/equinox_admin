@@ -11,7 +11,9 @@ class InvoiceDashboard < Administrate::BaseDashboard
     booking: Field::BelongsTo,
     id: Field::Number,
     state: Field::Select.with_options(collection: ['Abierta', 'Cerrada']),
-    expirry_date: Field::String,
+    fianza: Field::Number,
+    total: Field::Number,
+    sequence: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,17 +26,20 @@ class InvoiceDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   booking
   id
+  sequence
   state
-  expirry_date
+  total
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  sequence
   booking
   id
   state
-  expirry_date
+  fianza
+  total
   created_at
   updated_at
   ].freeze
@@ -43,9 +48,11 @@ class InvoiceDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  sequence
   booking
+  fianza
+  total
   state
-  expirry_date
   ].freeze
 
   # COLLECTION_FILTERS

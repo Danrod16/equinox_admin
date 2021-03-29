@@ -29,7 +29,7 @@ class IncidentPdf
     end
     draw_text "Factura Nº", at: [0, 585]
     bounding_box([65, 600], width: 200, height: 20) do
-      text "EQX027-2021", align: :center, valign: :center, character_spacing: 1, color: "FFFFFF"
+      text "EQ0#{@incident.sequence}-#{@incident.created_at.strftime('%Y')}", align: :center, valign: :center, character_spacing: 1, color: "FFFFFF"
       stroke_bounds
     end
     draw_text "Fecha", at: [400, 585]
