@@ -140,6 +140,7 @@ en:
 
         invoice:
           state: Estado
+          finaza: Suplidos, renta, fianza e ITP
           expirry_date: Fecha de expiración
           created_at: Creado el
 
