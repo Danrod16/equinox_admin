@@ -28,7 +28,6 @@ class BookingDashboard < Administrate::BaseDashboard
     itp: Field::Number.with_options(suffix: "€", decimals: 2),
     agency_fee: Field::Number.with_options(suffix: "€", decimals: 2),
     payments: Field::Number,
-    expiry_date: Field::DateTime,
     check_in_notes: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -65,7 +64,6 @@ class BookingDashboard < Administrate::BaseDashboard
   itp
   agency_fee
   payments
-  expiry_date
   check_in_notes
   deposit
   receipts
@@ -93,7 +91,6 @@ class BookingDashboard < Administrate::BaseDashboard
   itp
   agency_fee
   payments
-  expiry_date
   check_in_notes
   ].freeze
 
