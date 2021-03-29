@@ -30,7 +30,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    @user.admin?
   end
 
   def edit?

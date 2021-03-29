@@ -107,7 +107,9 @@ class BookingDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    abierta: ->(resources) { where(state: "Abierta")}
+  }.freeze
 
   # Overwrite this method to customize how bookings are displayed
   # across all pages of the admin dashboard.
