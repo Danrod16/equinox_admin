@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :flat
   belongs_to :user
   belongs_to :tenant
+  has_one :settlement, dependent: :destroy
   has_one :deposit, dependent: :destroy
   accepts_nested_attributes_for :deposit
   has_many :receipts, dependent: :destroy
@@ -9,7 +10,6 @@ class Booking < ApplicationRecord
   has_many :incidents, dependent: :destroy
   after_create :create_invoice, :contract_length
   before_update :contract_length, if: :booking_date_changed?
-
 
   def create_invoice
     Invoice.create(booking_id: self.id, state: self.state)

@@ -14,6 +14,7 @@ class IncidentDashboard < Administrate::BaseDashboard
     state: Field::Select.with_options(collection: ['Pendiente', 'Solucionado']),
     title: Field::String,
     description: Field::Text,
+    sequence: Field::Number,
     photo: Field::ActiveStorage.with_options(show_display_preview: true),
     total_hours: Field::Number,
     total_cost: Field::Number,
@@ -41,6 +42,7 @@ class IncidentDashboard < Administrate::BaseDashboard
   booking
   user
   id
+  sequence
   state
   title
   total_hours
@@ -61,6 +63,7 @@ class IncidentDashboard < Administrate::BaseDashboard
   user
   state
   title
+  sequence
   total_hours
   hourly_fee
   description
