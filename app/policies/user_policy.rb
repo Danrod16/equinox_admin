@@ -1,10 +1,24 @@
 class UserPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+
+    def resolve_admin
+      if user.admin?
+        scope.all
+      else
+        scope.where(email: user.email)
+      end
+    end
+  end
+  
   def index?
-    @user.admin?
+    true
   end
 
   def show?
-    @user.admin?
+    true
   end
 
   def create?
@@ -16,7 +30,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    @user.admin?
+    true
   end
 
   def edit?
