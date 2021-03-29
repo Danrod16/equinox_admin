@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'administrate'
 gem 'prawn'
+gem "chartkick"
+gem 'groupdate'
 
 
 gem 'autoprefixer-rails'
