@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_131421) do
+ActiveRecord::Schema.define(version: 2021_03_31_084124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,19 @@ ActiveRecord::Schema.define(version: 2021_03_29_131421) do
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["tenant_id"], name: "index_bookings_on_tenant_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "custom_invoices", force: :cascade do |t|
+    t.string "client"
+    t.string "address"
+    t.string "nif"
+    t.string "title"
+    t.integer "sequence", default: 1
+    t.integer "total_cost"
+    t.float "agency_fee"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "deposits", force: :cascade do |t|
@@ -114,7 +127,6 @@ ActiveRecord::Schema.define(version: 2021_03_29_131421) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "total_hours"
     t.float "hourly_fee"
-    t.float "agency_fee"
     t.integer "sequence", default: 1
     t.index ["booking_id"], name: "index_incidents_on_booking_id"
     t.index ["user_id"], name: "index_incidents_on_user_id"
