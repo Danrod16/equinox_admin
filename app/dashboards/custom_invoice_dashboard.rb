@@ -41,10 +41,10 @@ class CustomInvoiceDashboard < Administrate::BaseDashboard
   address
   nif
   title
+  description
   sequence
   total_cost
   agency_fee
-  description
   created_at
   updated_at
   ].freeze
@@ -57,10 +57,10 @@ class CustomInvoiceDashboard < Administrate::BaseDashboard
   address
   nif
   title
-  sequence
+  description
   total_cost
   agency_fee
-  description
+  sequence
   ].freeze
 
   # COLLECTION_FILTERS
