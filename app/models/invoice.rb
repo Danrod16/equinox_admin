@@ -13,6 +13,10 @@ class Invoice < ApplicationRecord
   end
 
   def total
-    rent_with_iva - self.booking.deposit.token_payment.to_f + self.fianza unless self.fianza.nil?
+    unless self.fianza.nil?
+      rent_with_iva - self.booking.deposit.token_payment.to_f + self.fianza
+    else
+      rent_with_iva - self.booking.deposit.token_payment.to_f
+    end
   end
 end

@@ -62,9 +62,9 @@ class CustomInvoicePdf
       text "#{@custom_invoice.title}", style: :bold, indent_paragraphs: 5
       move_down 10
       text_box "#{@custom_invoice.description}", at: [5, 140], width: 350, height: 100
-      text_box "#{@custom_invoice.total_cost}€", at: [390, 120], width: 140, height: 100, align: :right
+      text_box "#{@custom_invoice.total_cost} €", at: [390, 120], width: 140, height: 100, align: :right
       text_box "Honorarios de gestión", at:[5, 20], width: 350, height: 20
-      text_box "#{@custom_invoice.agency_fee}€", at: [390, 20], width: 140, height: 100, align: :right
+      text_box "#{@custom_invoice.agency_fee} €", at: [390, 20], width: 140, height: 100, align: :right
       stroke_bounds
     end
     bounding_box([270, 220], width: 180, height: 120) do
@@ -77,11 +77,11 @@ class CustomInvoicePdf
     end
     bounding_box([450, 220], width: 80, height: 120) do
       move_down 3
-      text "150,00€", align: :right
+      text "#{@custom_invoice.total_cost + @custom_invoice.agency_fee} €", align: :right
       move_down 5
-      text "31,50€", align: :right
+      text "#{@custom_invoice.iva} €", align: :right
       move_down 10
-      text "181,50€", align: :right, style: :bold
+      text "#{@custom_invoice.total_cost + @custom_invoice.agency_fee + @custom_invoice.iva} €", align: :right, style: :bold
     end
     bounding_box([0,160], width: 300, height: 60) do
       font_size 11
