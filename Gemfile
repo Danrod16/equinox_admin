@@ -37,6 +37,7 @@ gem 'prawn'
 gem "pundit"
 gem "chartkick"
 gem 'groupdate'
+gem 'i18n-debug', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

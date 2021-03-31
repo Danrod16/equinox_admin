@@ -1,0 +1,8 @@
+es:
+  administrate:
+    actions:
+      destroy: Eliminar
+    controller:
+      create:
+        success: "%{resource} creado exitosamente"
+    

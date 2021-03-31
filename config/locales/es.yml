@@ -1,0 +1,388 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+es:
+  helpers:
+    submit:
+      update: Actualizar
+      create: Crear
+    label:
+      booking:
+        id: Id
+        flat: Piso
+        flat_id: Piso
+        user: Agente
+        user_id: Agente
+        tenant: Inquilino
+        tenant_id: Inquilino
+        state: Estado
+        deposit: Depósito
+        start_date: Fecha de inicio
+        end_date: Fecha de fin
+        deposit_registry: Registro de depósito
+        contract_type: Tipo de contrato
+        rent: Alquiler
+        appliences: Suministros
+        itp: ITP
+        agency_fee: Honorarios
+        payments: Número de mensualidades
+        check_in_notes: Notas de check in
+        incidents: Incidencias
+        invoices: Facturas
+        receipts: Recibos
+        token_payment: Anticipo
+        amount: Cantidad
+        booking: Reserva
+        created_at: Fecha de creación
+        updated_at: Fecha de actualizado
+      
+      user:
+        bookings: Reservas
+        incidents: Incidencias
+        id: Id
+        email: Email
+        photo: Foto
+        first_name: Nombre
+        last_name: Apellido
+        role: Rol 
+        password: Contraseña 
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      incident:
+        booking: Reserva
+        booking_id: Reserva
+        user: Agente
+        user_id: Agente
+        id: Id
+        state: Estado
+        sequence: Número de factura
+        title: Título
+        total_hours: Total de horas
+        description: Descripción
+        photo: Foto
+        hourly_fee: Honorarios
+        total_cost: Costo total
+        notes: Notas
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      receipt:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        flat_id: Piso
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      landlord:
+        flats: Pisos
+        id: Id
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        nationality: Nacionalidad
+        id_number: Número de identificación
+        id_type: Tipo de indentificación
+        cif: CIF
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        notes: Notas
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      invoice:
+        booking: Reserva
+        id: Id
+        sequence: Número de factura
+        state: Estado
+        total: Total
+        fianza: Fianza
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+      
+      flat:
+        id: Id
+        name: Nombre
+        available: Disponible
+        landlord: Propietarios
+        landlord_id: Propietario
+        bookings: Reservas
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        celula: Cédula de habitabilidad
+        catastral: Información catastral
+        index: Index
+        cee: CEE
+        expenses: Gastos
+        insurance: Seguro
+        insurance_phone: Teléfono de la aseguradora
+        keys: Llaves
+        access_terace: Acceso a terraza
+        equinox_costs: Costes para agencia
+        photos: Fotos
+        video: Video
+        furnished: Amueblado
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+      
+      deposit:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        state: Estado
+        amount: Cantidad
+        token_payment: Paga y señal
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      tenant:
+        bookings: Reservas
+        id: Id
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        nationality: Nacionalidad
+        id_number: Número de identificación
+        id_type: Tipo de indentificación
+        cif: CIF
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        phone: Teléfono
+        description: Descripción
+        photo: Foto
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+      
+      settlement:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+      custom_invoice:
+        id: Id
+        client: Cliente
+        address: Dirección
+        nif: NIF
+        title: Título
+        description: Descripción
+        sequence: Número de factura
+        total_cost: Coste total
+        agency_fee: Honorarios
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+
+  time:
+    formats:
+      default: "%d-%m-%Y"    
+  shared:
+    new: nuevo
+    edit: editar
+  activerecord:
+    models:
+      booking:
+        one: Reserva
+        other: Reservas
+
+      settlement:
+        one: Finiquito
+        other: Finiquitos
+
+      deposit:
+        one: Deposito
+        other: Depositos
+
+      flat:
+       one: Piso
+       other: Pisos
+
+      incident:
+       one: Incidencia
+       other: Incidencias
+
+      invoice:
+        one: Factura
+        other: Facturas
+
+      landlord:
+        one: Proprietario
+        other: Proprietarios
+
+      receipt:
+        one: Recibo
+        other: Recibos
+
+      tenant:
+        one: Inquilino
+        other: Inquilinos
+
+      user:
+        one: Agente
+        other: Agentes
+
+      custom_invoice:
+       one: Otro Recibo
+       other: Otros Recibos
+    
+    attributes:
+      user:
+        password: Contraseña
+        first_name: Nombre
+        last_name: Apellido
+        photo: Foto
+        created_at: Creado en
+        first_name: Nombre
+        Last_name: Apellido
+        bookings: Reservas
+        incidents: Incidencias
+
+      booking:
+        start_date: Fecha de inicío
+        end_date: Fecha de salida
+        deposit_registry: Registro de deposito
+        deposit_amount: Cantidad del deposito
+        state: Estado de la reserva
+        obligatory_complience: Obligado cumplimiento
+        rent: Alquiler
+        appliencies: Gastos de servicio
+        agency_fee: Comisión de agencia
+        payments: Número de pagos
+        check_in_notes: Notas de check-in
+        flat_id: Piso
+        user_id: Agente
+        tenant_id: Inquilino
+
+      deposit:
+        state: Estado
+        amount: Cantidad
+        token_payment: Paga y señal
+        create_at: Creado el
+
+      flat:
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        index: Indice de alquiler
+        cee: CEE
+        expenses: Gastos mensuales
+        reference: Referencia
+        insurance: Seguro
+        insurance_phone: Teléfono del seguro
+        keys: nº de llaves
+        access_terrace: Acceso a terrasa
+        equinox_costs: Costes para equinox
+        photos: Fotos
+        furnished: Amueblado
+        name: Titulo
+
+      incident:
+        state: Estado
+        title: Titulo
+        description: Descripción
+        photo: Foto
+        total_hours: Horas de trabajo
+        hourly_fee: Honorarios
+        total_cost: Coste total
+        notes: Notas
+        created_at: Creado el
+
+      invoice:
+        state: Estado
+        finaza: Suplidos, renta, fianza e ITP
+        expirry_date: Fecha de expiración
+        created_at: Creado el
+
+      landlord:
+        first_name: Nombre
+        last_name: Apellido
+        photo: Foto
+        id_number: Número de identidad
+        id_type: Tipo de documento
+        cif: CIF
+        nationality: Nacionalidad
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        notes: Observaciones
+        created_at: Creado el
+
+      receipt:
+        created_at: Creado el
+
+      tenant:
+        first_name: Nombre
+        last_name: Apellido
+        phone: Teléfono de contacto
+        street: Calle línea 1
+        street_2: Calle línea 2
+        number: Número
+        nationality: Nacionalidad
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        description: Descripción
+        id_number: Número de identidad
+        id_type: Tipo de documento
+        cif: CIF
+        photo: Foto
+        notes: Observaciones
+        created_at: Creado el
+
+      custom_invoice:
+        client: Cliente
+        address: Dirección
+        nif: NIF
+        title: Título
+        description: Descripción
+        sequence: Número de factura
+        agency_fee: Honorarios
+        total_cost: Coste total
+        created_at: Creado el
