@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :tenants
       resources :deposits
       resources :settlements
+      resources :custom_invoices
       root to: "users#index"
     end
   resources :statistics, only: [:index]
