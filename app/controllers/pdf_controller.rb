@@ -50,4 +50,17 @@ class PdfController < ApplicationController
       end
     end
   end
+
+  def custom_invoice_pdf
+    language = params[:language]
+    custom_invoice = CustomInvoice.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        pdf = CustomInvoicePdf.new(custom_invoice)
+        send_data pdf.render, filename: "#{custom_invoice.title}.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+      end
+    end
+  end
 end

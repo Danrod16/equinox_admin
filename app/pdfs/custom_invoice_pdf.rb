@@ -7,7 +7,7 @@ class CustomInvoicePdf
     generate_custom_invoice
   end
   
-  def generate_incident
+  def generate_custom_invoice
     header
     content
     footer
@@ -51,7 +51,7 @@ class CustomInvoicePdf
       end
       bounding_box([0,200], width: 540, height: 20) do
         bounding_box([0,20], width: 300, height: 20) do
-          text "CONCEPTO INCIDENCIA", character_spacing: 1, color: "FFFFFF", valign: :center, align: :center
+          text "CONCEPTO", character_spacing: 1, color: "FFFFFF", valign: :center, align: :center
         end
         bounding_box([420,20], width: 120, height: 20) do
           text "SUBTOTAL", character_spacing: 1, color: "FFFFFF", valign: :center, align: :center
@@ -59,7 +59,7 @@ class CustomInvoicePdf
         stroke_bounds
       end
       move_down 10
-      text "#{@custom_invoice.title}", indent_paragraphs: 5
+      text "#{@custom_invoice.title}", style: :bold, indent_paragraphs: 5
       move_down 10
       text_box "#{@custom_invoice.description}", at: [5, 140], width: 350, height: 100
       text_box "#{@custom_invoice.total_cost}€", at: [390, 120], width: 140, height: 100, align: :right
