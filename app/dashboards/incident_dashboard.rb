@@ -30,27 +30,27 @@ class IncidentDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  booking
-  user
   id
+  user
+  booking
   state
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  id
+  title
+  state
   booking
   user
-  id
   sequence
-  state
-  title
   total_hours
   description
-  photo
   hourly_fee
   total_cost
   notes
+  photo
   created_at
   updated_at
   ].freeze
@@ -87,7 +87,7 @@ class IncidentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how incidents are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(incident)
-  #   "Incident ##{incident.id}"
-  # end
+  def display_resource(incident)
+    "#{incident.title}"
+  end
 end

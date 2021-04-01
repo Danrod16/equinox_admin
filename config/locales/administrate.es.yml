@@ -5,6 +5,7 @@ es:
       new_resource: Nuevo
       show_resource: "%{name}"
       edit_resource: Editar
+      back: Volver
     controller:
       create:
         success: "%{resource} creado exitosamente"

@@ -20,8 +20,8 @@ class SettlementDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  booking
   id
+  booking
   created_at
   updated_at
   ].freeze
@@ -29,8 +29,8 @@ class SettlementDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  booking
   id
+  booking
   created_at
   updated_at
   ].freeze
@@ -58,6 +58,6 @@ class SettlementDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(settlement)
-    "Finiquito ##{settlement.id}"
+    "#{settlement.booking.flat.name}"
   end
 end

@@ -45,8 +45,8 @@ class FlatDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   id
-  name
   available
+  name
   landlord
   bookings
   ].freeze
@@ -54,11 +54,10 @@ class FlatDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  id
+  available
   name
   landlord
-  bookings
-  available
-  id
   street
   street_2
   number
@@ -73,11 +72,12 @@ class FlatDashboard < Administrate::BaseDashboard
   insurance
   insurance_phone
   keys
+  furnished
   access_terace
   equinox_costs
   photos
   video
-  furnished
+  bookings
   created_at
   updated_at
   ].freeze
@@ -86,9 +86,9 @@ class FlatDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  available
   name
   landlord
-  available
   street
   street_2
   number
@@ -103,11 +103,11 @@ class FlatDashboard < Administrate::BaseDashboard
   insurance
   insurance_phone
   keys
+  furnished
   access_terace
   equinox_costs
   photos
   video
-  furnished
   ].freeze
 
   # COLLECTION_FILTERS
