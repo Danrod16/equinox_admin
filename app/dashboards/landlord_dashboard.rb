@@ -38,24 +38,22 @@ class LandlordDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  flats
   id
   first_name
   last_name
+  flats
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  photo
+  id
   first_name
   last_name
-  flats
-  id
   email
   nationality
-  id_number
   id_type
+  id_number
   cif
   street
   street_2
@@ -63,6 +61,8 @@ class LandlordDashboard < Administrate::BaseDashboard
   postal_code
   city
   country
+  flats
+  photo
   notes
   created_at
   updated_at
@@ -74,11 +74,10 @@ class LandlordDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   first_name
   last_name
-  photo
   email
   nationality
-  id_number
   id_type
+  id_number
   cif
   street
   street_2
@@ -86,6 +85,7 @@ class LandlordDashboard < Administrate::BaseDashboard
   postal_code
   city
   country
+  photo
   notes
   ].freeze
 

@@ -248,8 +248,8 @@ es:
         other: Facturas
 
       landlord:
-        one: Proprietario
-        other: Proprietarios
+        one: Propietario
+        other: Propietarios
 
       receipt:
         one: Recibo

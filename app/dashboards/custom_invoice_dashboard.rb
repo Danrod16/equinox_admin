@@ -37,12 +37,12 @@ class CustomInvoiceDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   id
+  sequence
   client
   address
   nif
   title
   description
-  sequence
   total_cost
   agency_fee
   created_at
@@ -78,7 +78,7 @@ class CustomInvoiceDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how custom invoices are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(custom_invoice)
-  #   "CustomInvoice ##{custom_invoice.id}"
-  # end
+  def display_resource(custom_invoice)
+    "#{custom_invoice.title}"
+  end
 end
