@@ -50,9 +50,9 @@ class InvoicePdf
       stroke_bounds
     end
     move_down 60
-    text "Cliente:  #{"NOMBRE INQUILINO"}", leading: 2
-    text "Dirección:  #{"DIRECCION INQUILINO"}", leading: 2
-    text "NIF:  #{"NIF INQUILINO"}"
+    text "Cliente:  #{@invoice.booking.tenant.full_name}", leading: 2
+    text "Dirección:  #{@invoice.booking.tenant.full_address}", leading: 2
+    text "NIF:  #{@invoice.booking.tenant.id_number}"
     bounding_box([0, 440], width: 540, height: 100) do
       transparent(1) do
         fill_color "A32921"
@@ -68,7 +68,7 @@ class InvoicePdf
         stroke_bounds
       end
       text_box "Honorarios #{@invoice.booking.flat.full_address}", at: [5, 55], width: 350, height: 100
-      text_box "#{@invoice.booking.rent}", at: [390, 55], width: 140, height: 100, align: :right
+      text_box "#{@invoice.booking.rent} €", at: [390, 55], width: 140, height: 100, align: :right
       stroke_bounds
     end
     bounding_box([270, 320], width: 180, height: 120) do
@@ -87,17 +87,17 @@ class InvoicePdf
     end
     bounding_box([450, 320], width: 80, height: 120) do
       move_down 3
-      text "#{@invoice.booking.rent}€", align: :right
+      text "#{@invoice.booking.rent} €", align: :right
       move_down 5
-      text "#{@invoice.iva}€", align: :right
+      text "#{@invoice.iva} €", align: :right
       move_down 5
-      text "#{@invoice.rent_with_iva}€", align: :right, style: :bold
+      text "#{@invoice.rent_with_iva} €", align: :right, style: :bold
       move_down 10
-      text "#{@invoice.fianza}€", align: :right
+      text "#{@invoice.fianza} €", align: :right
       move_down 5
-      text "#{@invoice.booking.deposit.token_payment}€", align: :right
+      text "#{@invoice.booking.deposit.token_payment} €", align: :right
       move_down 10
-      text "#{@invoice.total}€", align: :right, style: :bold
+      text "#{@invoice.total} €", align: :right, style: :bold
     end
     bounding_box([0,160], width: 300, height: 60) do
       font_size 11

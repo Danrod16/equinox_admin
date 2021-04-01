@@ -60,9 +60,9 @@ class IncidentPdf
       text "#{@incident.title}", indent_paragraphs: 5
       move_down 10
       text_box "#{@incident.description}", at: [5, 140], width: 350, height: 100
-      text_box "120,00€", at: [390, 120], width: 140, height: 100, align: :right
+      text_box "#{@incident.total_cost} €", at: [390, 120], width: 140, height: 100, align: :right
       text_box "Honorarios de gestión", at:[5, 20], width: 350, height: 20
-      text_box "30,00€", at: [390, 20], width: 140, height: 100, align: :right
+      text_box "#{@incident.hourly_fee} €", at: [390, 20], width: 140, height: 100, align: :right
       stroke_bounds
     end
     bounding_box([270, 220], width: 180, height: 120) do
@@ -75,11 +75,11 @@ class IncidentPdf
     end
     bounding_box([450, 220], width: 80, height: 120) do
       move_down 3
-      text "150,00€", align: :right
+      text "#{@incident.total_cost + @incident.hourly_fee} €", align: :right
       move_down 5
-      text "31,50€", align: :right
+      text "#{@incident.iva} €", align: :right
       move_down 10
-      text "181,50€", align: :right, style: :bold
+      text "#{@incident.total_cost + @incident.hourly_fee + @incident.iva} €", align: :right, style: :bold
     end
     bounding_box([0,160], width: 300, height: 60) do
       font_size 11
