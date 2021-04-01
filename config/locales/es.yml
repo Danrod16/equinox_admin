@@ -120,6 +120,7 @@ es:
         city: Ciudad
         country: País
         notes: Notas
+        photo: Foto
         created_at: Fecha de creación
         updated_at: Fecha de actualización
 
@@ -231,8 +232,8 @@ es:
         other: Finiquitos
 
       deposit:
-        one: Deposito
-        other: Depositos
+        one: Depósito
+        other: Depósitos
 
       flat:
        one: Piso
