@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Estadisticas</h1>
+    <h1>Estadísticas</h1>
   <div class="table-bookings">
     <h2>Reservas Creadas</h2>
     <%= line_chart Booking.group_by_day(:created_at).count %>
