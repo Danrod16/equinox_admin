@@ -30,5 +30,25 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+    def update
+      if any_empty_params?
+        flash.now[:alert] = "Ha ocurrido un error por favor vuelve a intentarlo"
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }, status: :unprocessable_entity
+      else
+        requested_resource.update(resource_params)
+        redirect_to(
+          [namespace, requested_resource],
+          notice: translate_with_resource("update.success"),
+        )
+      end
+    end
+
+    private
+
+    def any_empty_params?
+      resource_params[:flat_id].empty? || resource_params[:user_id].empty? || resource_params[:tenant_id].empty? || resource_params[:deposit_attributes][:booking_id].empty?
+    end
   end
 end

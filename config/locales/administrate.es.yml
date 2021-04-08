@@ -8,5 +8,10 @@ es:
       back: Volver
     controller:
       create:
-        success: "%{resource} creado exitosamente"
-    
+        success: "Creado exitosamente"
+      update:
+        success: "Actualizado exitosamente"
+      destroy:
+        success: "Eliminado exitosamente"
+    form:
+      errors: "Revisa los siguientes errores para poder continuar:"

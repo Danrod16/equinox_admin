@@ -30,5 +30,19 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+    def update
+      if resource_params[:landlord_id].empty?
+        flash.now[:alert] = "Ha ocurrido un error por favor vuelve a intentarlo"
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }, status: :unprocessable_entity
+      else
+        requested_resource.update(resource_params)
+        redirect_to(
+          [namespace, requested_resource],
+          notice: translate_with_resource("update.success"),
+        )
+      end
+    end
   end
 end

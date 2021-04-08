@@ -222,6 +222,10 @@ es:
     new: nuevo
     edit: editar
   activerecord:
+    errors:
+      messages:
+        required: es obligatorio
+        blank: no puede quedar en blanco
     models:
       booking:
         one: Reserva
@@ -264,8 +268,8 @@ es:
         other: Agentes
 
       custom_invoice:
-       one: Otro Recibo
-       other: Otros Recibos
+       one: Otra Factura
+       other: Otras Facturas
     
     attributes:
       user:
@@ -320,6 +324,7 @@ es:
         photos: Fotos
         furnished: Amueblado
         name: Titulo
+        landlord: Propietario
 
       incident:
         state: Estado
@@ -330,6 +335,8 @@ es:
         hourly_fee: Honorarios
         total_cost: Coste total
         notes: Notas
+        booking: Reserva
+        user: Agente
         created_at: Creado el
 
       invoice:
@@ -356,6 +363,7 @@ es:
         created_at: Creado el
 
       receipt:
+        booking: Reserva
         created_at: Creado el
 
       tenant:
