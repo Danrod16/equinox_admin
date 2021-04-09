@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_084124) do
     t.integer "rent"
     t.integer "agency_fee"
     t.integer "payments"
+    t.string "expiry_date"
     t.text "check_in_notes"
     t.bigint "flat_id", null: false
     t.bigint "user_id", null: false
@@ -134,6 +135,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_084124) do
   create_table "invoices", force: :cascade do |t|
     t.bigint "booking_id", null: false
     t.string "state"
+    t.string "expirry_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "fianza"

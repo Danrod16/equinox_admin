@@ -1,11 +1,22 @@
-<div class="container">
-    <h1>Estadísticas</h1>
-  <div class="table-bookings">
-    <h2>Reservas Creadas</h2>
-    <%= line_chart Booking.group_by_day(:created_at).count %>
-  </div>
-  <div class="table-bookings">
-    <h2>Incidencias Creadas</h2>
-    <%= line_chart Incident.group_by_day(:created_at).count %>
+<div class="mycontainer">
+    <%= link_to "< Atras", :back %>
+    <h1>Estadisticas</h1>
+  <div class="grid-container">
+    <div class="table-bookings">
+      <h2>Incidencias Creadas</h2>
+      <%= line_chart Incident.group_by_day(:created_at).count %>
+    </div>
+    <div class="table-bookings">
+      <h2>Incidencias Creadas</h2>
+      <%= line_chart @total_rent_earnings.group_by_day(:created_at).count %>
+    </div>
+    <div class="table-bookings">
+      <h2>Incidencias Creadas</h2>
+      <%= line_chart Incident.group_by_day(:created_at).count %>
+    </div>
+    <div class="table-bookings">
+      <h2>Reservas Creadas</h2>
+      <%= line_chart Booking.group_by_day(:created_at).count %>
+    </div>
   </div>
 </div>
