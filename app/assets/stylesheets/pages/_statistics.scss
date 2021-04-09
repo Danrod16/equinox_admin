@@ -3,3 +3,13 @@
   box-shadow: $box-shadow;
   padding: 20px;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.mycontainer {
+  width: 1100px;
+}
