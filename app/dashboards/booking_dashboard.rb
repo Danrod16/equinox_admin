@@ -40,34 +40,34 @@ class BookingDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   id
-  flat
   user
+  flat
   tenant
-  state
   deposit
+  state
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  id
+  state
   flat
   user
   tenant
-  state
-  id
+  contract_type
   start_date
   end_date
+  payments
   deposit_registry
-  contract_type
+  deposit
   rent
   appliences
   itp
   agency_fee
-  payments
   check_in_notes
-  deposit
-  receipts
   invoices
+  receipts
   incidents
   created_at
   updated_at
@@ -81,16 +81,16 @@ class BookingDashboard < Administrate::BaseDashboard
   user
   tenant
   state
+  deposit_registry
   deposit
   start_date
   end_date
-  deposit_registry
+  payments
   contract_type
   rent
   appliences
   itp
   agency_fee
-  payments
   check_in_notes
   ].freeze
 
@@ -104,14 +104,12 @@ class BookingDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {
-    abierta: ->(resources) { where(state: "Abierta")}
-  }.freeze
+  COLLECTION_FILTERS = {}.freeze
 
   # Overwrite this method to customize how bookings are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(booking)
-    "Reserva ##{booking.id}"
+    "#{booking.flat.name}"
   end
 end

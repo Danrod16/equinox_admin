@@ -24,20 +24,20 @@ class InvoiceDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  booking
   id
-  sequence
   state
+  sequence
+  booking
   total
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  sequence
-  booking
   id
   state
+  sequence
+  booking
   fianza
   total
   created_at
@@ -48,11 +48,11 @@ class InvoiceDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  state
   sequence
   booking
   fianza
   total
-  state
   ].freeze
 
   # COLLECTION_FILTERS
@@ -70,7 +70,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how invoices are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(invoice)
-  #   "Invoice ##{invoice.id}"
-  # end
+  def display_resource(invoice)
+    "#{invoice.booking.flat.name}"
+  end
 end

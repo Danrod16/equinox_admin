@@ -63,4 +63,16 @@ class PdfController < ApplicationController
       end
     end
   end
+
+  def receipt_pdf
+    receipt = Receipt.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        pdf = ReceiptPdf.new(receipt)
+        send_data pdf.render, filename: "#{receipt.booking.tenant.full_name}.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+      end
+    end
+  end
 end
