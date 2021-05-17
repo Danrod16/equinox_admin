@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_084124) do
+ActiveRecord::Schema.define(version: 2021_05_17_192548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_084124) do
     t.integer "appliences"
     t.string "state", default: "Abierta"
     t.integer "obligatory_complience"
+    t.boolean "notified", default: false
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["tenant_id"], name: "index_bookings_on_tenant_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -111,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_03_31_084124) do
     t.string "postal_code"
     t.string "city"
     t.string "country"
+    t.boolean "letter_box"
+    t.integer "reference_rent"
     t.index ["landlord_id"], name: "index_flats_on_landlord_id"
   end
 

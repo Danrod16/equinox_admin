@@ -63,7 +63,7 @@ es:
         booking: Reserva
         created_at: Fecha de creación
         updated_at: Fecha de actualizado
-      
+
       user:
         bookings: Reservas
         incidents: Incidencias
@@ -72,8 +72,8 @@ es:
         photo: Foto
         first_name: Nombre
         last_name: Apellido
-        role: Rol 
-        password: Contraseña 
+        role: Rol
+        password: Contraseña
         created_at: Fecha de creación
         updated_at: Fecha de actualización
 
@@ -133,7 +133,7 @@ es:
         fianza: Fianza
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       flat:
         id: Id
         name: Nombre
@@ -151,10 +151,12 @@ es:
         catastral: Información catastral
         index: Index
         cee: CEE
-        expenses: Gastos
+        reference_rent: Alquiler de referencia
+        expenses: Consumos
         insurance: Seguro
         insurance_phone: Teléfono de la aseguradora
         keys: Llaves
+        letter_box: Buzón
         access_terace: Acceso a terraza
         equinox_costs: Costes para agencia
         photos: Fotos
@@ -162,7 +164,7 @@ es:
         furnished: Amueblado
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       deposit:
         booking: Reserva
         booking_id: Reserva
@@ -194,7 +196,7 @@ es:
         photo: Foto
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       settlement:
         booking: Reserva
         booking_id: Reserva
@@ -217,7 +219,7 @@ es:
 
   time:
     formats:
-      default: "%d-%m-%Y"    
+      default: "%d-%m-%Y"
   shared:
     new: nuevo
     edit: editar
@@ -270,7 +272,7 @@ es:
       custom_invoice:
        one: Otra Factura
        other: Otras Facturas
-    
+
     attributes:
       user:
         password: Contraseña

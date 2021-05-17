@@ -29,6 +29,7 @@ class FlatDashboard < Administrate::BaseDashboard
     insurance: Field::String,
     insurance_phone: Field::String,
     keys: Field::Number,
+    letter_box: Field::Boolean,
     access_terace: Field::Boolean,
     equinox_costs: Field::Number,
     photos: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true),
@@ -72,6 +73,7 @@ class FlatDashboard < Administrate::BaseDashboard
   insurance
   insurance_phone
   keys
+  letter_box
   furnished
   access_terace
   equinox_costs
@@ -103,6 +105,7 @@ class FlatDashboard < Administrate::BaseDashboard
   insurance
   insurance_phone
   keys
+  letter_box
   furnished
   access_terace
   equinox_costs
