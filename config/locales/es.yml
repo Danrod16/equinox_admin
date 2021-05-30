@@ -109,6 +109,8 @@ es:
         first_name: Nombre
         last_name: Apellido
         email: Email
+        phone: Movíl
+        company_name: Empresa
         nationality: Nacionalidad
         id_number: Número de identificación
         id_type: Tipo de indentificación
