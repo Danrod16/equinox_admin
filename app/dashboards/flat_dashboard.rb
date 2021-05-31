@@ -16,13 +16,13 @@ class FlatDashboard < Administrate::BaseDashboard
     available: Field::Boolean,
     id: Field::Number,
     street: Field::String,
-    street_2: Field::String,
     number: Field::String,
     postal_code: Field::String,
     city: Field::String,
     country: Field::Select.with_options(collection: COUNTRIES),
     celula: Field::String,
     catastral: Field::String,
+    catastral_number: Field::String,
     index: Field::Number,
     cee: Field::String,
     expenses: Field::Number,
@@ -30,7 +30,6 @@ class FlatDashboard < Administrate::BaseDashboard
     insurance_phone: Field::String,
     keys: Field::Number,
     letter_box: Field::Boolean,
-    access_terace: Field::Boolean,
     equinox_costs: Field::Number,
     photos: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true),
     video: Field::String,
@@ -60,13 +59,13 @@ class FlatDashboard < Administrate::BaseDashboard
   name
   landlord
   street
-  street_2
   number
   postal_code
   city
   country
   celula
   catastral
+  catastral_number
   index
   cee
   expenses
@@ -75,7 +74,6 @@ class FlatDashboard < Administrate::BaseDashboard
   keys
   letter_box
   furnished
-  access_terace
   equinox_costs
   photos
   video
@@ -92,13 +90,13 @@ class FlatDashboard < Administrate::BaseDashboard
   name
   landlord
   street
-  street_2
   number
   postal_code
   city
   country
   celula
   catastral
+  catastral_number
   index
   cee
   expenses
@@ -107,7 +105,6 @@ class FlatDashboard < Administrate::BaseDashboard
   keys
   letter_box
   furnished
-  access_terace
   equinox_costs
   photos
   video

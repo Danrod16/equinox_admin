@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_174114) do
+ActiveRecord::Schema.define(version: 2021_05_31_081904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,7 +95,6 @@ ActiveRecord::Schema.define(version: 2021_05_30_174114) do
     t.string "insurance"
     t.string "insurance_phone"
     t.integer "keys"
-    t.boolean "access_terace"
     t.integer "equinox_costs"
     t.string "photos"
     t.string "video"
@@ -107,13 +106,14 @@ ActiveRecord::Schema.define(version: 2021_05_30_174114) do
     t.string "name"
     t.string "reference"
     t.string "street"
-    t.string "street_2"
     t.string "number"
     t.string "postal_code"
     t.string "city"
     t.string "country"
     t.boolean "letter_box"
     t.integer "reference_rent"
+    t.string "habitability_number"
+    t.string "catastral_number"
     t.index ["landlord_id"], name: "index_flats_on_landlord_id"
   end
 
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_174114) do
     t.float "fianza"
     t.float "total"
     t.integer "sequence", default: 1
+    t.float "supplements"
     t.index ["booking_id"], name: "index_invoices_on_booking_id"
   end
 

@@ -133,6 +133,7 @@ es:
         state: Estado
         total: Total
         fianza: Fianza
+        supplements: Suplidos
         created_at: Fecha de creación
         updated_at: Fecha de actualización
 
@@ -144,14 +145,14 @@ es:
         landlord_id: Propietario
         bookings: Reservas
         street: Calle línea 1
-        street_2: Calle línea 2
         number: Número de calle
         postal_code: Código postal
         city: Ciudad
         country: País
         celula: Cédula de habitabilidad
         catastral: Información catastral
-        index: Index
+        catastral_number: Referencia catastral
+        index: Indice
         cee: CEE
         reference_rent: Alquiler de referencia
         expenses: Consumos
@@ -159,8 +160,7 @@ es:
         insurance_phone: Teléfono de la aseguradora
         keys: Llaves
         letter_box: Buzón
-        access_terace: Acceso a terraza
-        equinox_costs: Costes para agencia
+        equinox_costs: Porcentage de gestion
         photos: Fotos
         video: Video
         furnished: Amueblado

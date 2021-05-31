@@ -12,6 +12,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
     id: Field::Number,
     state: Field::Select.with_options(collection: ['Abierta', 'Cerrada']),
     fianza: Field::Number,
+    supplements: Field::Number,
     total: Field::Number,
     sequence: Field::String,
     created_at: Field::DateTime,
@@ -39,6 +40,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
   sequence
   booking
   fianza
+  supplements
   total
   created_at
   updated_at
@@ -52,6 +54,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
   sequence
   booking
   fianza
+  supplements
   total
   ].freeze
 
