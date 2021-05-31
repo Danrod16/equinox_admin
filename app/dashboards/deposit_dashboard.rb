@@ -34,7 +34,6 @@ class DepositDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   state
-  booking
   amount
   token_payment
   created_at

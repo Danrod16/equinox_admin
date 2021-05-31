@@ -63,7 +63,7 @@ es:
         booking: Reserva
         created_at: Fecha de creación
         updated_at: Fecha de actualizado
-      
+
       user:
         bookings: Reservas
         incidents: Incidencias
@@ -72,8 +72,8 @@ es:
         photo: Foto
         first_name: Nombre
         last_name: Apellido
-        role: Rol 
-        password: Contraseña 
+        role: Rol
+        password: Contraseña
         created_at: Fecha de creación
         updated_at: Fecha de actualización
 
@@ -109,6 +109,8 @@ es:
         first_name: Nombre
         last_name: Apellido
         email: Email
+        phone: Movíl
+        company_name: Empresa
         nationality: Nacionalidad
         id_number: Número de identificación
         id_type: Tipo de indentificación
@@ -131,9 +133,10 @@ es:
         state: Estado
         total: Total
         fianza: Fianza
+        supplements: Suplidos
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       flat:
         id: Id
         name: Nombre
@@ -142,27 +145,28 @@ es:
         landlord_id: Propietario
         bookings: Reservas
         street: Calle línea 1
-        street_2: Calle línea 2
         number: Número de calle
         postal_code: Código postal
         city: Ciudad
         country: País
         celula: Cédula de habitabilidad
         catastral: Información catastral
-        index: Index
+        catastral_number: Referencia catastral
+        index: Indice
         cee: CEE
-        expenses: Gastos
+        reference_rent: Alquiler de referencia
+        expenses: Consumos
         insurance: Seguro
         insurance_phone: Teléfono de la aseguradora
         keys: Llaves
-        access_terace: Acceso a terraza
-        equinox_costs: Costes para agencia
+        letter_box: Buzón
+        equinox_costs: Porcentage de gestion
         photos: Fotos
         video: Video
         furnished: Amueblado
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       deposit:
         booking: Reserva
         booking_id: Reserva
@@ -194,7 +198,7 @@ es:
         photo: Foto
         created_at: Fecha de creación
         updated_at: Fecha de actualización
-      
+
       settlement:
         booking: Reserva
         booking_id: Reserva
@@ -217,7 +221,7 @@ es:
 
   time:
     formats:
-      default: "%d-%m-%Y"    
+      default: "%d-%m-%Y"
   shared:
     new: nuevo
     edit: editar
@@ -270,7 +274,7 @@ es:
       custom_invoice:
        one: Otra Factura
        other: Otras Facturas
-    
+
     attributes:
       user:
         password: Contraseña

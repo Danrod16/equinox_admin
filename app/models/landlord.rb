@@ -1,5 +1,6 @@
 class Landlord < ApplicationRecord
   has_many :flats, dependent: :destroy
+  has_many :bookings, through: :flats
   has_one_attached :photo
 
   def full_name
