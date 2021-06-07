@@ -93,7 +93,7 @@ class InvoicePdf
       move_down 5
       text "#{@invoice.rent_with_iva} €", align: :right, style: :bold
       move_down 10
-      text "#{@invoice.fianza} €", align: :right
+      text "#{@invoice.suplidos} €", align: :right
       move_down 5
       text "#{@invoice.booking.deposit.token_payment} €", align: :right
       move_down 10

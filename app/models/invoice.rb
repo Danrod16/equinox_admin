@@ -15,12 +15,17 @@ class Invoice < ApplicationRecord
   end
 
   def total
-    unless self.fianza.nil?
-      total = rent_with_iva - self.booking.deposit.token_payment.to_f + self.fianza
+      total = rent_with_iva - self.booking.deposit.token_payment.to_f + suplidos
       total.round(2)
+  end
+
+  def suplidos
+    if self.fianza.nil? && self.supplements.nil?
+      suplidos = 0
+    elsif self.fianza.nil?
+      suplidos = self.supplements
     else
-      total = rent_with_iva - self.booking.deposit.token_payment.to_f
-      total.round(2)
+      suplidos = self.fianza + self.supplements
     end
   end
 end
