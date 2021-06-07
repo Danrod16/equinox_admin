@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_080014) do
+ActiveRecord::Schema.define(version: 2021_06_07_083031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_080014) do
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "token_payment"
+    t.float "token_payment"
     t.index ["booking_id"], name: "index_deposits_on_booking_id"
   end
 
