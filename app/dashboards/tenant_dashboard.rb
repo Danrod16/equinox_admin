@@ -18,7 +18,6 @@ class TenantDashboard < Administrate::BaseDashboard
     email: Field::String,
     phone: Field::String,
     street: Field::String,
-    street_2: Field::String,
     number: Field::String,
     postal_code: Field::String,
     city: Field::String,
@@ -58,7 +57,6 @@ class TenantDashboard < Administrate::BaseDashboard
   cif
   phone
   street
-  street_2
   number
   postal_code
   city
@@ -83,7 +81,6 @@ class TenantDashboard < Administrate::BaseDashboard
   cif
   phone
   street
-  street_2
   number
   postal_code
   city
