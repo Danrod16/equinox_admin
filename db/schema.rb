@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_083031) do
+ActiveRecord::Schema.define(version: 2021_06_07_083214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_083031) do
     t.string "nif"
     t.string "title"
     t.integer "sequence", default: 1
-    t.integer "total_cost"
+    t.float "total_cost"
     t.float "agency_fee"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
