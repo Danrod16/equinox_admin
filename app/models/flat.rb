@@ -4,6 +4,6 @@ class Flat < ApplicationRecord
   has_many_attached :photos, dependent: :destroy
 
   def full_address
-    "#{self.street}, #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
+    "#{self.street}, #{self.number} #{self.postal_code}, #{self.city}, #{self.country}"
   end
 end
