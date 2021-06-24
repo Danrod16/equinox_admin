@@ -3,7 +3,7 @@ class StatisticsController < ApplicationController
     authorize :statistics, :index?
     @total_rent_earnings = []
     Booking.all.each do |booking|
-      @total_rent_earnings << booking.subtotal
+      @total_rent_earnings << booking.invoice.total
     end
   end
 
