@@ -24,6 +24,8 @@ class Invoice < ApplicationRecord
       suplidos = 0
     elsif self.fianza.nil?
       suplidos = self.supplements
+    elsif self.supplements.nil?
+      suplidos = self.fianza
     else
       suplidos = self.fianza + self.supplements
     end
