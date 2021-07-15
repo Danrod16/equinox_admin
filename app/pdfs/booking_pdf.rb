@@ -57,7 +57,7 @@ class BookingPdf
     move_down 10
     text "<b>#{@booking.tenant.full_name}</b> de nacionalidad #{@booking.tenant.nationality} con #{@booking.tenant.id_type} Nº #{@booking.tenant.id_number} en adelante ARRENDATARIO abona la cantidad de <b>#{@booking.deposit.token_payment}€</b> en concepto de reserva. Dicha reserva se ha transferido a la cuenta del propietario y se aplicará a la fianza pactada.", inline_format: true
     move_down 10
-    text "1.  El contrato de alquiler inicia el #{@booking.start_date.to_date} y finaliza el #{@booking.end_date} período de obligado cumplimiento. El contrato tendrá una validez de #{@booking.payments} meses."
+    text "1.  El contrato de alquiler inicia el #{@booking.start_date.to_date} y finaliza el #{@booking.end_date.to_date} período de obligado cumplimiento. El contrato tendrá una validez de #{@booking.payments} meses."
     text "2.  Urban Equinox percibirá en concepto de honorarios por parte del ARRENDATARIO, <b>#{@booking.agency_fee}€</b> más IVA(21%), previa emisión y recepción de factura.", inline_format: true
     text "3.  La renta pactada es de <b>#{@booking.rent}€</b> al mes. Los gastos de comunidad e IBI están incluidos en el importe de alquiler. Los consumos de agua, luz y gas corren por cuenta del ARRENDATARIO. La fianza legal <b>#{@booking.deposit.amount}€</b>. Al finalizar el contrato se pagará una limpieza del piso y el importe total será facturado y descontado de la fianza.", inline_format: true
     text "4.  Se cubre un importe por ITP(Impuesto de Transmisiones Patrimonionales) de <b>#{@booking.itp}€</b>.", inline_format: true
@@ -80,7 +80,7 @@ class BookingPdf
     text "<b>CERTIFIES</b> that Mr/Mrs <b>#{@booking.tenant.full_name}</b> hereinafter referred to as the CLIENT, citizen of <b>#{@booking.tenant.nationality}</b> with #{@booking.tenant.id_type} nr. <b>#{@booking.tenant.id_number}</b> has paid, via bank transfer to the AGENCY's bank account, the amount of <b>#{@booking.deposit.token_payment} EUROS</b> as reservation fee. Such amount shall be part of the agreed security deposit amount.", inline_format: true
     move_down 10
     bounding_box([35, 445], width: 505, height: 260) do
-      text "The rental agreement will begin on the <b>#{@booking.start_date}</b> and will end on the <b>#{@booking.end_date}</b> for a total of <b>#{@booking.payments}</b> months of compulsory nature. The utilities will amount <b>#{@booking.appliences} EUROS</b>.", inline_format: true
+      text "The rental agreement will begin on the <b>#{@booking.start_date.to_date}</b> and will end on the <b>#{@booking.end_date.to_date}</b> for a total of <b>#{@booking.payments}</b> months of compulsory nature. The utilities will amount <b>#{@booking.appliences} EUROS</b>.", inline_format: true
       move_down 5
       text "The agreed rental will amount to <b>#{@booking.rent} EUROS</b> per month. The security deposit will amount to <b>#{@booking.deposit.amount} EUROS</b> and the ITP (Property Transfer Tax) to <b>#{@booking.itp} EUROS</b>.", inline_format: true
       move_down 5
