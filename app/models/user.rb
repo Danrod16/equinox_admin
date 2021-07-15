@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :incidents
-  
+  has_one_attached :photo
+
+
   def agent?
     self.role == "Agente"
   end

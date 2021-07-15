@@ -2,9 +2,10 @@ class PdfController < ApplicationController
   def booking_pdf
     language = params[:language]
     booking = Booking.find(params[:id])
+    signature = booking.user.photo
     respond_to do |format|
       format.pdf do
-        pdf = BookingPdf.new(language, booking)
+        pdf = BookingPdf.new(language, booking, signature)
         send_data pdf.render, filename: "#{booking.tenant.full_name}_#{language}.pdf",
         type: "application/pdf",
         disposition: "inline"

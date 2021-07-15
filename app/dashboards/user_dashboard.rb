@@ -14,7 +14,7 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     first_name: Field::String,
     last_name: Field::String,
-    photo: Field:: String,
+    photo: Field::ActiveStorage.with_options(index_display_preview: true, show_display_preview: true),
     role: Field::Select.with_options(collection: ["Agente", "Administrador"]),
     password: Field::String,
     reset_password_token: Field::String,

@@ -2,10 +2,11 @@ class BookingPdf
   include Prawn::View
   include WhatMonth
 
-  def initialize(language, booking)
+  def initialize(language, booking, signature)
     @booking = booking
     @language = language
     @date = Time.now
+    @signature = signature
     check_booking_language
   end
 
@@ -20,18 +21,27 @@ class BookingPdf
   def generate_booking_es
     logo
     content_es
+    signature
     footer_es
   end
 
   def generate_booking_eng
     logo
     content_eng
+    signature
     footer_eng
   end
 
   def logo
     bounding_box([0, cursor], width: 535, height: 82) do
       image "app/assets/images/equinox_logo.png", at: [390, 82], width: 160
+    end
+  end
+
+
+  def signature
+    bounding_box([0, cursor], width: 535, height: 82) do
+      image StringIO.open(@signature.download), at: [15, 50], width: 100
     end
   end
 

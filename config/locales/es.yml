@@ -69,7 +69,7 @@ es:
         incidents: Incidencias
         id: Id
         email: Email
-        photo: Foto
+        photo: Foto de firma
         first_name: Nombre
         last_name: Apellido
         role: Rol
@@ -115,7 +115,7 @@ es:
         id_number: Número de identificación
         id_type: Tipo de indentificación
         cif: CIF
-        street: Calle línea 1
+        street: Calle
         street_2: Calle línea 2
         number: Número de calle
         postal_code: Código postal
@@ -144,7 +144,7 @@ es:
         landlord: Propietarios
         landlord_id: Propietario
         bookings: Reservas
-        street: Calle línea 1
+        street: Calle
         number: Número de calle
         postal_code: Código postal
         city: Ciudad
@@ -187,7 +187,7 @@ es:
         id_number: Número de identificación
         id_type: Tipo de indentificación
         cif: CIF
-        street: Calle línea 1
+        street: Calle
         street_2: Calle línea 2
         number: Número de calle
         postal_code: Código postal
@@ -357,8 +357,7 @@ es:
         id_type: Tipo de documento
         cif: CIF
         nationality: Nacionalidad
-        street: Calle línea 1
-        street_2: Calle línea 2
+        street: Calle
         number: Número
         postal_code: Código postal
         city: Ciudad
@@ -374,7 +373,7 @@ es:
         first_name: Nombre
         last_name: Apellido
         phone: Teléfono de contacto
-        street: Calle línea 1
+        street: Calle
         street_2: Calle línea 2
         number: Número
         nationality: Nacionalidad
