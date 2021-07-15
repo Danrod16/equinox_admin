@@ -11,6 +11,7 @@ class Booking < ApplicationRecord
   after_create :create_invoice, :contract_length
   before_update :contract_length, if: :booking_date_changed?
   after_create :strip_date
+  before_update :strip_date
 
   def create_invoice
     Invoice.create(booking_id: self.id, state: self.state)
