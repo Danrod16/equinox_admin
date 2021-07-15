@@ -15,8 +15,8 @@ as defined by the routes in the `admin/` namespace
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) %>
   <% end %>
-  <% if current_user.admin? %>
-    <%= link_to "Estadísticas", statistics_path, class: "navigation__link navigation__link" %>
-  <% end %>
+  <%# if current_user.admin? %>
+    <%#= link_to "Estadísticas", statistics_path, class: "navigation__link navigation__link" %>
+  <%# end %>
   <%= link_to "Desconectarse", destroy_user_session_path, method: :delete %>
 </nav>
