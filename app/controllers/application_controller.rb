@@ -13,4 +13,6 @@ begin
   end
 rescue
   puts "Error"
+  redirect_to root_path
+  flash[:alert] = "Hemos identificado un error, por favor contacte con el desarollador"
 end
