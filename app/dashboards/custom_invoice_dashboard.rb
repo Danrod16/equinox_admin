@@ -14,7 +14,7 @@ class CustomInvoiceDashboard < Administrate::BaseDashboard
     nif: Field::String,
     title: Field::String,
     sequence: Field::Number,
-    total_cost: Field::Number,
+    total_cost: Field::Number.with_options(decimals: 2),
     agency_fee: Field::Number.with_options(decimals: 2),
     description: Field::Text,
     created_at: Field::DateTime,
