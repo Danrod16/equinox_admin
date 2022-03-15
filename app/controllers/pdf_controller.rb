@@ -1,3 +1,4 @@
+require 'csv'
 class PdfController < ApplicationController
   def booking_pdf
     language = params[:language]
@@ -75,5 +76,11 @@ class PdfController < ApplicationController
         disposition: "inline"
       end
     end
+  end
+
+  def generate_landlord_csv
+   respond_to do |format|
+     format.csv { render :csv => Landlord.all }
+   end
   end
 end

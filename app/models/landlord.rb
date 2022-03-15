@@ -10,4 +10,28 @@ class Landlord < ApplicationRecord
   def full_address
     "#{self.street}, #{self.number} #{self.postal_code}, #{self.city}, #{self.country}"
   end
+
+   # ===============
+   # = CSV support =
+   # ===============
+   comma do
+
+     first_name
+     last_name
+     photo
+     email
+     notes
+     id_number
+     id_type
+     cif
+     street
+     number
+     postal_code
+     country
+     nationality
+     company_name
+     phone
+     iban
+
+   end
 end

@@ -31,7 +31,8 @@ gem "image_processing"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'csv'
+gem "comma"
 gem 'devise'
 gem 'administrate'
 gem 'prawn'
