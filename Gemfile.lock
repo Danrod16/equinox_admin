@@ -117,6 +117,8 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.14.2)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
@@ -308,6 +310,7 @@ DEPENDENCIES
   csv
   devise
   dotenv-rails
+  faker
   font-awesome-sass
   groupdate
   i18n-debug (~> 1.2)

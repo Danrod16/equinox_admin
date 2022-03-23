@@ -40,6 +40,7 @@ gem "pundit"
 gem "chartkick"
 gem 'groupdate'
 gem 'i18n-debug', '~> 1.2'
+gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

@@ -2,6 +2,7 @@ class Landlord < ApplicationRecord
   has_many :flats, dependent: :destroy
   has_many :bookings, through: :flats
   has_one_attached :photo
+  ID = ["Pasaporte", "DNI", "NIE", "Otro"]
 
   def full_name
     "#{self.first_name} #{self.last_name}"
