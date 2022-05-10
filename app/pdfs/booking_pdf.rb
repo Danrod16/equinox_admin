@@ -40,9 +40,9 @@ class BookingPdf
 
 
   def signature
-    if !@signature.nil?
+    if @signature.attached?
       bounding_box([0, cursor], width: 535, height: 82) do
-        image StringIO.open(@signature.download), at: [15, 50], width: 100
+        image StringIO.open(@signature&.download), at: [15, 50], width: 100
       end
     end
   end
