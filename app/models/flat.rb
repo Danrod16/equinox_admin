@@ -10,4 +10,8 @@ class Flat < ApplicationRecord
   def full_address
     "#{self.street}, #{self.number} #{self.postal_code}, #{self.city}, #{self.country}"
   end
+
+  def table_attribute
+    return self.street
+  end
 end
