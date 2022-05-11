@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "/receipt_pdf", to: "pdf#receipt_pdf"
   get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
   devise_for :users
-  root to: 'admin/users#index'
+  root to: 'settings#dashboard'
+  get '/styleguide', to: "pages#styleguide"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

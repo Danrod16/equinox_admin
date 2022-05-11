@@ -8,13 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= yield :charts_js %>
+    <%#= yield :charts_js %>
   </head>
 
   <body>
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-    <%= yield %>
+    <div class="main-wrapper">
+      <div class="sidebar-wrapper">
+        <%= render 'shared/sidebar' %>
+      </div>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
