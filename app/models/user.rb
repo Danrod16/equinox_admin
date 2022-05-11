@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def table_attribute
+    return self.full_name
+  end
 end

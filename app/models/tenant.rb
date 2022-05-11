@@ -9,4 +9,8 @@ class Tenant < ApplicationRecord
   def full_address
     "#{self.street}, #{self.number} #{self.postal_code}, #{self.city}, #{self.country}"
   end
+
+  def table_attribute
+    return self.full_name
+  end
 end

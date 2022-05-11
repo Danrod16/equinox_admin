@@ -1,0 +1,14 @@
+  <table class="urban-table">
+    <tr>
+      <% headers.each do |header| %>
+      <th> <%= header %> </th>
+      <% end %>
+    </tr>
+  <% records.each do |record| %>
+    <tr>
+      <% headers.each do |header| %>
+        <td><%= record.send(header.to_sym).class != String ? record.send(header.to_sym).table_attribute : record.send(header.to_sym) %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
