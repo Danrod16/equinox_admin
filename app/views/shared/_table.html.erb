@@ -1,14 +1,24 @@
-  <table class="urban-table">
-    <tr>
-      <% headers.each do |header| %>
-      <th> <%= header %> </th>
-      <% end %>
-    </tr>
+<table class="urban-table">
+  <tr>
+    <% headers.each do |header| %>
+      <th class="urban-table-header"> <%= header.capitalize %> </th>
+    <% end %>
+      <th class="urban-table-header"> - </th>
+  </tr>
   <% records.each do |record| %>
     <tr>
       <% headers.each do |header| %>
-        <td><%= record.send(header.to_sym).class != String ? record.send(header.to_sym).table_attribute : record.send(header.to_sym) %></td>
+        <td>
+          <% if record.send(header.to_sym).class != String %>
+            <%= link_to "/#{header}s/#{record.id}" do %>
+              <%= truncate(record.send(header.to_sym).table_attribute, :length => 17) %>
+            <% end %>
+          <% else %>
+            <%= record.send(header.to_sym) %>
+          <% end %>
+        </td>
       <% end %>
+      <td> <%= link_to "See more", "#", class: "button-secondary" %> </td>
     </tr>
-    <% end %>
-  </table>
+  <% end %>
+</table>

@@ -56,6 +56,12 @@
   overflow: hidden;
 }
 
+.wrapper-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .card-wrapper {
   background-color: white;
   width: 100%;
