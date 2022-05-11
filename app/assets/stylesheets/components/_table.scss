@@ -1,0 +1,14 @@
+.urban-table {
+  width: 100%;
+  tr {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    height: 65px;
+    color: $secondary-text-color;
+  }
+
+  .urban-table-header {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+}

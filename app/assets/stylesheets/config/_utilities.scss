@@ -7,6 +7,9 @@ a {
   text-decoration: none;
   color: black !important;
   font-weight: 500;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 body {
