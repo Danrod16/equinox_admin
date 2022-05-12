@@ -18,7 +18,7 @@
           <% end %>
         </td>
       <% end %>
-      <td> <%= link_to "See more", "#", class: "button-secondary" %> </td>
+      <td class="urban-table-last"> <%= link_to "See more", "/#{record.class.to_s.downcase}s/#{record.id}", class: "button-secondary" %> </td>
     </tr>
   <% end %>
 </table>
