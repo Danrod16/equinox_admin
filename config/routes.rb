@@ -15,7 +15,8 @@ Rails.application.routes.draw do
       resources :custom_invoices
       root to: "users#index"
     end
-    resources :bookings
+  resources :bookings
+  resources :invoices
   resources :statistics, only: [:index]
   get "/booking_pdf", to: "pdf#booking_pdf"
   get "/invoice_pdf", to: "pdf#invoice_pdf"

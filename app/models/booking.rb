@@ -28,6 +28,10 @@ class Booking < ApplicationRecord
     self.update_column(:payments, number_of_payments)
   end
 
+  def table_attribute
+    self.id
+  end
+
   private
 
   def booking_date_changed?

@@ -9,9 +9,13 @@
     <tr>
       <% headers.each do |header| %>
         <td>
-          <% if record.send(header.to_sym).class != String %>
+          <% if record.send(header.to_sym).respond_to?(:id) %>
             <%= link_to "/#{header}s/#{record.id}" do %>
-              <%= truncate(record.send(header.to_sym).table_attribute, :length => 17) %>
+              <% if record.send(header.to_sym).class == String %>
+                <%= truncate(record.send(header.to_sym).table_attribute, :length => 17) %>
+              <% else %>
+                <%= record.send(header.to_sym).table_attribute %>
+              <% end %>
             <% end %>
           <% else %>
             <%= record.send(header.to_sym) %>
@@ -22,3 +26,4 @@
     </tr>
   <% end %>
 </table>
+<%= console %>
