@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   resources :bookings
+  resources :landlords
   resources :invoices
   resources :statistics, only: [:index]
   get "/booking_pdf", to: "pdf#booking_pdf"
