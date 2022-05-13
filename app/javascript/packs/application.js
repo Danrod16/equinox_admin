@@ -24,12 +24,18 @@ require("chart.js")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-// External imports
-import "bootstrap";
+require("jquery")
+require("selectize")
+
+import "bootstrap"
+import { selectize } from '../components/selectize';
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  selectize();
 });
+
+// Import selectize method from components/selectize.js

@@ -2,6 +2,8 @@
   "name": "equinox_admin",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -11,6 +13,7 @@
     "chartkick": "^3.2.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
+    "selectize": "^0.12.6",
     "turbolinks": "^5.2.0"
   },
   "engines": {
