@@ -7,6 +7,11 @@ class Flat < ApplicationRecord
   validates :number, presence: true
   validates :postal_code, presence: true
 
+  # after_save :create_address
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   include PgSearch::Model
   pg_search_scope :search_by_name_or_street,
     against: [ :name, :street],
@@ -15,10 +20,14 @@ class Flat < ApplicationRecord
     }
 
   def full_address
-    "#{self.street}, #{self.number} #{self.postal_code}, #{self.city}, #{self.country}"
+    "#{self.street} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
   end
 
   def table_attribute
     return self.name
+  end
+
+  def create_address
+    self.update(address: self.full_address)
   end
 end

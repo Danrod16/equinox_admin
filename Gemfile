@@ -25,7 +25,7 @@ gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dab
 gem 'pg_search', '~> 2.3.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem "geocoder"
 gem 'administrate-field-active_storage'
 gem "image_processing"
 
