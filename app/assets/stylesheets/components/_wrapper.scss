@@ -6,6 +6,7 @@
   background-color: $bg-color;
   padding: 25px;
 }
+
 .sidebar-wrapper {
   width: 25%;
   background-color: white;
@@ -33,6 +34,8 @@
       height: 20px;
     }
     transition: .3s;
+    margin-left: -27px;
+    padding: 10px 30px;
     &:hover {
       background: #FFFFFF;
       box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);

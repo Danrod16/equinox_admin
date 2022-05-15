@@ -2,7 +2,7 @@
     <% records.each do |record| %>
       <%= link_to "/#{record.class.to_s.downcase}s/#{record.id}" do  %>
         <div class="horizontal-card">
-          <% if record.photo.attached? %>
+          <% if record.respond_to?(:photo) && record.photo.attached? %>
             <%= image_tag record.photo, class:"avatar" %>
           <% else %>
             <%= image_tag "urbanist-logo.png", class: "avatar" %>
