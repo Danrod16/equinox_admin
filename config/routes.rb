@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   resources :bookings
+  resources :incidents
   resources :landlords
   resources :invoices
   resources :tenants
