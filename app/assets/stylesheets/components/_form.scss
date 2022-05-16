@@ -67,14 +67,21 @@ input[type="checkbox"] {
 
 .form-group {
   margin: 0;
+  display: flex;
+  margin-bottom: 10px;
 
   input:focus {
     color: black;
+  }
+
+  label {
+    margin-right: 8px;
   }
 }
 
 .form-control {
   padding: 0;
+  margin-right: 24px;
 }
 
 .devise-box {
@@ -84,6 +91,7 @@ input[type="checkbox"] {
   align-items: center;
   z-index: 1;
   box-shadow:8px 8px 20px 0 rgba(0,0,0,.2);
+
   .sign-in-form {
     text-align: center;
   }

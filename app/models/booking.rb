@@ -12,7 +12,7 @@ class Booking < ApplicationRecord
   before_update :contract_length, if: :booking_date_changed?
   after_create :strip_date
   TABLE_HEADERS = ["user", "flat", "tenant", "deposit", "state"]
-
+  # FORM_INPUTS = ["start_date", "end_date", "user_id", "flat_id", "tenant_id", "deposit_registry", "deposit_amount", "deposit_paid", "contract_type"]
 
   def create_invoice
     Invoice.create(booking_id: self.id, state: self.state)

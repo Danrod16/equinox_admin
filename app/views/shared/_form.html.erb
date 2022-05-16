@@ -1,0 +1,15 @@
+<%= simple_form_for class_instance do |f| %>
+  <% headers.each do |header| %>
+    <%= f.input :header %>
+  <% end %>
+  <%= f.button :submit, "Submit",  class: "button-primary" %>
+<% end %>
+
+
+<%# if record.send(header.to_sym).class != String %>
+  <%#= link_to "/#{header}s/#{record.id}" do %>
+    <%#= truncate(record.send(header.to_sym).table_attribute, :length => 17) %>
+  <%# end %>
+<%# else %>
+  <%#= record.send(header.to_sym) %>
+<%# end %>
