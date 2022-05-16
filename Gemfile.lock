@@ -333,6 +333,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   redis (~> 4.0)
   sass-rails (>= 6)
+  selectize-rails
   selenium-webdriver
   simple_form
   spring
@@ -347,4 +348,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.2.15
+   2.3.13

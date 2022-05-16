@@ -8,5 +8,22 @@ class TenantsController < ApplicationController
     end
   end
 
-end
+  def new
+    @tenant = Tenant.new
+  end
 
+  def create
+    @tenant = Tenant.new(tenant_params)
+    if @tenant.save
+      render json: @tenant
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def tenant_params
+    params.require(:tenant).permit(:first_name, :last_name, :email, :phone, :description, :photo, :street, :street_2, :number, :postal_code, :city, :country, :id_number, :id_type, :cif, :nationality)
+  end
+end

@@ -17,7 +17,7 @@
       last_name: Faker::FunnyName.name,
       email: Faker::Internet.email,
       id_number: 123123123,
-      id_type: Landlord::ID,
+      id_type: Landlord::ID.sample,
       cif: 123123123,
       street: Faker::Address.street_name,
       number: Faker::Address.building_number,

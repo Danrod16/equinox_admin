@@ -7,4 +7,9 @@ class LandlordsController < ApplicationController
       @landlords = Landlord.all
     end
   end
+
+  def show
+    @landlord = Landlord.find(params[:id])
+    @bookings = @landlord.flats.extract_associated(:bookings).first
+  end
 end
