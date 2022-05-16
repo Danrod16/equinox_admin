@@ -1,0 +1,36 @@
+<%= simple_form_for booking do |f| %>
+  <div class="form-group">
+    <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+    <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.select :user_id, User.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select User" } %>
+    <%= f.select :flat_id, Flat.all.pluck(:street, :id), {}, { class: "form-control selectize", prompt: "Select Properties" } %>
+    <%= f.select :tenant_id, Tenant.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Tenant" } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :deposit_registry, class: "form-control" %>
+    <%= f.input :deposit_amount, class: "form-control" %>
+    <%= f.input :deposit_paid, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :contract_type, class: "form-control" %>
+    <%= f.input :rent, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :payments, class: "form-control" %>
+    <%= f.input :state, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :obligatory_complience, class: "form-control" %>
+    <%= f.input :appliences, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :agency_fee, class: "form-control" %>
+    <%= f.input :itp, class: "form-control" %>
+  </div>
+    <%= f.input :check_in_notes %>
+  <div class="form-actions">
+    <%= f.button :submit, "Submit",  class: "button-primary" %>
+  </div>
+<% end %>

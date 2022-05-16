@@ -1,45 +1,7 @@
 <h1>New Bookings</h1>
 <div class="card-wrapper">
-  <%= simple_form_for @booking do |f| %>
-  <div class="form-group">
-    <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-    <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.select :user_id, User.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select User" } %>
-    <%= f.select :flat_id, Flat.all.pluck(:street, :id), {}, { class: "form-control selectize", prompt: "Select Properties" } %>
-    <%= f.select :tenant_id, Tenant.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Tenant" } %>
-  </div>
-  <div class="form-group">
-    <%= f.input :deposit_registry, class: "form-control" %>
-    <%= f.input :deposit_amount, class: "form-control" %>
-    <%= f.input :deposit_paid, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.input :contract_type, class: "form-control" %>
-    <%= f.input :rent, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.input :payments, class: "form-control" %>
-    <%= f.input :state, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.input :obligatory_complience, class: "form-control" %>
-    <%= f.input :appliences, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.input :agency_fee, class: "form-control" %>
-    <%= f.input :itp, class: "form-control" %>
-  </div>
-    <%= f.input :check_in_notes %>
-  <div class="form-actions">
-    <%= f.button :submit, "Submit",  class: "button-primary" %>
-  </div>
-  <% end %>
-
-  <%#= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
+  <%= render 'shared/booking_form.html.erb', { booking: @booking } %>
 </div>
-
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary button-modal d-none" data-toggle="modal" data-target="#exampleModal">
@@ -51,22 +13,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Insert New Form</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <%#= simple_form_for User.new, url: user_registration_path do |f| %>
-          <%#= f.input :first_name %>
-          <%#= f.input :last_name %>
-          <%#= f.input :email %>
-          <%#= f.button :submit, "Submit",  class: "button-primary" %>
-        <%# end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= render 'shared/user_form.html.erb', { user: @user, class_list: "d-none" } %>
+        <%= render 'shared/flat_form.html.erb', { flat: @flat, class_list: "d-none" } %>
+        <%= render 'shared/tenant_form.html.erb', { tenant: @tenant, class_list: "d-none" } %>
       </div>
     </div>
   </div>
