@@ -1,0 +1,9 @@
+<div class="wrapper-header">
+  <h1>Incidents</h1>
+  <%= link_to "New incident", "#", class: "button-primary" %>
+</div>
+
+<div class="card-wrapper">
+  <%= render 'shared/table.html.erb', { headers: Incident::INCIDENT_HEADERS, records: @incidents } %>
+</div>
+

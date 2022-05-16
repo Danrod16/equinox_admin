@@ -3,6 +3,8 @@ class Invoice < ApplicationRecord
   belongs_to :booking
   after_create :set_sequence
 
+  INVOICE_HEADERS = [ "sequence", "booking", "state", "expirry_date", "total"]
+
   def rent_with_iva
     iva_subtotal = self.booking.rent - (self.booking.rent * 0.79)
     total_iva = self.booking.rent + iva_subtotal

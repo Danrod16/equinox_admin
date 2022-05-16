@@ -122,6 +122,7 @@ GEM
     ffi (1.14.2)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
+    geocoder (1.7.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     groupdate (5.0.0)
@@ -176,6 +177,9 @@ GEM
     orm_adapter (0.5.0)
     pdf-core (0.8.1)
     pg (1.2.3)
+    pg_search (2.3.5)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     prawn (2.3.0)
       pdf-core (~> 0.8.1)
       ttfunk (~> 1.6)
@@ -312,6 +316,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass
+  geocoder
   groupdate
   i18n-debug (~> 1.2)
   image_processing
@@ -319,6 +324,7 @@ DEPENDENCIES
   listen (~> 3.2)
   mimemagic!
   pg (>= 0.18, < 2.0)
+  pg_search (~> 2.3.0)
   prawn
   pry-byebug
   pry-rails

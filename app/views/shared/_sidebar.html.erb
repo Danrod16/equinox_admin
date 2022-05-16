@@ -1,11 +1,27 @@
 <%= image_tag 'urbanist-logo.png' %>
 
 <ul class="sidebar-links">
-  <li><%= image_tag 'home.png' %> <%= link_to "Dashboard", root_path %> </li>
-  <li><%= image_tag 'file.jpg' %> <%= link_to "Bookings", bookings_path %> </li>
-  <li><%= image_tag 'file-text.jpg' %> <%= link_to "Invoices", root_path %> </li>
-  <li><%= image_tag 'home.png' %> <%= link_to "Receipts", root_path %> </li>
-  <li><%= image_tag 'home.png' %> <%= link_to "Dashboard", root_path %> </li>
+  <%= link_to root_path do %>
+    <li><%= image_tag 'home.png' %> Dashboard </li>
+  <% end %>
+  <%= link_to bookings_path do  %>
+    <li><%= image_tag 'file.jpg' %> Bookings </li>
+  <% end %>
+  <%= link_to invoices_path do  %>
+    <li><%= image_tag 'file-text.jpg' %> Invoices </li>
+  <% end %>
+  <%= link_to landlords_path do  %>
+    <li><%= image_tag 'home.png' %> Landlords </li>
+  <% end %>
+  <%= link_to tenants_path do %>
+    <li><%= image_tag 'home.png' %> Tenants </li>
+  <% end %>
+  <%= link_to incidents_path do %>
+    <li><%= image_tag 'home.png' %> Incidents </li>
+  <% end %>
+  <%= link_to flats_path do %>
+    <li><%= image_tag 'home.png' %> Flats </li>
+  <% end %>
 </ul>
 
 <%= image_tag 'equinox_logo.png', class: "avatar-large" %>
