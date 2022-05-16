@@ -2,8 +2,6 @@
   "name": "equinox_admin",
   "private": true,
   "dependencies": {
-    "@hotwired/stimulus": "^3.0.1",
-    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -14,11 +12,8 @@
     "jquery": "^3.5.1",
     "mapbox-gl": "^2.8.2",
     "popper.js": "^1.16.1",
-<<<<<<< HEAD
     "selectize": "^0.12.6",
-=======
     "stimulus": "^3.0.1",
->>>>>>> 130bb7743f5c064454dbc5769a7dfe9cca0c7d84
     "turbolinks": "^5.2.0"
   },
   "engines": {

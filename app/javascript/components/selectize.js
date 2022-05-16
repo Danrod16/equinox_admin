@@ -10,23 +10,23 @@ const selectize = () => {
       console.log(input)
       $(".button-modal").click();
 
-      $("#booking_user_id-selectized").on('change', function(){
-        $("#user_first_name").val(input);
-        $("#new_user").removeClass("d-none")
-        $("#new_user").on("submit", function(e) {
-          e.preventDefault();
-          $.ajax({
-            method: "POST",
-            url: $(this).attr("action"),
-            data: $(this).serialize(),
-            success: function(response){
-              console.log(response)
-              callback({value: response.id, text: response.first_name});
-              $(".button-modal").click();
-            }
-          })
-        })
-      });
+      // $("#booking_user_id-selectized").on('change', function(){
+      //   $("#user_first_name").val(input);
+      //   $("#new_user").removeClass("d-none")
+      //   $("#new_user").on("submit", function(e) {
+      //     e.preventDefault();
+      //     $.ajax({
+      //       method: "POST",
+      //       url: $(this).attr("action"),
+      //       data: $(this).serialize(),
+      //       success: function(response){
+      //         console.log(response)
+      //         callback({value: response.id, text: response.first_name});
+      //         $(".button-modal").click();
+      //       }
+      //     })
+      //   })
+      // });
 
       $("#booking_flat_id-selectized").on('change', function(){
         $("#flat_street").val(input);
@@ -39,7 +39,7 @@ const selectize = () => {
             data: $(this).serialize(),
             success: function(response){
               console.log(response)
-              callback({value: response.id, text: response.first_name});
+              callback({value: response.id, text: response.street});
               $(".button-modal").click();
             }
           })

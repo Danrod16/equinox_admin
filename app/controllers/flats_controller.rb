@@ -14,6 +14,11 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    if @flat.save
+      render json: @flat.attributes
+    else
+      render :new
+    end
   end
 
   private
