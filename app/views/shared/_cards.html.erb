@@ -3,7 +3,7 @@
       <%= link_to "/#{record.class.to_s.downcase}s/#{record.id}" do  %>
         <div class="horizontal-card">
           <% if record.respond_to?(:photo) && record.photo.attached? %>
-            <%= image_tag record.photo, class:"avatar" %>
+            <%= image_tag record.photo, class: "avatar" %>
           <% else %>
             <%= image_tag "urbanist-logo.png", class: "avatar" %>
           <% end %>
