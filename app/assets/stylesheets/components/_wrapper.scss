@@ -7,6 +7,32 @@
   padding: 25px;
 }
 
+.card-top-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  h2 {
+    margin-left: 15px;
+  }
+}
+
+.card-top li {
+  list-style: none;
+  padding: 5px 0px;
+}
+
+.card-top ul {
+  padding-left: 0px;
+}
+
+.card-top {
+  border-bottom: 1px solid #ddd;
+}
+
+.personal-details {
+  display: flex;
+}
+
 .sidebar-wrapper {
   width: 25%;
   background-color: white;
