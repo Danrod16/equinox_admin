@@ -1,9 +1,8 @@
 <div class="wrapper-header">
   <h1>Invoices</h1>
-  <%= link_to "New invoice", "#", class: "button-primary" %>
+  <%= link_to "New invoice", new_invoice_path, class: "button-primary" %>
 </div>
 
 <div class="card-wrapper">
   <%= render 'shared/table.html.erb', { headers: Invoice::INVOICE_HEADERS, records: @invoices } %>
 </div>
-
