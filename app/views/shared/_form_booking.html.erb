@@ -1,4 +1,4 @@
-<%= simple_form_for booking do |f| %>
+<%= simple_form_for booking, html: { class: class_list } do |f| %>
   <div class="form-group">
     <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
     <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>

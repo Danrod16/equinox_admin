@@ -1,0 +1,22 @@
+<%= simple_form_for landlord, html: { class: class_list } do |f| %>
+  <div>
+    <%= f.input :first_name, html: { class: "form-control" } %>
+    <%= f.input :last_name, html: { class: "form-control" } %>
+  </div>
+  <%= f.input :email, html: { class: "form-control" } %>
+  <%= f.input :photo, html: { class: "form-control" } %>
+  <%= f.input :notes, html: { class: "form-control" } %>
+  <%= f.input :id_number, html: { class: "form-control" } %>
+  <%= f.input :id_type, html: { class: "form-control" } %>
+  <%= f.input :cif, html: { class: "form-control" } %>
+  <%= f.input :street, html: { class: "form-control" } %>
+  <%= f.input :number, html: { class: "form-control" } %>
+  <%= f.input :postal_code, html: { class: "form-control" } %>
+  <%= f.input :city, html: { class: "form-control" } %>
+  <%#= f.input :country, collection: Flat::COUNTRIES, html: { class: "form-control" } %>
+  <%= f.input :nationality, html: { class: "form-control" } %>
+  <%= f.input :company_name, html: { class: "form-control" } %>
+  <%= f.input :phone, html: { class: "form-control" } %>
+  <%= f.input :iban, html: { class: "form-control" } %>
+  <%= f.button :submit, "Submit",  class: "button-primary" %>
+<% end %>

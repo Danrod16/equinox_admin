@@ -1,9 +1,8 @@
 <div class="wrapper-header">
   <h1>Bookings</h1>
-  <%= link_to "New booking", "#", class: "button-primary" %>
+  <%= link_to "New booking", new_booking_path, class: "button-primary" %>
 </div>
 
 <div class="card-wrapper">
   <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
 </div>
-

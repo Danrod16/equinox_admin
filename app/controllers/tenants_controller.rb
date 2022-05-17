@@ -15,7 +15,7 @@ class TenantsController < ApplicationController
   def create
     @tenant = Tenant.new(tenant_params)
     if @tenant.save
-      render json: @tenant
+      render json: @tenant.attributes
     else
       render :new
     end

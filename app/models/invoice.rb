@@ -3,22 +3,34 @@ class Invoice < ApplicationRecord
   belongs_to :booking
   after_create :set_sequence
 
-  INVOICE_HEADERS = [ "sequence", "booking", "state", "expirry_date", "total"]
+  INVOICE_HEADERS = [ "sequence", "booking", "state", "total"]
 
   def rent_with_iva
-    iva_subtotal = self.booking.rent - (self.booking.rent * 0.79)
-    total_iva = self.booking.rent + iva_subtotal
-    total_iva.round(2)
+    begin
+      iva_subtotal = self.booking.rent - (self.booking.rent * 0.79)
+      total_iva = self.booking.rent + iva_subtotal
+      total_iva.round(2)
+    rescue
+      0.00
+    end
   end
 
   def iva
-    iva_subtotal = self.booking.rent - (self.booking.rent * 0.79)
-    iva_subtotal.round(2)
+    begin
+      iva_subtotal = self.booking.rent - (self.booking.rent * 0.79)
+      iva_subtotal.round(2)
+    rescue
+      0.00
+    end
   end
 
   def total
+    begin
       total = rent_with_iva - self.booking.deposit.token_payment.to_f + suplidos
       total.round(2)
+    rescue
+      0.00
+    end
   end
 
   def suplidos
