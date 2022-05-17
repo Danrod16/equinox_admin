@@ -15,7 +15,11 @@ class TenantsController < ApplicationController
   def create
     @tenant = Tenant.new(tenant_params)
     if @tenant.save
-      render json: @tenant
+      if request.referer.include? "bookings"
+        render json: @tenant.attributes
+      else
+        redirect_to tenants_path
+      end
     else
       render :new
     end

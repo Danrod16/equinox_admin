@@ -6,4 +6,23 @@ class IncidentsController < ApplicationController
       @incidents = Incident.all
     end
   end
+
+  def new
+    @incident = Incident.new
+  end
+
+  def create
+    @incident = Incident.new(incident_params)
+    if @incident.save
+      redirect_to incidents_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def incident_params
+    params.require(:incident).permit(:booking_id, :user_id, :state, :title, :sequence, :hourly_fee, :total_hours, :total_cost, :description, :photo)
+  end
 end

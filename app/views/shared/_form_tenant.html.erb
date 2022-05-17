@@ -1,0 +1,37 @@
+<%= simple_form_for tenant, html: { class: class_list } do |f| %>
+  <div class="form-group-two">
+    <%= f.input :first_name, class: "form-control" %>
+    <%= f.input :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :photo, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :email, class: "form-control" %>
+    <%= f.input :phone, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :street, class: "form-control" %>
+    <%= f.input :street_2, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :number, class: "form-control" %>
+    <%= f.input :postal_code, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :city, class: "form-control" %>
+    <%#= f.input :country, collection: Application::COUNTRIES, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :id_number, class: "form-control" %>
+    <%= f.input :id_type, class: "form-control" %>
+  </div>
+  <div class="form-group-two">
+    <%= f.input :cif, class: "form-control" %>
+    <%= f.input :nationality, class: "form-control" %>
+  </div>
+  <%= f.input :description, class: "form-control" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Submit",  class: "button-primary" %>
+  </div>
+<% end %>

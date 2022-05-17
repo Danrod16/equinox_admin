@@ -65,18 +65,32 @@ input[type="checkbox"] {
 
 // Boostrap
 
-.form-group {
+.form-group-two {
   margin: 0;
-  display: flex;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
 
-  input:focus {
-    color: black;
-  }
+  // input:focus {
+  //   color: black;
+  // }
+}
 
-  label {
-    margin-right: 8px;
-  }
+.form-group-three {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+
+  // input:focus {
+  //   color: black;
+  // }
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 12px;
 }
 
 .form-control {
@@ -100,8 +114,6 @@ input[type="checkbox"] {
 .form-check {
   margin-bottom: 15px;
 }
-
-
 
 .was-validated .form-control:valid, .form-control.is-valid {
   color: white;

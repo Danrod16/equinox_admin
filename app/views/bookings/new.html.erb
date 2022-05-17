@@ -1,6 +1,6 @@
-<h1>New Bookings</h1>
+<h1>New Booking</h1>
 <div class="card-wrapper">
-  <%= render 'shared/booking_form.html.erb', { booking: @booking } %>
+  <%= render 'shared/form_booking.html.erb', { booking: @booking, class_list: "" } %>
 </div>
 
 <!-- Button trigger modal -->
@@ -19,9 +19,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <%#= render 'shared/user_form.html.erb', { user: @user, class_list: "d-none" } %>
-        <%= render 'shared/flat_form.html.erb', { flat: @flat, class_list: "d-none" } %>
-        <%= render 'shared/tenant_form.html.erb', { tenant: @tenant, class_list: "d-none" } %>
+        <%#= render 'shared/form_user.html.erb', { user: @user, class_list: "d-none" } %>
+        <%= render 'shared/form_flat.html.erb', { flat: @flat, class_list: "d-none" } %>
+        <%= render 'shared/form_tenant.html.erb', { tenant: @tenant, class_list: "d-none" } %>
       </div>
     </div>
   </div>
