@@ -1,14 +1,16 @@
 <%= simple_form_for invoice, html: { class: class_list } do |f| %>
-  <div class="form-group">
-    <%= f.label :booking %>
-    <%= f.select :booking_id, Booking.all.pluck(:id), {}, { class: "form-control", prompt: "Select Booking" } %>
-  </div>
-  <div class="form-group">
+  <div class="form-groups">
+    <div class="form-group">
+      <%= f.label :booking %>
+      <%= f.select :booking_id, Booking.all.pluck(:id), {}, { class: "form-control", prompt: "Select Booking" } %>
+    </div>
     <%= f.input :state, class: "form-control" %>
+  </div>
+  <div class="form-groups">
     <%= f.input :fianza, class: "form-control" %>
     <%= f.input :total, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :sequence, class: "form-control" %>
     <%= f.input :supplements, class: "form-control" %>
   </div>

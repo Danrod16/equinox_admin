@@ -1,38 +1,46 @@
 <%= simple_form_for booking, html: { class: class_list } do |f| %>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
     <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :user %>
-    <%= f.select :user_id, User.all.pluck(:firist_name, :id), {}, { class: "form-control", prompt: "Select User" } %>
-    <%= f.label :flat %>
-    <%= f.select :flat_id, Flat.all.pluck(:street, :id), {}, { class: "form-control selectize", prompt: "Select Properties" } %>
-    <%= f.label :tenant %>
-    <%= f.select :tenant_id, Tenant.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Tenant" } %>
+  <div class="form-groups">
+    <div class="form-group">
+      <%= f.label :user %>
+      <%= f.select :user_id, User.all.pluck(:first_name, :id), {}, { class: "form-control", prompt: "Select User" } %>
+    </div>
+    <div class="form-group">
+      <%= f.label :flat %>
+      <%= f.select :flat_id, Flat.all.pluck(:street, :id), {}, { class: "form-control selectize", prompt: "Select Properties" } %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.input :deposit_registry, class: "form-control" %>
+  <div class="form-groups">
+    <div class="form-group">
+      <%= f.label :tenant %>
+      <%= f.select :tenant_id, Tenant.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Tenant" } %>
+    </div>
     <%= f.input :deposit_amount, class: "form-control" %>
+  </div>
+  <div class="form-groups">
+    <%= f.input :deposit_registry, class: "form-control" %>
     <%= f.input :deposit_paid, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :contract_type, class: "form-control" %>
     <%= f.input :rent, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :payments, class: "form-control" %>
     <%= f.input :state, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :obligatory_complience, class: "form-control" %>
     <%= f.input :appliences, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :agency_fee, class: "form-control" %>
     <%= f.input :itp, class: "form-control" %>
   </div>
-    <%= f.input :check_in_notes %>
+  <%= f.input :check_in_notes %>
   <div class="form-actions">
     <%= f.button :submit, "Submit",  class: "button-primary" %>
   </div>

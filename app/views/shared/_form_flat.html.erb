@@ -1,41 +1,41 @@
 <%= simple_form_for flat, html: { class: class_list } do |f| %>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :name, class: "form-control" %>
     <%= f.label :landlord %>
     <%= f.select :landlord_id, Landlord.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Landlord" } %>
     <%= f.input :available, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :street, class: "form-control" %>
     <%= f.input :number, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :postal_code, class: "form-control" %>
     <%= f.input :city, class: "form-control" %>
     <%#= f.input :country, collection: Flat::COUNTRIES, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :index, class: "form-control" %>
     <%= f.input :expenses, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :insurance, class: "form-control" %>
     <%= f.input :insurance_phone, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :keys, class: "form-control" %>
     <%= f.input :furnished, class: "form-control" %>
     <%= f.input :letter_box, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :equinox_costs, class: "form-control" %>
     <%= f.input :reference_rent, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :celula, class: "form-control" %>
     <%= f.input :cee, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-groups">
     <%= f.input :catastral, class: "form-control" %>
     <%= f.input :catastral_number, class: "form-control" %>
     <%= f.input :habitability_number, class: "form-control" %>
@@ -43,5 +43,7 @@
   </div>
   <%= f.input :photos, class: "form-control" %>
   <%= f.input :video, class: "form-control" %>
-  <%= f.button :submit, "Submit",  class: "button-primary" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Submit",  class: "button-primary" %>
+  </div>
 <% end %>

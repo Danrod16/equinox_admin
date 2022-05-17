@@ -65,18 +65,21 @@ input[type="checkbox"] {
 
 // Boostrap
 
-.form-group {
+.form-groups {
   margin: 0;
-  display: flex;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
 
   input:focus {
     color: black;
   }
+}
 
-  label {
-    margin-right: 8px;
-  }
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 12px;
 }
 
 .form-control {

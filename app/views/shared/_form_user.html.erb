@@ -1,6 +1,8 @@
 <%= simple_form_for user, url: user_registration_path, html: { class: class_list } do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.button :submit, "Submit",  class: "button-primary" %>
+  <%= f.input :first_name, class: "form-control" %>
+  <%= f.input :last_name, class: "form-control" %>
+  <%= f.input :email, class: "form-control" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Submit",  class: "button-primary" %>
+  </div>
 <% end %>
