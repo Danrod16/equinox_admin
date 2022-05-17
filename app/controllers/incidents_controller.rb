@@ -14,7 +14,7 @@ class IncidentsController < ApplicationController
   def create
     @incident = Incident.new(incident_params)
     if @incident.save
-      render json: @incident.attributes
+      redirect_to incidents_path
     else
       render :new
     end

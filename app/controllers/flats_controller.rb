@@ -16,7 +16,11 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     if @flat.save
-      render json: @flat.attributes
+      if request.referer.include? "bookings"
+        render json: @flat.attributes
+      else
+        redirect_to flats_path
+      end
     else
       render :new
     end

@@ -15,6 +15,9 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
+      @user = User.new
+      @flat = Flat.new
+      @tenant = Tenant.new
       render :new
     end
   end

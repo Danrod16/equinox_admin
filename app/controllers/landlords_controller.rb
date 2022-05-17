@@ -20,7 +20,7 @@ class LandlordsController < ApplicationController
   def create
     @landlord = Landlord.new
     if @landlord.save
-      render json: @landlord.attributes
+      redirect_to landlords_path
     else
       render :new
     end
