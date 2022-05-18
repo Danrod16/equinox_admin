@@ -16,7 +16,7 @@ class SettingsController < ApplicationController
     @sales_monthly = transform_to_json(@sales_monthly)
     # state = open / closed
     @booking_status = Booking.group(:state).count
-    @top_five_flats = Booking.group(:flat).count
+    @top_five_flats = Booking.group(:flat).count.sort
   end
 
   private

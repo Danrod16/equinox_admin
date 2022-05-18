@@ -9,18 +9,18 @@
       </div>
       <div class="horizontal-card">
         <h3>This year bookings</h3>
-        <p><%= @booking_status %></p>
+        <p><%= @booking_status["Open"] %>/<%= @booking_status.values.sum %></p>
       </div>
       <div class="horizontal-card">
         <h3>This year sales</h3>
         <p><%= @sales_this_year %></p>
         <canvas width="200" height="200" data-stats-target="salesChart"></canvas>
-        <p data-stats-target= "salesData"><%= @sales_monthly %></p>
+        <p data-stats-target= "salesData" class="d-none"><%= @sales_monthly %></p>
       </div>
       <div class="horizontal-card">
         <h3>This year top 5 flats</h3>
         <% @top_five_flats.each do |flat| %>
-        <div class="d-flex border-bottom justify-content-between">
+        <div class="d-flex border-bottom justify-content-between mb-2">
           <div><%= flat[0].street %></div>
           <div><%= flat[1] %></div>
         </div>

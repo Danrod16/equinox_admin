@@ -8,18 +8,20 @@ export default class extends Controller {
   }
 
   #salesChart() {
-    const data = JSON.parse(this.salesDataTarget.innerText.replace("=>", ":"))
+    Chart.defaults.global.legend.display = false;
+    console.log(this.salesDataTarget.innerText.replace("=>", ":"))
+    const data = JSON.parse(this.salesDataTarget.innerText.replaceAll("=>", ":"))
     const salesKey = Object.keys(data)
     const salesValue = Object.values(data)
-
+    console.log(salesKey)
+    console.log(salesValue)
     const salesLabel = salesKey;
 
     const salesData = {
       labels: salesLabel,
       datasets: [
         {
-          label: "Sales",
-          backgroundColor: ["#32A287"],
+          backgroundColor: "rgba(0, 0, 0, 0)",
           borderColor: ["#32A287"],
           data: salesValue,
         },
@@ -31,46 +33,28 @@ export default class extends Controller {
       data: salesData,
       options: {
         scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              stepSize: 1,
-            },
-            grid: {
-              drawBorder: false,
-              color: "#0023660a",
-            },
-            title: {
+          yAxes: [{
+            gridLines: {
               display: false,
-              text: "Number of Sales",
+              color: "rgba(0, 0, 0, 0)"
             },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              color: "#0023660a",
+            ticks: {
+              display: false
+            }
+          }],
+          xAxes: [{
+            gridLines: {
+              display: false,
+              color: "rgba(0, 0, 0, 0)"
             },
-          },
-        },
-        plugins: {
-          legend: {
-            display: false,
-          },
-          title: {
-            display: false,
-            text: "Sales per date",
-            color: "#002366",
-            font: {
-              family: "Montserrat",
-              size: 16,
-              lineHeight: 1.2,
-            },
-            padding: { top: 0, left: 0, right: 0, bottom: 25 },
-          },
-        },
+            ticks: {
+              display: false
+            }
+          }],
+        }
       },
     };
 
-    const dateChart = new Chart(this.salesChartTarget, salesConfig);
+    new Chart(this.salesChartTarget, salesConfig);
   }
 }
