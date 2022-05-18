@@ -11,8 +11,8 @@ module WhatSequence
       @array << custom_invoice.sequence
     end
     latest_sequence = @array.sort.last
-    unless latest_sequence == self.sequence 
-      self.update(sequence:  latest_sequence + 1)
+    unless latest_sequence == self.sequence
+      self.update(sequence: latest_sequence + 1)
     end
   end
 end

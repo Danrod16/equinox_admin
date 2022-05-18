@@ -5,12 +5,12 @@
     <%= f.label :user %>
     <%= f.select :user_id, User.all.pluck(:first_name, :id), {}, { class: "form-control", prompt: "Select User" } %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :state, class: "form-control" %>
     <%= f.input :title, class: "form-control" %>
     <%= f.input :sequence, class: "form-control" %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :hourly_fee, class: "form-control" %>
     <%= f.input :total_hours, class: "form-control" %>
     <%= f.input :total_cost, class: "form-control" %>
