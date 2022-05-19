@@ -87,10 +87,14 @@ input[type="checkbox"] {
   // }
 }
 
-.form-group {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  margin-bottom: 12px;
+// .form-group {
+//   display: grid;
+//   grid-template-columns: 1fr 2fr;
+//   margin-bottom: 12px;
+// }
+
+.boolean {
+  align-self: flex-end;
 }
 
 .form-control {

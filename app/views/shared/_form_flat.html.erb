@@ -1,25 +1,23 @@
 <%= simple_form_for flat, html: { class: class_list } do |f| %>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :name, class: "form-control" %>
     <div class="form-group">
       <%= f.label :landlord %>
       <%= f.select :landlord_id, Landlord.all.pluck(:first_name, :id), {}, { class: "form-control selectize", prompt: "Select Landlord" } %>
     </div>
+    <%= f.input :photos, class: "form-control" %>
   </div>
   <div class="form-group-two">
     <%= f.input :street, class: "form-control" %>
     <%= f.input :number, class: "form-control" %>
   </div>
-  <div class="form-group-two">
-    <%= f.input :postal_code, class: "form-control" %>
+  <div class="form-group-three">
     <%= f.input :city, class: "form-control" %>
+    <%= f.input :postal_code, class: "form-control" %>
     <%#= f.input :country, collection: Flat::COUNTRIES, class: "form-control" %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :index, class: "form-control" %>
-    <%= f.input :expenses, class: "form-control" %>
-  </div>
-  <div class="form-group-two">
     <%= f.input :insurance, class: "form-control" %>
     <%= f.input :insurance_phone, class: "form-control" %>
   </div>
@@ -28,27 +26,25 @@
     <%= f.input :furnished, class: "form-control" %>
     <%= f.input :letter_box, class: "form-control" %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :keys, class: "form-control" %>
-  </div>
-  <div class="form-group-two">
     <%= f.input :equinox_costs, class: "form-control" %>
     <%= f.input :reference_rent, class: "form-control" %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
     <%= f.input :celula, class: "form-control" %>
-    <%= f.input :cee, class: "form-control" %>
-  </div>
-  <div class="form-group-two">
     <%= f.input :catastral, class: "form-control" %>
     <%= f.input :catastral_number, class: "form-control" %>
   </div>
-  <div class="form-group-two">
+  <div class="form-group-three">
+    <%= f.input :cee, class: "form-control" %>
+    <%= f.input :expenses, class: "form-control" %>
     <%= f.input :habitability_number, class: "form-control" %>
-    <%= f.input :reference, class: "form-control" %>
   </div>
-  <%= f.input :photos, class: "form-control" %>
-  <%= f.input :video, class: "form-control" %>
+  <div class="form-group-two">
+    <%= f.input :reference, class: "form-control" %>
+    <%= f.input :video, class: "form-control" %>
+  </div>
   <div class="form-actions">
     <%= f.button :submit, "Submit",  class: "button-primary" %>
   </div>
