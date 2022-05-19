@@ -21,9 +21,9 @@ const selectize = () => {
             url: $(this).attr("action"),
             data: $(this).serialize(),
             success: function(response){
-              console.log(response)
               callback({value: response.id, text: response.street});
               $(".button-modal").click();
+              $.rails.enableFormElements($("#new_flat"))
             }
           })
         })
@@ -40,9 +40,9 @@ const selectize = () => {
             url: $(this).attr("action"),
             data: $(this).serialize(),
             success: function(response){
-              console.log(response)
               callback({value: response.id, text: response.first_name});
               $(".button-modal").click();
+              $.rails.enableFormElements($("#new_tenant"))
             }
           })
         })
