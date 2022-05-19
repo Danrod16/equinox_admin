@@ -9,21 +9,22 @@ export default class extends Controller {
 
   #salesChart() {
     Chart.defaults.global.legend.display = false;
-    console.log(this.salesDataTarget.innerText.replace("=>", ":"))
     const data = JSON.parse(this.salesDataTarget.innerText.replaceAll("=>", ":"))
-    const salesKey = Object.keys(data)
-    const salesValue = Object.values(data)
-    console.log(salesKey)
-    console.log(salesValue)
-    const salesLabel = salesKey;
+    const ctx = this.salesChartTarget.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(.7, 'rgba(50, 162, 135, 0)');
+    gradient.addColorStop(0, 'rgba(50, 162, 135, .1)');
 
+    // ["#32A287"]
     const salesData = {
-      labels: salesLabel,
+      labels: Object.keys(data),
       datasets: [
         {
-          backgroundColor: "rgba(0, 0, 0, 0)",
-          borderColor: ["#32A287"],
-          data: salesValue,
+          backgroundColor: gradient,
+          borderColor: "rgba(50, 162, 135, 1)",
+          pointBackgroundColor: "rgba(0, 0, 0, 0)",
+          pointBorderColor: "rgba(0, 0, 0, 0)",
+          data: Object.values(data),
         },
       ],
     };

@@ -10,27 +10,10 @@ const selectize = () => {
       console.log(input)
       $(".button-modal").click();
 
-      // $("#booking_user_id-selectized").on('change', function(){
-      //   $("#user_first_name").val(input);
-      //   $("#new_user").removeClass("d-none")
-      //   $("#new_user").on("submit", function(e) {
-      //     e.preventDefault();
-      //     $.ajax({
-      //       method: "POST",
-      //       url: $(this).attr("action"),
-      //       data: $(this).serialize(),
-      //       success: function(response){
-      //         console.log(response)
-      //         callback({value: response.id, text: response.first_name});
-      //         $(".button-modal").click();
-      //       }
-      //     })
-      //   })
-      // });
-
       $("#booking_flat_id-selectized").on('change', function(){
         $("#flat_street").val(input);
         $("#new_flat").removeClass("d-none")
+        $("#new_tenant").addClass("d-none")
         $("#new_flat").on("submit", function(e) {
           e.preventDefault();
           $.ajax({
@@ -49,6 +32,7 @@ const selectize = () => {
       $("#booking_tenant_id-selectized").on('change', function(){
         $("#tenant_first_name").val(input);
         $("#new_tenant").removeClass("d-none")
+        $("#new_flat").addClass("d-none")
         $("#new_tenant").on("submit", function(e) {
           e.preventDefault();
           $.ajax({
@@ -63,20 +47,6 @@ const selectize = () => {
           })
         })
       });
-
-
-      // $("#new_client_form").on("submit", function(e) {
-      //   e.preventDefault();
-      //   $.ajax({
-      //     method: "POST",
-      //     url: $(this).attr("action"),
-      //     data: $(this).serialize(),
-      //     success: function(response){
-      //       callback({value: response.id, text: response.company_name});
-      //       $(".client-modal").modal("toggle");
-      //     }
-      //   });
-      // });
     }
   });
 
