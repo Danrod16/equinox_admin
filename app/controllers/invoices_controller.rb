@@ -20,6 +20,6 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:booking_id, :state, :fianza, :total, :sequence, :supplements)
+    params.require(:invoice).permit(:booking_id, :state, :fianza, :total, :supplements)
   end
 end
