@@ -23,6 +23,6 @@ class IncidentsController < ApplicationController
   private
 
   def incident_params
-    params.require(:incident).permit(:booking_id, :user_id, :state, :title, :sequence, :hourly_fee, :total_hours, :total_cost, :description, :photo)
+    params.require(:incident).permit(:booking_id, :user_id, :state, :title, :hourly_fee, :total_hours, :total_cost, :description, :photo)
   end
 end
