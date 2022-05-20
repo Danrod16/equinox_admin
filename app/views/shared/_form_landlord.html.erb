@@ -16,7 +16,7 @@
   </div>
   <div class="form-group-three">
     <%= f.input :postal_code, class: "form-control" %>
-    <%#= f.input :country, collection: Flat::COUNTRIES, class: "form-control" %>
+    <%= f.input :country, as: :select, collection: ApplicationRecord::COUNTRIES, class: "form-control" %>
     <%= f.input :nationality, class: "form-control" %>
   </div>
   <div class="form-group-three">

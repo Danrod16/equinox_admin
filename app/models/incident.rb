@@ -3,6 +3,8 @@ class Incident < ApplicationRecord
   belongs_to :booking
   belongs_to :user
   after_create :set_sequence
+  has_one_attached :photo
+
   INCIDENT_HEADERS = ["user", "title", "booking", "state"]
   include PgSearch::Model
   pg_search_scope :search_by_name_city_or_available,

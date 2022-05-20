@@ -1,4 +1,5 @@
 <%= simple_form_for incident, html: { class: class_list } do |f| %>
+  <%= f.input :title, class: "form-control" %>
   <div class="form-group-three">
     <div class="form-group">
       <%= f.label :booking %>
@@ -10,10 +11,9 @@
     </div>
     <%= f.input :photo, class: "form-control" %>
   </div>
-  <div class="form-group-three">
-    <%= f.input :state, class: "form-control" %>
-    <%= f.input :title, class: "form-control" %>
-  </div>
+  <%# <div class="form-group-two">
+    <%#= f.input :state, class: "form-control" %>
+  </div> %>
   <div class="form-group-three">
     <%= f.input :hourly_fee, class: "form-control" %>
     <%= f.input :total_hours, class: "form-control" %>
