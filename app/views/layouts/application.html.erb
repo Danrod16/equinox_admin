@@ -15,14 +15,19 @@
   <body>
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="main-wrapper">
-      <div class="sidebar-wrapper">
-        <%= render 'shared/sidebar' %>
+    <% if controller_name == "sessions" && controller.params[:action] == "new" || controller_name == "registration" && controller.params[:action] == "new" %>
+      <%= yield %>
+    <% else %>
+      <div class="main-wrapper">
+        <div class="sidebar-wrapper">
+          <%= render 'shared/sidebar' %>
+        </div>
+        <div class="content-wrapper">
+          <%= yield %>
+          <%= console %>
+        </div>
       </div>
-      <div class="content-wrapper">
-        <%= yield %>
-        <%= console %>
-      </div>
-    </div>
+    <% end %>
+
   </body>
 </html>
