@@ -9,11 +9,11 @@
       </div>
       <div class="horizontal-card">
         <h3>This year bookings</h3>
-        <p><%= @booking_status["Open"] %>/<%= @booking_status.values.sum %></p>
+        <p><%= @booking_status["Abierta"] %>/<%= @booking_status.values.sum %></p>
       </div>
       <div class="horizontal-card">
         <h3>This year sales</h3>
-        <p><%= @sales_this_year %></p>
+        <p>€ <%= @sales_this_year %></p>
         <canvas width="200" height="200" data-stats-target="salesChart"></canvas>
         <p data-stats-target= "salesData" class="d-none"><%= @sales_monthly %></p>
       </div>
