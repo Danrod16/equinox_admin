@@ -21,8 +21,8 @@
         <h3>This year top 5 flats</h3>
         <% @top_five_flats.each do |flat| %>
         <div class="d-flex border-bottom justify-content-between mb-2">
-          <div><%= flat[0].street %></div>
-          <div><%= flat[1] %></div>
+          <div><%= flat.street %></div>
+          <div><%= flat.flats_count %></div>
         </div>
         <% end %>
       </div>
