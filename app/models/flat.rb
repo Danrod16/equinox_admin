@@ -7,7 +7,7 @@ class Flat < ApplicationRecord
   validates :number, presence: true
   validates :postal_code, presence: true
 
-  # after_save :create_address
+  after_save :create_address
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -32,6 +32,6 @@ class Flat < ApplicationRecord
   end
 
   def create_address
-    self.update(address: self.full_address)
+    self.update(address: self.map_address)
   end
 end
