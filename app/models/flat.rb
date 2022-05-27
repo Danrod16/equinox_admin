@@ -24,7 +24,7 @@ class Flat < ApplicationRecord
   end
 
   def map_address
-     "#{self.street.split(" ").first} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
+     "#{self.street} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
   end
 
   def table_attribute
