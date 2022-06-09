@@ -1,0 +1,37 @@
+  <div class="header-wrapper">
+    <h1> Personal details </h1>
+  </div>
+  <div class="card-wrapper">
+    <div class="card-top">
+      <div class="card-top-header">
+
+        <% if @tenant.respond_to?(:photo) && @tenant.photo.attached? %>
+          <%= image_tag @tenant.photo, class: "avatar-bordered avatar-large" %>
+        <% else %>
+          <%= image_tag "urbanist-logo.png", class: "avatar-bordered avatar-large" %>
+        <% end %>
+        <h2><%= @tenant.full_name %></h2>
+      </div>
+      <div class="card-top-body">
+        <div class="personal-details">
+          <ul>
+            <li> <strong>Email:</strong> <%= @tenant.email %> </li>
+            <li> <strong>Phone:</strong> <%= @tenant.phone %> </li>
+            <li> <strong>Nationality:</strong> <%= @tenant.nationality %> </li>
+          </ul>
+          <ul>
+            <% if @tenant.id_type %>
+              <li> <strong><%= @tenant.id_type %> :</strong> <%= @tenant.id_number %> </li>
+            <% end %>
+            <li> <strong>Cif:</strong> <%= @tenant.cif%> </li>
+            <li> <strong>Address:</strong> <%= @tenant.full_address%> </li>
+            <li> <strong>Notes:</strong> <%= @tenant.description %> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h2>Bookings</h2>
+    <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
+  </div>
+
