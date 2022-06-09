@@ -331,7 +331,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chartkick
-  cloudinary
+  cloudinary (~> 1.16.0)
   comma
   csv
   devise
