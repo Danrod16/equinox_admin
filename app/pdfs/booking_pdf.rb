@@ -21,14 +21,14 @@ class BookingPdf
   def generate_booking_es
     logo
     content_es
-    signature
+    # signature
     footer_es
   end
 
   def generate_booking_eng
     logo
     content_eng
-    signature
+    # signature
     footer_eng
   end
 
@@ -39,13 +39,13 @@ class BookingPdf
   end
 
 
-  def signature
-    if @signature.attached?
-      bounding_box([0, cursor], width: 535, height: 82) do
-        image StringIO.open(@signature&.download), at: [15, 50], width: 100
-      end
-    end
-  end
+  # def signature
+  #   if @signature.attached?
+  #     bounding_box([0, cursor], width: 535, height: 82) do
+  #       image StringIO.open(@signature&.download), at: [15, 50], width: 100
+  #     end
+  #   end
+  # end
 
   def content_es
     text "En Barcelona #{@date.day} de #{month_in_es(@date.month)} de #{@date.year}"
