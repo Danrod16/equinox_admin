@@ -1,16 +1,16 @@
 <div class="wrapper-header">
-  <h1>tenants</h1>
+  <h1> <%= t('.tenants') %></h1>
   <div class="urbanist-form">
     <%= form_tag tenants_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "urbanist-form-field",
-      placeholder: "Find a tenant"
+      placeholder: t('tenants.find_tenant')
     %>
-    <%= submit_tag "Search", class: "button-secondary" %>
+    <%= submit_tag t('search'), class: "button-secondary" %>
     <% end %>
   </div>
-  <%= link_to "New tenant", new_tenant_path, class: "button-primary" %>
+  <%= link_to t('tenant.new_tenant'), new_tenant_path, class: "button-primary" %>
 </div>
 
 <div class="card-wrapper">

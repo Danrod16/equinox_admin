@@ -1,16 +1,16 @@
 <div class="wrapper-header">
-  <h1>Flats</h1>
+  <h1> <%= t('.flats') %></h1>
   <div class="urbanist-form">
     <%= form_tag flats_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "urbanist-form-field",
-        placeholder: "Find a flat"
+        placeholder: t('flats.find_flat')
       %>
-      <%= submit_tag "Search", class: "button-secondary" %>
+      <%= submit_tag t('search'), class: "button-secondary" %>
     <% end %>
   </div>
-  <%= link_to "New flat", new_flat_path, class: "button-primary" %>
+  <%= link_to t('flats.new_flat'), new_flat_path, class: "button-primary" %>
 </div>
 
 <div class="card-wrapper">

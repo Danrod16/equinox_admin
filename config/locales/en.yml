@@ -30,8 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 en:
   see_more: See more
+  dashboard: Dashboard
   bookings: Bookings
   invoices: Invoices
+  search: Search
+  landlords: Landlords
+  tenants: Tenants
+  incidents: Incidents
+  flats: Flats
+  statistics: Statistics
   sessions_new:
     sign_in: Sign in
     email: Email
@@ -56,4 +63,14 @@ en:
     status: Status
     total: Total
     new_invoice: New invoice
-
+  landlords:
+    find_landlord: Find a landlord
+    new_landlord: New landlord
+  tenants:
+    find_tenant: Find a tenant
+    new_landlord: New tenant
+  incidents:
+    new_incident: New incident
+  flats:
+    new_flat: New property
+    find_flat: Find property

@@ -33,6 +33,13 @@ es:
   bookings: Reservas
   see_more: Ver más
   invoices: Facturas
+  search: Buscar
+  landlords: Propietarios
+  tenants: Inquilinos
+  incidents: Incidencias
+  flats: Propiedades
+  dashboard: Panel de control
+  statistics: Estadisticas
   sessions_new:
     sign_in: Conectarse
     login: Iniciar sessión
@@ -57,7 +64,17 @@ es:
     status: Estado
     total: Total
     new_invoice: Nueva factura
-
+  landlords:
+    find_landlord: Buscar Propietario
+    new_landlord: Nuevo Propietario
+  tenants:
+    find_tenant: Buscar Inquilino
+    new_landlord: Nuevo inquilino
+  incidents:
+    new_incident: Nueva incidencia
+  flats:
+    new_flat: Nueva propiedad
+    find_flat: Buscar propiedad
   helpers:
     submit:
       update: Actualizar
