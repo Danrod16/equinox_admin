@@ -11,6 +11,7 @@ class Booking < ApplicationRecord
   after_create :create_invoice, :contract_length
   before_update :contract_length, if: :booking_date_changed?
   after_create :strip_date
+  CONTRACT_TYPE = ['Largo Plazo', 'Temporal', 'Otro']
   TABLE_HEADERS = ["user", "flat", "tenant", "deposit", "state"]
   validates :start_date, :end_date, presence: true
 

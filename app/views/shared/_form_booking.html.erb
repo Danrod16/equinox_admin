@@ -16,7 +16,7 @@
       <%= f.label :tenant %>
       <%= f.select :tenant_id, Tenant.all.pluck(:first_name, :id), {}, { class: "selectize form-control", prompt: "Select Tenant" } %>
     </div>
-    <%= f.input :contract_type, class: "form-control", collection: ['Largo Plazo', 'Temporal', 'Otro'] %>
+    <%= f.input :contract_type, class: "form-control", collection: Booking::CONTRACT_TYPE %>
   </div>
   <div class="deposit-box">
     <p><strong>Deposit</strong></p>
