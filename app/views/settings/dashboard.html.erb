@@ -1,23 +1,23 @@
-<h1>Welcome <%= current_user.full_name %>! </h1>
+<h1><%= t('dashboard.welcome', name: current_user.full_name) %> </h1>
 
 <div class="card-wrapper">
   <div class="map-wrapper">
     <div class="cards cards-double">
       <div class="horizontal-card">
-        <h3>Your bookings</h3>
+        <h3> <%= t('dashboard.your_bookings') %> </h3>
         <p> <%= current_user.bookings.count %> </p>
       </div>
       <div class="horizontal-card">
-        <h3>This year bookings</h3>
+        <h3> <%= t('dashboard.this_year_booking') %> </h3>
         <p><%= @booking_status["Abierta"] %>/<%= @booking_status.values.sum %></p>
       </div>
       <div class="horizontal-card">
-        <h3>This year sales</h3>
+        <h3> <%= t('dashboard.this_year_sales') %> </h3>
         <p>€ <%= @sales_this_year %></p>
         <canvas width="200" height="200" data-controller="stats" data-stats-sales-value="<%= @sales_monthly.to_json %>" data-stats-target="salesChart"></canvas>
       </div>
       <div class="horizontal-card">
-        <h3>This year top 5 flats</h3>
+        <h3> <%= t('dashboard.this_year_top_5') %> </h3>
         <% @top_five_flats.each do |flat| %>
         <div class="d-flex border-bottom justify-content-between mb-2">
           <div><%= flat.street %></div>

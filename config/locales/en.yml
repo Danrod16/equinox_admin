@@ -29,3 +29,31 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 en:
+  see_more: See more
+  bookings: Bookings
+  invoices: Invoices
+  sessions_new:
+    sign_in: Sign in
+    email: Email
+    password: Password
+    remember_me: Remember me
+  dashboard:
+    your_bookings: Your bookings
+    this_year_bookings: This year's bookings
+    this_year_sales: This year sales
+    this_year_top_5: This year top 5 properties
+    welcome: Welcome %{name}!
+    new_booking: New Booking
+  table:
+    user: Team member
+    flat: Property
+    tenant: Tenant
+    deposit: Deposit amount
+    state: Status
+    open: Open
+    sequence: Invoice ID
+    booking: Booking ID
+    status: Status
+    total: Total
+    new_invoice: New invoice
+
