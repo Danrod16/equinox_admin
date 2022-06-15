@@ -1,7 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "salesChart", "salesData" ]
+  static targets = [ "salesChart" ]
+  static values = {
+    sales: Object
+  }
 
   connect() {
     this.#salesChart()
@@ -9,7 +12,7 @@ export default class extends Controller {
 
   #salesChart() {
     Chart.defaults.global.legend.display = false;
-    const data = JSON.parse(this.salesDataTarget.innerText.replaceAll("=>", ":"))
+    const data = this.salesValue
     const ctx = this.salesChartTarget.getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(.7, 'rgba(50, 162, 135, 0)');
