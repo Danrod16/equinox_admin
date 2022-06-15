@@ -1,6 +1,6 @@
 <%= f.simple_fields_for :deposit, html: { class: class_list } do |f| %>
   <div class="form-group-three">
-    <%= f.input :state, class: "form-control", collection: Deposit::STATE %>
+    <%= f.input :state, class: "form-control", collection: ApplicationRecord::STATE %>
     <%= f.input :amount, class: "form-control" %>
     <%= f.input :token_payment, class: "form-control" %>
   </div>
