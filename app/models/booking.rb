@@ -12,6 +12,7 @@ class Booking < ApplicationRecord
   before_update :contract_length, if: :booking_date_changed?
   after_create :strip_date
   TABLE_HEADERS = ["user", "flat", "tenant", "deposit", "state"]
+  validates :start_date, :end_date, presence: true
 
   def create_invoice
     Invoice.create(booking_id: self.id, state: self.state)

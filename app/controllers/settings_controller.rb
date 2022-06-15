@@ -11,7 +11,7 @@ class SettingsController < ApplicationController
         image_url: helpers.asset_url("urbanist-logo.png")
       }
     end
-    @sales_monthly = Invoice.where("created_at >= ?", Time.now.beginning_of_year).group('(EXTRACT(MONTH FROM created_at))::integer').sum(:total)
+    @sales_monthly = Booking.where("created_at >= ?", Time.now.beginning_of_year).group('(EXTRACT(MONTH FROM created_at))::integer').sum(:agency_fee)
     @sales_this_year = @sales_monthly.values.sum
     @sales_monthly = transform_to_json(@sales_monthly)
     # state = open / closed

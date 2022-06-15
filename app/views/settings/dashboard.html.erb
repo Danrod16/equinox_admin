@@ -1,6 +1,6 @@
 <h1>Welcome <%= current_user.full_name %>! </h1>
 
-<div class="card-wrapper" data-controller="stats">
+<div class="card-wrapper">
   <div class="map-wrapper">
     <div class="cards cards-double">
       <div class="horizontal-card">
@@ -14,8 +14,7 @@
       <div class="horizontal-card">
         <h3>This year sales</h3>
         <p>€ <%= @sales_this_year %></p>
-        <canvas width="200" height="200" data-stats-target="salesChart"></canvas>
-        <p data-stats-target= "salesData" class="d-none"><%= @sales_monthly %></p>
+        <canvas width="200" height="200" data-controller="stats" data-stats-sales-value="<%= @sales_monthly.to_json %>" data-stats-target="salesChart"></canvas>
       </div>
       <div class="horizontal-card">
         <h3>This year top 5 flats</h3>
