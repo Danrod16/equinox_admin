@@ -6,6 +6,15 @@
 
 .cards-double {
   grid-template-columns: 1fr 1fr !important;
+
+  .horizontal-card {
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 25px;
+    pointer-events: none;
+  }
 }
 
 .horizontal-card {
@@ -15,9 +24,9 @@
   border: 1px solid #ddd;
   padding: 25px;
   transition: .2s;
-  // &:hover {
-  //   background-color: $bg-color;
-  // }
+  &:hover {
+    background-color: $bg-color;
+  }
 }
 
 // Smallest device
