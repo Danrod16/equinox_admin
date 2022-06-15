@@ -2,22 +2,22 @@
 
 <ul class="sidebar-links">
   <%= link_to root_path do %>
-    <li><%= image_tag 'home.png' %> Dashboard </li>
+    <li><%= image_tag 'home.png' %> <%= t('.dashboard') %> </li>
   <% end %>
   <%= link_to bookings_path do  %>
-    <li><%= image_tag 'file.jpg' %> Bookings </li>
+    <li><%= image_tag 'file.jpg' %> <%= t('.bookings') %> </li>
   <% end %>
   <%= link_to invoices_path do  %>
-    <li><%= image_tag 'file-text.jpg' %> Invoices </li>
+    <li><%= image_tag 'file-text.jpg' %> <%= t('.invoices') %> </li>
   <% end %>
   <%= link_to landlords_path do  %>
-    <li><%= image_tag 'users-icon.png' %> Landlords </li>
+    <li><%= image_tag 'users-icon.png' %> <%= t('.landlords') %> </li>
   <% end %>
   <%= link_to tenants_path do %>
-    <li><%= image_tag 'user-icon.png' %> Tenants </li>
+    <li><%= image_tag 'user-icon.png' %> <%= t('.tenants') %> </li>
   <% end %>
   <%= link_to incidents_path do %>
-    <li><%= image_tag 'Vector-icon.png' %> Incidents </li>
+    <li><%= image_tag 'Vector-icon.png' %> <%= t('.incidents') %> </li>
   <% end %>
   <%= link_to flats_path do %>
     <li><%= image_tag 'package.png' %> Flats </li>

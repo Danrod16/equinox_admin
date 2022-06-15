@@ -30,6 +30,51 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  bookings: Reservas
+  see_more: Ver más
+  invoices: Facturas
+  search: Buscar
+  landlords: Propietarios
+  tenants: Inquilinos
+  incidents: Incidencias
+  flats: Propiedades
+  dashboard: Panel de control
+  statistics: Estadisticas
+  sessions_new:
+    sign_in: Conectarse
+    login: Iniciar sessión
+    email: Email
+    remember_me: Recordar
+  dashboard:
+    your_bookings: Tus abiertas
+    this_year_bookings: Reservas de este año
+    this_year_sales: Total de ventas
+    this_year_top_5: Top 5 propiedades en ventas
+    welcome: Bienvenid@ %{name}!
+  table:
+    user: Miembro
+    flat: Propiedad
+    tenant: Inquilino
+    deposit: Deposito
+    state: Estatus
+    open: Abierta
+    new_booking: Nueva reserva
+    sequence: Nº de factura
+    booking: Nº de reserva
+    status: Estado
+    total: Total
+    new_invoice: Nueva factura
+  landlords:
+    find_landlord: Buscar Propietario
+    new_landlord: Nuevo Propietario
+  tenants:
+    find_tenant: Buscar Inquilino
+    new_landlord: Nuevo inquilino
+  incidents:
+    new_incident: Nueva incidencia
+  flats:
+    new_flat: Nueva propiedad
+    find_flat: Buscar propiedad
   helpers:
     submit:
       update: Actualizar

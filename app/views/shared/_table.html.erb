@@ -1,7 +1,7 @@
 <table class="urban-table">
   <tr>
     <% headers.each do |header| %>
-      <th class="urban-table-header"> <%= header.capitalize %> </th>
+      <th class="urban-table-header"> <%= t("table.#{header}") %> </th>
     <% end %>
       <th class="urban-table-header"> - </th>
   </tr>
@@ -23,7 +23,7 @@
             <% end %>
           </td>
         <% end %>
-        <td class="urban-table-last"> <%= link_to "See more", "/#{record.class.to_s.downcase}s/#{record.id}", class: "button-secondary" %> </td>
+        <td class="urban-table-last"> <%= link_to t('table.see_more'), "/#{record.class.to_s.downcase}s/#{record.id}", class: "button-secondary" %> </td>
       </tr>
     <% end %>
   <% end %>
