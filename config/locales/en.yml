@@ -47,8 +47,8 @@ en:
   dashboard:
     your_bookings: Your bookings
     this_year_bookings: This year's bookings
-    this_year_sales: This year sales
-    this_year_top_5: This year top 5 properties
+    this_year_sales: This year's sales
+    this_year_top_5: This year's top 5 properties
     welcome: Welcome %{name}!
     new_booking: New Booking
   table:
