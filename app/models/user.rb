@@ -33,10 +33,10 @@ class User < ApplicationRecord
   end
 
   def create_subdomain
-    self.update(subdomain: self.map_company_name)
+    self.update(subdomain: map_company_name)
   end
 
   def create_tenant
-    Apartment::Tenant.create('tenant_name')
+    Apartment::Tenant.create(self.subdomain) unless User.pluck(:subdomain).include? self.subdomain
   end
 end
