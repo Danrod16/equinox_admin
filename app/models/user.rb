@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :incidents
   has_one_attached :photo
 
+  before_create :create_subdomain
+  after_create :create_tenant
 
   def agent?
     self.role == "Agente"
@@ -22,5 +24,19 @@ class User < ApplicationRecord
 
   def table_attribute
     return self.full_name
+  end
+
+  private
+
+  def map_company_name
+    self.company_name.gsub(" ", "").strip.lowercase
+  end
+
+  def create_subdomain
+    self.update(subdomain: self.map_company_name)
+  end
+
+  def create_tenant
+    Apartment::Tenant.create('tenant_name')
   end
 end

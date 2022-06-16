@@ -31,6 +31,12 @@
                       input_html: { autocomplete: "new-password" } %>
           </div>
           <hr>
+          <%= f.input :company_name,
+                      required: true,
+                      label: false,
+                      placeholder: 'Company name' %>
+          </div>
+          <hr>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Registrarse", class: 'button-primary' %>
@@ -44,4 +50,3 @@
     </div>
   </div>
 </div>
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_15_104425) do
+ActiveRecord::Schema.define(version: 2022_06_16_095813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,62 +36,6 @@ ActiveRecord::Schema.define(version: 2022_05_15_104425) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "blazer_audits", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "query_id"
-    t.text "statement"
-    t.string "data_source"
-    t.datetime "created_at"
-    t.index ["query_id"], name: "index_blazer_audits_on_query_id"
-    t.index ["user_id"], name: "index_blazer_audits_on_user_id"
-  end
-
-  create_table "blazer_checks", force: :cascade do |t|
-    t.bigint "creator_id"
-    t.bigint "query_id"
-    t.string "state"
-    t.string "schedule"
-    t.text "emails"
-    t.text "slack_channels"
-    t.string "check_type"
-    t.text "message"
-    t.datetime "last_run_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_checks_on_creator_id"
-    t.index ["query_id"], name: "index_blazer_checks_on_query_id"
-  end
-
-  create_table "blazer_dashboard_queries", force: :cascade do |t|
-    t.bigint "dashboard_id"
-    t.bigint "query_id"
-    t.integer "position"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["dashboard_id"], name: "index_blazer_dashboard_queries_on_dashboard_id"
-    t.index ["query_id"], name: "index_blazer_dashboard_queries_on_query_id"
-  end
-
-  create_table "blazer_dashboards", force: :cascade do |t|
-    t.bigint "creator_id"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_dashboards_on_creator_id"
-  end
-
-  create_table "blazer_queries", force: :cascade do |t|
-    t.bigint "creator_id"
-    t.string "name"
-    t.text "description"
-    t.text "statement"
-    t.string "data_source"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
-  end
-
   create_table "bookings", force: :cascade do |t|
     t.string "start_date"
     t.string "end_date"
@@ -100,19 +44,17 @@ ActiveRecord::Schema.define(version: 2022_05_15_104425) do
     t.string "contract_type"
     t.integer "deposit_amount"
     t.integer "rent"
-    t.integer "agency_fee"
     t.integer "payments"
-    t.string "expiry_date"
     t.text "check_in_notes"
     t.bigint "flat_id", null: false
     t.bigint "user_id", null: false
     t.bigint "tenant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "appliences"
     t.string "state", default: "Abierta"
     t.integer "obligatory_complience"
-    t.boolean "notified", default: false
+    t.float "appliences"
+    t.float "agency_fee"
     t.float "itp"
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["tenant_id"], name: "index_bookings_on_tenant_id"
@@ -197,7 +139,6 @@ ActiveRecord::Schema.define(version: 2022_05_15_104425) do
   create_table "invoices", force: :cascade do |t|
     t.bigint "booking_id", null: false
     t.string "state"
-    t.string "expirry_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "fianza"
@@ -276,6 +217,9 @@ ActiveRecord::Schema.define(version: 2022_05_15_104425) do
     t.string "first_name"
     t.string "last_name"
     t.string "photo"
+    t.string "language"
+    t.string "subdomain"
+    t.string "company_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
