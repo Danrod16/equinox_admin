@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :incidents
   has_one_attached :photo
 
-  before_create :create_subdomain
+  # before_create :create_subdomain
   after_create :create_tenant
 
   def agent?
@@ -29,14 +29,15 @@ class User < ApplicationRecord
   private
 
   def map_company_name
-    self.company_name.gsub(" ", "").strip.lowercase
+    self.company_name.gsub(" ", "").strip.downcase
   end
 
-  def create_subdomain
-    self.update(subdomain: map_company_name)
-  end
+  # def create_subdomain
+  #   self.update(subdomain: map_company_name)
+  # end
 
   def create_tenant
-    Apartment::Tenant.create(self.subdomain) unless User.pluck(:subdomain).include? self.subdomain
+    self.update(subdomain: map_company_name)
+    Apartment::Tenant.create(self.subdomain) # unless User.where.not(id: self.id).pluck(:subdomain).include? self.subdomain
   end
 end

@@ -107,3 +107,5 @@ end
 Rails.application.config.middleware.use Apartment::Elevators::Subdomain
 # Rails.application.config.middleware.use Apartment::Elevators::FirstSubdomain
 # Rails.application.config.middleware.use Apartment::Elevators::Host
+# config/initializers/apartment/subdomain_exclusions.rb
+Apartment::Elevators::Subdomain.excluded_subdomains = ['www']
