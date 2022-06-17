@@ -13,7 +13,7 @@ class SettingsController < ApplicationController
     end
     @sales_monthly = Booking.where("created_at >= ?", Time.now.beginning_of_year).group('(EXTRACT(MONTH FROM created_at))::integer').sum(:agency_fee)
     @sales_this_year = @sales_monthly.values.sum
-    # @sales_monthly = transform_to_json(@sales_monthly)
+    @sales_monthly = transform_to_json(@sales_monthly)
     # state = open / closed
     @booking_status = Booking.group(:state).count
     @top_five_flats = Flat

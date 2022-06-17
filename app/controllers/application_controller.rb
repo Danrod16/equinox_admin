@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :authenticate_user!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_locale
     if user_signed_in?
@@ -20,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo, :company_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :language, :photo, :role])
 
   end
@@ -31,3 +30,4 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
