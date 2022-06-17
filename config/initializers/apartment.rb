@@ -43,8 +43,8 @@ Apartment.configure do |config|
   #   }
   # }
   # config.tenant_names = lambda do
-  #   Tenant.all.each_with_object({}) do |tenant, hash|
-  #     hash[tenant.name] = tenant.db_configuration
+  #   User.all.each_with_object({}) do |user, hash|
+  #     hash[user.name] = user.db_configuration
   #   end
   # end
   #
@@ -107,5 +107,4 @@ end
 Rails.application.config.middleware.use Apartment::Elevators::Subdomain
 # Rails.application.config.middleware.use Apartment::Elevators::FirstSubdomain
 # Rails.application.config.middleware.use Apartment::Elevators::Host
-# config/initializers/apartment/subdomain_exclusions.rb
 Apartment::Elevators::Subdomain.excluded_subdomains = ['www']
