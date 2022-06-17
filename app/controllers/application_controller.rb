@@ -30,4 +30,15 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  def after_sign_up_path_for(resource)
+    root_url(subdomain: resource.subdomain)
+  end
+
+  def after_sign_in_path_for(resource)
+    root_url(subdomain: resource.subdomain)
+  end
+
+  # def after_sign_out_path_for(resource)
+  #   root_url
+  # end
 end
