@@ -7,26 +7,12 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <div class="form-field">
-            <%= f.input :first_name,
-                        required: true,
-                        label: false,
-                        placeholder: 'First name' %>
-          </div>
-          <hr>
-          <div class="form-field">
-            <%= f.input :last_name,
-                        required: true,
-                        label: false,
-                        placeholder: 'Last name' %>
-          </div>
-          <hr>
-          <div class="form-field">
-            <%= f.input :email,
-                        required: true,
-                        placeholder: 'email',
-                        label: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }%>
+          <%= f.input :email,
+                      required: true,
+                      placeholder: 'email',
+                      label: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
           </div>
           <hr>
           <div class="form-field">
@@ -38,18 +24,11 @@
           </div>
           <hr>
           <div class="form-field">
-            <%= f.input :password_confirmation,
-                        required: true,
-                        label: false,
-                        placeholder: 'Confrimar contraseña',
-                        input_html: { autocomplete: "new-password" } %>
-          </div>
-          <hr>
-          <div class="form-field">
-            <%= f.input :company_name,
-                        required: true,
-                        label: false,
-                        placeholder: 'Company name' %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      label: false,
+                      placeholder: 'Confrimar contraseña',
+                      input_html: { autocomplete: "new-password" } %>
           </div>
           <hr>
         </div>
@@ -65,3 +44,4 @@
     </div>
   </div>
 </div>
+

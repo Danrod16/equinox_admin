@@ -12,13 +12,13 @@ export default class extends Controller {
 
   #salesChart() {
     Chart.defaults.global.legend.display = false;
+    console.log(this.salesValue)
     const data = this.salesValue
     const ctx = this.salesChartTarget.getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(.7, 'rgba(50, 162, 135, 0)');
     gradient.addColorStop(0, 'rgba(50, 162, 135, .1)');
 
-    // ["#32A287"]
     const salesData = {
       labels: Object.keys(data),
       datasets: [

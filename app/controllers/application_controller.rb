@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :check_subdomain
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def check_subdomain
     unless user_signed_in? && request.subdomain == current_user.subdomain
@@ -27,7 +26,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo, :company_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :language, :photo, :role])
 
   end
@@ -49,3 +48,4 @@ class ApplicationController < ActionController::Base
   #   root_url
   # end
 end
+
