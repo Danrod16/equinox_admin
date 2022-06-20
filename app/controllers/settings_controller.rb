@@ -11,9 +11,9 @@ class SettingsController < ApplicationController
         image_url: helpers.asset_url("urbanist-logo.png")
       }
     end
-    @sales_monthly = Booking.where("created_at >= ?", Time.now.beginning_of_year).group('(EXTRACT(MONTH FROM created_at))::integer').sum(:agency_fee)
+    @sales_monthly = Booking.where("start_date >= ?", "01-01-#{Time.now.year}").group("SUBSTRING(start_date, 6, 2)").sum(:agency_fee)
     @sales_this_year = @sales_monthly.values.sum
-    @sales_monthly = transform_to_json(@sales_monthly)
+    @sales_monthly = @sales_monthly.map{|k,v| [k.to_i, v.to_i]}.to_h
     # state = open / closed
     @booking_status = Booking.group(:state).count
     @top_five_flats = Flat
@@ -23,11 +23,5 @@ class SettingsController < ApplicationController
                         .order("flats_count DESC")
                         .distinct
                         .limit(5)
-  end
-
-  private
-
-  def transform_to_json(hash)
-    hash.collect{|k,v| [k.to_s, v.to_s]}.to_h
   end
 end

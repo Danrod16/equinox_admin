@@ -18,7 +18,7 @@
     </div>
     <%= f.input :contract_type, class: "form-control", collection: Booking::CONTRACT_TYPE %>
   </div>
-  <div class="deposit-box">
+  <div class="deposit-box mb-2">
     <p><strong>Deposit</strong></p>
     <%= render 'shared/form_deposit.html.erb', { class_list: "", f: f } %>
   </div>
