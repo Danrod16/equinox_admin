@@ -2,8 +2,15 @@ class ApplicationController < ActionController::Base
   include Pundit
   before_action :set_locale
   before_action :authenticate_user!
+  before_action :check_subdomain
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def check_subdomain
+    unless user_signed_in? && request.subdomain == current_user.subdomain
+      redirect_to root_url(subdomain: current_user.subdomain), alert: "You are not authorized to access that subdomain."
+    end
+  end
 
   def set_locale
     if user_signed_in?
