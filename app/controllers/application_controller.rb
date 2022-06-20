@@ -44,8 +44,7 @@ class ApplicationController < ActionController::Base
     root_url(subdomain: resource.subdomain)
   end
 
-  # def after_sign_out_path_for(resource)
-  #   root_url
-  # end
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
 end
-

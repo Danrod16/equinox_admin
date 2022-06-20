@@ -1,4 +1,6 @@
-<%= image_tag 'urbanist-logo.png', class: "sidebar-logo" %>
+<%= link_to root_path do %>
+  <%= image_tag 'urbanist-logo.png', class: "sidebar-logo" %>
+<% end %>
 
 <ul class="sidebar-links">
   <%= link_to root_path do %>
@@ -26,3 +28,7 @@
 </ul>
 
 <%= image_tag 'equinox_logo.png', class: "avatar-large" %>
+<br>
+<br>
+
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
