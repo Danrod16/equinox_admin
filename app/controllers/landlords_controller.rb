@@ -26,6 +26,11 @@ class LandlordsController < ApplicationController
     end
   end
 
+  def import
+    count = Landlord.import params[:file]
+    redirect_to landlords_path, notice: "Imported #{count} landlords"
+  end
+
   private
 
   def landlord_params

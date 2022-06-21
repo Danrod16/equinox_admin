@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   resources :bookings
   resources :incidents
   resources :deposits, only: [:create]
-  resources :landlords
+  resources :landlords do
+    collection do
+      post :import
+    end
+  end
   resources :invoices
   resources :tenants
   resources :flats
