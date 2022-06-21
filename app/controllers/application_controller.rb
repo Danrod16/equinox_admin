@@ -3,11 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :authenticate_user!
   before_action :check_subdomain
+
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  # skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def check_subdomain
-    unless user_signed_in? && request.subdomain == current_user.subdomain
-      redirect_to root_url(subdomain: current_user.subdomain), alert: "You are not authorized to access that subdomain."
+    if user_signed_in? && request.subdomain != current_user.subdomain
+      redirect_to root_url(subdomain: current_user.subdomain)
     end
   end
 
@@ -45,6 +47,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    new_user_session_path
+    root_url
   end
 end
