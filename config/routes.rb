@@ -18,10 +18,18 @@ Rails.application.routes.draw do
   resources :bookings
   resources :incidents
   resources :deposits, only: [:create]
-  resources :landlords
+  resources :landlords do
+    collection do
+      post :import
+    end
+  end
   resources :invoices
   resources :tenants
-  resources :flats
+  resources :flats do
+    collection do
+      post :import
+    end
+  end
   resources :statistics, only: [:index]
   get "/booking_pdf", to: "pdf#booking_pdf"
   get "/invoice_pdf", to: "pdf#invoice_pdf"

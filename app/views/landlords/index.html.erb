@@ -10,7 +10,36 @@
     <%= submit_tag t('search'), class: "button-secondary" %>
     <% end %>
   </div>
-  <%= link_to t('landlords.new_landlord'), new_landlord_path, class: "button-primary" %>
+  <div class="d-flex">
+    <%= link_to t('landlords.new_landlord'), new_landlord_path, class: "button-primary" %>
+    <%= button_to landlords_path("csv"), method: :get, class: "button-small btn-left" do %>
+      <%= image_tag 'download.png' %>
+    <% end %>
+    <!-- Button trigger modal -->
+    <button type="button" class="button-small btn-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%= image_tag 'upload.png' %>
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-custom">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload CSV file</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <%= image_tag "close.png" %>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_tag import_landlords_path, multipart: true, class:"modal-form" do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Upload", class:"button-primary margin-top" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card-wrapper">

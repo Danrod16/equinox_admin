@@ -5,6 +5,16 @@ class FlatsController < ApplicationController
     else
       @flats = Flat.all
     end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @flats.to_csv, filename: "#{Date.today}-flats.csv" }
+    end
+  end
+
+  def import
+    count = Flat.import params[:file]
+    redirect_to flats_path, notice: "Imported #{count} flats"
   end
 
   def new

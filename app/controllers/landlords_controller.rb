@@ -6,6 +6,11 @@ class LandlordsController < ApplicationController
     else
       @landlords = Landlord.all
     end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @landlords.to_csv, filename: "#{Date.today}-landlords.csv" }
+    end
   end
 
   def show
@@ -24,6 +29,11 @@ class LandlordsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def import
+    count = Landlord.import params[:file]
+    redirect_to landlords_path, notice: "Imported #{count} landlords"
   end
 
   private
