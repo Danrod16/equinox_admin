@@ -25,7 +25,11 @@ Rails.application.routes.draw do
   end
   resources :invoices
   resources :tenants
-  resources :flats
+  resources :flats do
+    collection do
+      post :import
+    end
+  end
   resources :statistics, only: [:index]
   get "/booking_pdf", to: "pdf#booking_pdf"
   get "/invoice_pdf", to: "pdf#invoice_pdf"

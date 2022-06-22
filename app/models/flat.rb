@@ -7,7 +7,7 @@ class Flat < ApplicationRecord
   validates :number, presence: true
   validates :postal_code, presence: true
 
-  after_save :create_address
+  before_save :create_address
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -18,6 +18,30 @@ class Flat < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  def self.import(file)
+    counter = 0
+    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
+      flat = Flat.assign_from_row(row)
+      if flat.save
+        counter += 1
+      else
+        puts "#{flat.first_name} #{flat.last_name} - #{flat.errors.full_messages.join(",")}"
+      end
+    end
+    counter
+  end
+
+  def self.to_csv
+    attributes = %w[id celula catastral index cee expenses insurance insurance_phone keys equinox_costs furnished landlord_id available name reference street number postal_code city country letter_box reference_rent habitability_number latitude longitude address]
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |flat|
+        csv << flat.attributes.values_at(*attributes)
+      end
+    end
+  end
 
   def full_address
     "#{self.street} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
@@ -32,6 +56,14 @@ class Flat < ApplicationRecord
   end
 
   def create_address
-    self.update(address: self.map_address)
+    self.address = self.map_address
+  end
+
+  private
+
+  def self.assign_from_row(row)
+    flat = Flat.where(name: row[:name]).first_or_initialize
+    flat.assign_attributes row.to_hash.slice(:celula, :catastral, :index, :cee, :expenses, :insurance, :insurance_phone, :keys, :equinox_costs, :furnished, :landlord_id, :available, :name, :reference, :street, :number, :postal_code, :city, :country, :letter_box, :reference_rent, :habitability_number, :latitude, :longitude, :address)
+    flat
   end
 end

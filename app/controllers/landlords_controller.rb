@@ -6,6 +6,11 @@ class LandlordsController < ApplicationController
     else
       @landlords = Landlord.all
     end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @landlords.to_csv, filename: "#{Date.today}-landlords.csv" }
+    end
   end
 
   def show

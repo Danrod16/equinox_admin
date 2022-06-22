@@ -11,10 +11,12 @@
     <% end %>
   </div>
   <%= link_to t('landlords.new_landlord'), new_landlord_path, class: "button-primary" %>
-  <%= form_tag import_landlords_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Upload" %>
-  <% end %>
+  <%#= link_to "Download", landlords_path("csv"), class: "button-secondary"  %>
+
+  <%#= form_tag import_landlords_path, multipart: true do %>
+    <%#= file_field_tag :file %>
+    <%#= submit_tag "Upload" %>
+  <%# end %>
 </div>
 
 <div class="card-wrapper">
