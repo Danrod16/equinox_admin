@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if user_signed_in?
-      I18n.locale = current_user.language.to_sym || I18n.default_locale
+      I18n.locale = current_user.language&.to_sym || I18n.default_locale
     else
       I18n.locale = params[:lang] || locale_from_header || I18n.default_locale
     end
