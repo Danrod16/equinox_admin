@@ -5,9 +5,12 @@ class SubdomainConstraint
 end
 
 Rails.application.routes.draw do
-  devise_for :users
+  resources :companies, only: [:new, :create]
 
   constraints SubdomainConstraint do
+    devise_for :users, controllers: {
+      registrations: 'users/registrations'
+    }
     get 'statistics/index'
     get 'pdf/booking_pdf'
     namespace :admin do

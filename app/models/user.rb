@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :incidents
   has_one_attached :photo
-
   belongs_to :company
+  # accepts_nested_attributes_for :company
 
   def agent?
     self.role == "Agente"

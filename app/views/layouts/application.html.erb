@@ -16,7 +16,7 @@
   <body>
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <% if controller_name == "sessions" && controller.params[:action] == "new" || controller_name == "registration" && controller.params[:action] == "new" %>
+    <% if (controller_name == "sessions" && controller.params[:action] == "new") || (controller_name == "registrations" && controller.params[:action] == "new") || controller_name == "companies" %>
       <%= yield %>
     <% else %>
       <div class="main-wrapper">

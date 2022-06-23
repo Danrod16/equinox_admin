@@ -4,6 +4,7 @@
   color: white !important;
   padding: 10px 30px;
   height: fit-content;
+  border: none;
   &:hover {
     background-color: $primary-color !important;
     color: white !important;
@@ -14,10 +15,11 @@
 .button-secondary {
   background-color: none;
   border-radius: 45px;
-  color: $primary-color !important !important;
+  color: $primary-color !important;
   padding: 10px 30px;
   border: solid 1px $primary-color !important;
   height: fit-content;
+  border: none;
   &:hover {
     background-color: $primary-color !important;
     color: white !important;

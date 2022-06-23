@@ -1,0 +1,36 @@
+<div class="register-container">
+  <h1>Register</h1>
+
+  <div data-controller="wizard">
+    <div data-wizard-target="step">
+      <%= simple_form_for :other do |o| %>
+        <%= o.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: ["Create a Company", "Join a Company"] %>
+
+        <%= button_tag "Next", type: "button", class: "button-primary",
+          data: {
+            action: "click->wizard#goToNext",
+            next_step: "1"
+          } %>
+      <% end %>
+    </div>
+
+    <div data-wizard-target="step" class="d-none">
+      <%= simple_form_for @company do |f| %>
+        <%= f.input :company_name %>
+
+        <%= button_tag "Previous", type: "button", class: "button-secondary",
+          data: {
+            action: "click->wizard#goToPrevious",
+            previous_step: "1"
+          } %>
+        <%= f.button :submit, class: "button-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
