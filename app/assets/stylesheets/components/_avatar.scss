@@ -3,8 +3,11 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 76px;
+  width: 116px;
+  height: 116px;
+  object-fit: contain;
   border-radius: 50%;
+  margin: 0px auto;
 }
 
 .avatar-bordered {

@@ -1,4 +1,4 @@
-<%= image_tag 'urbanist-logo.png', class: "sidebar-logo" %>
+<%= image_tag 'equinox_logo.png', class: "avatar-large" %>
 
 <ul class="sidebar-links">
   <%= link_to root_path do %>
@@ -20,9 +20,14 @@
     <li><%= image_tag 'Vector-icon.png' %> <%= t('.incidents') %> </li>
   <% end %>
   <%= link_to flats_path do %>
-    <li><%= image_tag 'package.png' %> Flats </li>
+    <li><%= image_tag 'package.png' %> <%= t('.flats') %> </li>
   <% end %>
-  <li class="small-text"><%= image_tag 'package.png' %> <div>Statistics <p><span class="pill-tag">Coming soon</span></p></div></li>
+  <li class="small-text"><%= image_tag 'package.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
 </ul>
 
-<%= image_tag 'equinox_logo.png', class: "avatar-large" %>
+<div class="sidebar-footer">
+  <%= form_tag set_language_path, class: "language-pill" do %>
+    <%= select_tag :lang, options_for_select([["🇬🇧 EN", :en], ["🇪🇸 ES", :es]], I18n.locale), :onchange => "this.form.submit();", style: "border: none; padding: 0px 5px; border-radius: 10px; border: 1px solid #ddd;" %>
+  <% end %>
+  <small> powered by <%= image_tag 'logo-small.svg', class: "logo-small" %></small>
+</div>

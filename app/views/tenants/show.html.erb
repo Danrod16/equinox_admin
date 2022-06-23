@@ -6,9 +6,9 @@
       <div class="card-top-header">
 
         <% if @tenant.respond_to?(:photo) && @tenant.photo.attached? %>
-          <%= image_tag @tenant.photo, class: "avatar-bordered avatar-large" %>
+          <%= image_tag @tenant.photo, class: "avatar-bordered" %>
         <% else %>
-          <%= image_tag "urbanist-logo.png", class: "avatar-bordered avatar-large" %>
+          <%= image_tag "urbanist-logo.png", class: "avatar-bordered" %>
         <% end %>
         <h2><%= @tenant.full_name %></h2>
       </div>

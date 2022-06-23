@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   include Pundit
-  before_action :set_locale
   before_action :authenticate_user!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  before_action :set_locale
 
   def set_locale
     if user_signed_in?
-      I18n.locale = current_user.language
+      I18n.locale = current_user.language.to_sym
     else
       I18n.locale = params[:lang] || locale_from_header || I18n.default_locale
     end
