@@ -1,9 +1,9 @@
 class FlatsController < ApplicationController
   def index
     if params[:query].present?
-      @flats = Flat.search_by_name_or_street(params[:query])
+      @flats = Flat.search_by_name_or_street(params[:query]).paginate(page: params[:page], per_page: 15)
     else
-      @flats = Flat.all
+      @flats = Flat.all.paginate(page: params[:page], per_page: 15)
     end
 
     respond_to do |format|
