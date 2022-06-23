@@ -1,19 +1,16 @@
   <div class="header-wrapper">
-    <h1> Personal details </h1>
+    <h1> <%= @landlord.full_name %> </h1>
   </div>
   <div class="card-wrapper">
     <div class="card-top">
-      <div class="card-top-header">
 
+      <div class="card-top-body">
+        <div class="personal-details">
         <% if @landlord.respond_to?(:photo) && @landlord.photo.attached? %>
           <%= image_tag @landlord.photo, class: "avatar-bordered" %>
         <% else %>
           <%= image_tag "urbanist-logo.png", class: "avatar-bordered" %>
         <% end %>
-        <h2><%= @landlord.full_name %></h2>
-      </div>
-      <div class="card-top-body">
-        <div class="personal-details">
           <ul>
             <li> <strong>Email:</strong> <%= @landlord.email %> </li>
             <li> <strong>Phone:</strong> <%= @landlord.phone %> </li>
