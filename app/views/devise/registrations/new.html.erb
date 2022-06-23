@@ -7,12 +7,39 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <div class="form-field">
-          <%= f.input :email,
+            <%= f.association :company,
+                      label_method: :company_name,
                       required: true,
-                      placeholder: 'email',
+                      placeholder: 'Company name',
+                      label: false,
+                      autofocus: true %>
+          </div>
+          <hr>
+          <div class="form-field">
+            <%= f.input :first_name,
+                      required: true,
+                      placeholder: 'First name',
                       label: false,
                       autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "first-name" } %>
+          </div>
+          <hr>
+          <div class="form-field">
+            <%= f.input :last_name,
+                      required: true,
+                      placeholder: 'Last name',
+                      label: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "last-name" } %>
+          </div>
+          <hr>
+          <div class="form-field">
+            <%= f.input :email,
+                      required: true,
+                      placeholder: 'Email',
+                      label: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
           </div>
           <hr>
           <div class="form-field">
@@ -44,4 +71,3 @@
     </div>
   </div>
 </div>
-

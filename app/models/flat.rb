@@ -26,7 +26,7 @@ class Flat < ApplicationRecord
       if flat.save
         counter += 1
       else
-        puts "#{flat.first_name} #{flat.last_name} - #{flat.errors.full_messages.join(",")}"
+        puts "#{flat.name} - #{flat.errors.full_messages.join(",")}"
       end
     end
     counter

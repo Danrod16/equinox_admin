@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :incidents
   has_one_attached :photo
 
+  belongs_to :company
 
   def agent?
     self.role == "Agente"

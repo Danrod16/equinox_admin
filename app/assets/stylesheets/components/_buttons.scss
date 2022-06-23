@@ -1,11 +1,11 @@
 .button-primary {
-  background-color: $primary-color;
+  background-color: $primary-color !important;
   border-radius: 45px;
   color: white !important;
   padding: 10px 30px;
   height: fit-content;
   &:hover {
-    background-color: $primary-color;
+    background-color: $primary-color !important;
     color: white !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
   }
@@ -14,12 +14,12 @@
 .button-secondary {
   background-color: none;
   border-radius: 45px;
-  color: $primary-color !important;
+  color: $primary-color !important !important;
   padding: 10px 30px;
-  border: solid 1px $primary-color;
+  border: solid 1px $primary-color !important;
   height: fit-content;
   &:hover {
-    background-color: $primary-color;
+    background-color: $primary-color !important;
     color: white !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
   }
