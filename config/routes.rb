@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     end
   end
   resources :statistics, only: [:index]
+  post "/update_language", to: "pages#set_language", as: :set_language
   get "/booking_pdf", to: "pdf#booking_pdf"
   get "/invoice_pdf", to: "pdf#invoice_pdf"
   get "/incident_pdf", to: "pdf#incident_pdf"

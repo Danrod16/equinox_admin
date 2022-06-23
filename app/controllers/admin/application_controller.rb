@@ -8,12 +8,15 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     include Administrate::Punditize
     before_action :authenticate_user!
+    before_action :set_language, if: :user_signed_in?
 
     def authenticate_admin
       if current_user
         true
       end
     end
+
+
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
