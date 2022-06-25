@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ['step']
+  static targets = ['step', 'category', 'create', 'join']
 
   goToNext(event) {
     const nextStep = event.target.dataset.nextStep - 1;
@@ -9,6 +9,14 @@ export default class extends Controller {
 
     this.stepTargets[nextStep].classList.add("d-none");
     this.stepTargets[actualStep].classList.remove("d-none");
+
+    if(this.categoryTarget.checked) {
+      this.joinTarget.classList.add("d-none")
+      this.createTarget.classList.remove("d-none")
+    } else {
+      this.createTarget.classList.add("d-none")
+      this.joinTarget.classList.remove("d-none")
+    }
   }
 
   goToPrevious(event) {

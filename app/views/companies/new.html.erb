@@ -1,36 +1,62 @@
 <div class="register-container">
-  <h1>Register</h1>
 
   <div data-controller="wizard">
     <div data-wizard-target="step">
+    <h1>Join or create a company</h1>
+    <hr>
       <%= simple_form_for :other do |o| %>
         <%= o.input :category,
             as: :radio_buttons,
+            legend_tag: false,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
+            input_html: {class: 'category-selector',
+                data: {
+                  wizard_target: "category"
+                }
+            },
             collection: ["Create a Company", "Join a Company"] %>
-
-        <%= button_tag "Next", type: "button", class: "button-primary",
-          data: {
-            action: "click->wizard#goToNext",
-            next_step: "1"
-          } %>
+        <div class="d-flex justify-content-end">
+          <%= button_tag "Next", type: "button", class: "button-primary",
+            data: {
+              action: "click->wizard#goToNext",
+              next_step: "1"
+            } %>
+        </div>
       <% end %>
     </div>
 
     <div data-wizard-target="step" class="d-none">
-      <%= simple_form_for @company do |f| %>
-        <%= f.input :company_name %>
+      <div data-wizard-target="create">
+        <h1>Create create a company</h1>
+        <hr>
+          <%= simple_form_for @company do |f| %>
+            <%= f.input :company_name, collection_wrapper_class: 'category-wrapper' %>
 
-        <%= button_tag "Previous", type: "button", class: "button-secondary",
-          data: {
-            action: "click->wizard#goToPrevious",
-            previous_step: "1"
-          } %>
-        <%= f.button :submit, class: "button-primary" %>
-      <% end %>
+            <div class="d-flex justify-content-between">
+              <%= button_tag "Previous", type: "button", class: "button-secondary",
+                data: {
+                  action: "click->wizard#goToPrevious",
+                  previous_step: "1"
+                } %>
+              <%= f.submit "Create Company", class: "button-primary" %>
+            </div>
+          <% end %>
+      </div>
+      <div data-wizard-target="join">
+        <h1>Find your company</h1>
+        <p>Search bar here</p>
+        <div class="d-flex justify-content-between">
+          <%= button_tag "Previous", type: "button", class: "button-secondary",
+            data: {
+              action: "click->wizard#goToPrevious",
+              previous_step: "1"
+            } %>
+          <%= button_tag "Create Company", class: "button-primary" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<%= console %>
