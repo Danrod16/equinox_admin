@@ -17,6 +17,11 @@ class FlatsController < ApplicationController
     redirect_to flats_path, notice: "Imported #{count} flats"
   end
 
+  def show
+    @flat = Flat.find(params[:id])
+    @bookings = @flat.bookings
+  end
+
   def new
     @flat = Flat.new
     @landlord = Landlord.new
