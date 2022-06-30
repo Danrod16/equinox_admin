@@ -3,20 +3,20 @@ class Company < ApplicationRecord
   after_create :create_tenant
   has_many :users
 
-  validates :company_name, uniqueness: true
+  validates :name, uniqueness: true
 
   private
 
-  def map_company_name
-    self.company_name.gsub(" ", "").strip.downcase
+  def map_name
+    self.name.gsub(" ", "").strip.downcase
   end
 
   def create_subdomain
-    self.subdomain =  map_company_name
+    self.subdomain =  map_name
   end
 
   def create_tenant
-    # self.update(subdomain: map_company_name)
+    # self.update(subdomain: map_name)
     Apartment::Tenant.create(self.subdomain) # unless User.where(subdomain: self.subdomain).count > 1
   end
 end

@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :new, :create ]
+  skip_before_action :authenticate_user!, only: [ :new, :create, :find ]
 
   def new
     @company = Company.new
@@ -14,9 +14,14 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def find
+    @company = Company.find_by(name: params[:name]) unless params[:name].nil?
+    render json: @company
+  end
+
   private
 
   def company_params
-    params.require(:company).permit(:company_name)
+    params.require(:company).permit(:name)
   end
 end

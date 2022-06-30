@@ -13,20 +13,22 @@ Rails.application.routes.draw do
     }
     get 'statistics/index'
     get 'pdf/booking_pdf'
+
     namespace :admin do
-        resources :users
-        resources :landlords
-        resources :invoices
-        resources :receipts
-        resources :flats
-        resources :incidents
-        resources :bookings
-        resources :tenants
-        resources :deposits
-        resources :settlements
-        resources :custom_invoices
-        root to: "users#index"
-      end
+      resources :users
+      resources :landlords
+      resources :invoices
+      resources :receipts
+      resources :flats
+      resources :incidents
+      resources :bookings
+      resources :tenants
+      resources :deposits
+      resources :settlements
+      resources :custom_invoices
+      root to: "users#index"
+    end
+
     resources :bookings
     resources :incidents
     resources :deposits, only: [:create]
@@ -42,6 +44,7 @@ Rails.application.routes.draw do
         post :import
       end
     end
+
     resources :statistics, only: [:index]
     post "/update_language", to: "pages#set_language", as: :set_language
     get "/booking_pdf", to: "pdf#booking_pdf"
@@ -51,7 +54,7 @@ Rails.application.routes.draw do
     get "/custom_invoice_pdf", to: "pdf#custom_invoice_pdf"
     get "/receipt_pdf", to: "pdf#receipt_pdf"
     get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
-
+    get "/company", to: "companies#find", as: :find_company
     root to: 'settings#dashboard'
     get '/styleguide', to: "pages#styleguide"
   end
