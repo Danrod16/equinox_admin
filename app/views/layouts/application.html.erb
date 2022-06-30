@@ -16,9 +16,11 @@
   <body>
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <% if controller_name == "sessions" && controller.params[:action] == "new" || controller_name == "registration" && controller.params[:action] == "new" %>
+    <% if !user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" %>
+     <%= render 'shared/navbar' %>
       <%= yield %>
-    <% else %>
+    <%= render 'shared/footer' %>
+    <% elsif user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions"%>
       <div class="main-wrapper">
         <div class="sidebar-wrapper">
           <%= render 'shared/sidebar' %>
@@ -27,6 +29,8 @@
           <%= yield %>
         </div>
       </div>
+    <% else %>
+      <%= yield %>
     <% end %>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first
   end
 
+  def after_sign_in_path_for(user)
+    bookings_user_root_path
+  end
+
   private
 
   def configure_permitted_parameters

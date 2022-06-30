@@ -16,3 +16,38 @@
 .col-lg-6 {
   padding:0px;
 }
+
+section {
+  text-align: center;
+  padding: 100px 0px;
+}
+
+
+.value-proposition {
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 500px;
+  }
+}
+
+.value-body {
+  max-width: 35%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  span {
+    color: $primary-color;
+  }
+}
+
+.cta-last {
+  background-color: $light-blue-bg;
+  border-radius: 10px;
+}
+
+.cta-last-body {
+  max-width: 70%;
+  margin: 0px auto;
+}

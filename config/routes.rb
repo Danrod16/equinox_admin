@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'statistics/index'
-  get 'pdf/booking_pdf'
   namespace :admin do
       resources :users
       resources :landlords
@@ -15,7 +13,9 @@ Rails.application.routes.draw do
       resources :custom_invoices
       root to: "users#index"
     end
-  resources :bookings
+  resources :bookings do
+    root to: 'settings#dashboard', as: :user_root
+  end
   resources :incidents
   resources :deposits, only: [:create]
   resources :landlords do
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     end
   end
   resources :statistics, only: [:index]
+  get 'statistics/index'
+  get 'pdf/booking_pdf'
   post "/update_language", to: "pages#set_language", as: :set_language
   get "/booking_pdf", to: "pdf#booking_pdf"
   get "/invoice_pdf", to: "pdf#invoice_pdf"
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
   get "/receipt_pdf", to: "pdf#receipt_pdf"
   get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
   devise_for :users
-  root to: 'settings#dashboard'
+  root to: 'pages#home'
   get '/styleguide', to: "pages#styleguide"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
