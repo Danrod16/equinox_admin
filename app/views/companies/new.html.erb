@@ -61,16 +61,20 @@
                   action: "keyup->search#searchCompany"
                 }
           %>
+          <div class="d-flex justify-content-between">
+            <%= button_tag "Previous", type: "button", class: "button-secondary",
+              data: {
+                action: "click->wizard#goToPrevious",
+                previous_step: "1"
+              } %>
+            <%= link_to "Join Company", new_user_registration_url, class: "button-primary",
+              data: {
+                action: "click->search#goToSubdomain"
+              } %>
+          </div>
           <p data-search-target="output"></p>
         <% end %>
-        <div class="d-flex justify-content-between">
-          <%= button_tag "Previous", type: "button", class: "button-secondary",
-            data: {
-              action: "click->wizard#goToPrevious",
-              previous_step: "1"
-            } %>
-          <%= button_tag "Create Company", class: "button-primary" %>
-        </div>
+        <%= @company.id %>
       </div>
     </div>
   </div>
