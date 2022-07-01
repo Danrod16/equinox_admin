@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
   end
 
   def find
-    @company = Company.find_by(name: params[:name]) unless params[:name].nil?
+    @company = Company.find_by(name: params[:name])
     render json: @company
   end
 

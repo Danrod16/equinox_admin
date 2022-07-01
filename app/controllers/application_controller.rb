@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::NumberHelper
   include Pundit
   before_action :authenticate_user!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

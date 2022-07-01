@@ -6,11 +6,12 @@ end
 
 Rails.application.routes.draw do
   resources :companies, only: [:new, :create]
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  get "/company", to: "companies#find", as: :find_company
 
   constraints SubdomainConstraint do
-    devise_for :users, controllers: {
-      registrations: 'users/registrations'
-    }
     get 'statistics/index'
     get 'pdf/booking_pdf'
 
@@ -54,7 +55,6 @@ Rails.application.routes.draw do
     get "/custom_invoice_pdf", to: "pdf#custom_invoice_pdf"
     get "/receipt_pdf", to: "pdf#receipt_pdf"
     get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
-    get "/company", to: "companies#find", as: :find_company
     root to: 'settings#dashboard'
     get '/styleguide', to: "pages#styleguide"
   end
