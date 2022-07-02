@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    if @company.save!
+    if @company.save
       redirect_to new_user_registration_url(subdomain: @company.subdomain)
     else
       render :new

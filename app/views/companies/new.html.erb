@@ -1,9 +1,8 @@
 <div class="register-container">
-
   <div data-controller="wizard">
     <div data-wizard-target="step">
-    <h1>Join or create a company</h1>
-    <hr>
+      <h1>Join or create a company</h1>
+      <hr>
       <%= simple_form_for :other do |o| %>
         <%= o.input :category,
             as: :radio_buttons,
@@ -21,6 +20,7 @@
           <%= button_tag "Next", type: "button", class: "button-primary",
             data: {
               action: "click->wizard#goToNext",
+              wizard_target: "next",
               next_step: "1"
             } %>
         </div>
@@ -45,13 +45,7 @@
       </div>
       <div data-wizard-target="join">
         <h1>Find your company</h1>
-        <%# <div class="my-3">
-          <form id="search-form" class="row" data-controller="search">
-            <input id="search-input" type="text" class="form-control" placeholder="Find company" data-action="keyup->search#searchCompany">
-            <p data-search-target="output">Found</p>
-          </form>
-        </div> %>
-
+        <hr>
         <%= simple_form_for @company, url: join_company_path, method: :post, data: { controller: "search"} do |f| %>
           <%= text_field_tag :name,
                 params[:name],
