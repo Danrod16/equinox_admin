@@ -1,9 +1,10 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "output", "submit" ]
 
   searchCompany(event) {
+    console.log(this.element.action)
     const url = `${this.element.action}?name=${event.currentTarget.value}`
     fetch(url)
     .then(response => response.json())
@@ -11,9 +12,11 @@ export default class extends Controller {
       console.log(data)
       if (data !== null) {
         this.outputTarget.innerText = "Company found ✅"
+        this.submitTarget.disabled = false
         // this.outputTarget.classList.add = "text-success"
       } else {
         this.outputTarget.innerText = "Company does not found"
+        this.submitTarget.disabled = true
         // this.outputTarget.classList.add = "text-danger"
       }
     })

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   get "/company", to: "companies#find", as: :find_company
+  post "/company", to: "companies#join", as: :join_company
 
   constraints SubdomainConstraint do
     get 'statistics/index'

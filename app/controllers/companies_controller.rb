@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :new, :create, :find ]
+  skip_before_action :authenticate_user!, only: [ :new, :create, :find, :join ]
 
   def new
     @company = Company.new
@@ -17,6 +17,13 @@ class CompaniesController < ApplicationController
   def find
     @company = Company.find_by(name: params[:name])
     render json: @company
+  end
+
+  def join
+    @company = Company.find_by(name: params[:name])
+    if @company.present?
+      redirect_to new_user_registration_url(subdomain: @company.subdomain)
+    end
   end
 
   private

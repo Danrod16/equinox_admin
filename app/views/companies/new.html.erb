@@ -52,27 +52,24 @@
           </form>
         </div> %>
 
-        <%= form_tag find_company_path, method: :get, data: { controller: "search"} do |f| %>
+        <%= simple_form_for @company, url: join_company_path, method: :post, data: { controller: "search"} do |f| %>
           <%= text_field_tag :name,
                 params[:name],
                 class: "form-control",
-                placeholder: "Find a class",
+                placeholder: "Find your company",
                 data: {
                   action: "keyup->search#searchCompany"
                 }
           %>
+          <p data-search-target="output"></p>
           <div class="d-flex justify-content-between">
             <%= button_tag "Previous", type: "button", class: "button-secondary",
               data: {
                 action: "click->wizard#goToPrevious",
                 previous_step: "1"
               } %>
-            <%= link_to "Join Company", new_user_registration_url, class: "button-primary",
-              data: {
-                action: "click->search#goToSubdomain"
-              } %>
+            <%= f.submit "Join Company", disabled: true, class: "button-primary", data: { search_target: "submit" } %>
           </div>
-          <p data-search-target="output"></p>
         <% end %>
         <%= @company.id %>
       </div>

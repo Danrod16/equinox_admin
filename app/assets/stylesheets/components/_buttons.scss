@@ -10,6 +10,10 @@
     color: white !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
   }
+
+  &:disabled {
+    background-color: rgba(100, 100, 100, 0.5) !important;
+  }
 }
 
 .button-secondary {
