@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_many :incidents
   has_one_attached :photo
   belongs_to :company
-  # accepts_nested_attributes_for :company
+
+  before_create :update_admin
 
   def agent?
     self.role == "Agente"
@@ -23,5 +24,13 @@ class User < ApplicationRecord
 
   def table_attribute
     return self.full_name
+  end
+
+  private
+
+  def update_admin
+    if User.where(company: self.company).count == 0
+      self.role = "Admin"
+    end
   end
 end

@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @company = Company.find_by(subdomain: request.subdomain)
-    # @user.build_company
     super
   end
 

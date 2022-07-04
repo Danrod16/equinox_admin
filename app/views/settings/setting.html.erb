@@ -1,0 +1,8 @@
+<h1>Setting</h1>
+<div class="card-wrapper">
+  <h4>Team Members</h4>
+  <hr>
+  <% @members.each do |member| %>
+    <p><%= member.role %> | <%= member.first_name %> <%= member.last_name %></p>
+  <% end %>
+</div>

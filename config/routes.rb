@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post "/company", to: "companies#join", as: :join_company
 
   constraints SubdomainConstraint do
+    root to: 'settings#dashboard'
+    get 'setting', to: "settings#setting", as: :setting
     get 'statistics/index'
     get 'pdf/booking_pdf'
 
@@ -56,7 +58,6 @@ Rails.application.routes.draw do
     get "/custom_invoice_pdf", to: "pdf#custom_invoice_pdf"
     get "/receipt_pdf", to: "pdf#receipt_pdf"
     get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
-    root to: 'settings#dashboard'
     get '/styleguide', to: "pages#styleguide"
   end
 end
