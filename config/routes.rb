@@ -6,13 +6,18 @@ end
 
 Rails.application.routes.draw do
   resources :companies, only: [:new, :create]
+
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    invitations: 'users/invitations'
   }
   get "/company", to: "companies#find", as: :find_company
   post "/company", to: "companies#join", as: :join_company
 
   constraints SubdomainConstraint do
+    resources :companies do
+      resources :company_user, path: :users, module: :companies
+    end
     root to: 'settings#dashboard'
     get 'setting', to: "settings#setting", as: :setting
     get 'statistics/index'
