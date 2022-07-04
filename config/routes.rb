@@ -13,9 +13,10 @@ Rails.application.routes.draw do
       resources :custom_invoices
       root to: "users#index"
     end
-  resources :bookings do
+  resources :bookings, except: [:index] do
     root to: 'settings#dashboard', as: :user_root
   end
+  get '/our-bookings', to: 'bookings#index', as: :bookings_list
   resources :incidents
   resources :deposits, only: [:create]
   resources :landlords do
