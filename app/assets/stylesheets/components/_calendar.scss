@@ -3,3 +3,11 @@
     height: 100%
   }
 }
+
+#myTab {
+  .active {
+    svg {
+    color: $primary-color;
+    }
+  }
+}
