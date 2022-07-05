@@ -19,11 +19,13 @@
   <body>
     <%= render 'shared/flashes' %>
     <%# if !user_signed_in? && (controller_name == "sessions" && controller.params[:action] == "new") || (controller_name == "registrations" && controller.params[:action] == "new") || controller_name == "companies" %>
-    <% if !user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" && params[:controller] != "companies" %>
-      <%= render 'shared/navbar' %>
-      <%= yield %>
-      <%= render 'shared/footer' %>
-    <% elsif user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions"%>
+    <% if !user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" %>
+      <div class="page-container">
+        <div class="navbar-container"><%= render "shared/navbar" %></div>
+        <div class="content-container"><%= yield %></div>
+        <div class="footer-container"><%= render "shared/footer" %></div>
+      </div>
+    <% elsif user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" %>
       <div class="main-wrapper">
         <div class="sidebar-wrapper">
           <%= render 'shared/sidebar' %>
