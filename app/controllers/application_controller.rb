@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if user_signed_in?
-      I18n.locale = current_user.language.to_sym
+      I18n.locale = current_user.language&.to_sym || I18n.default_locale
     else
       I18n.locale = params[:lang] || locale_from_header || I18n.default_locale
     end
@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
 
   def locale_from_header
     request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first
+  end
+
+  def after_sign_in_path_for(user)
+    bookings_user_root_path
   end
 
   private
@@ -44,6 +48,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     root_url(subdomain: resource.company.subdomain)
   end
+
+  def set_time_zone
+    Time.zone = current_user.time_zone
+  end
+
+end
 
   def after_sign_out_path_for(resource)
     root_url

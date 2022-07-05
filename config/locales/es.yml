@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    week: Semana
   shared:
     sidebar:
       bookings: Reservas
@@ -72,12 +76,33 @@ es:
     new_landlord: Nuevo Propietario
   tenants:
     find_tenant: Buscar Inquilino
-    new_landlord: Nuevo inquilino
+    new_tenant: Nuevo inquilino
   incidents:
     new_incident: Nueva incidencia
   flats:
     new_flat: Nueva propiedad
     find_flat: Buscar propiedad
+  show:
+    email: Email
+    notes: Notas
+    phone: Telefono
+    nationality: Nacionalidad
+    address: Dirección
+    company: Empresa
+    celula: Celula
+    catastral: Catastral
+    cee: CEE
+    landlord: Propietari@
+    keys: Llaves
+    costs: comision de agencia
+    cif: CIF
+    available: Disponible
+    not_available: Ocupado
+    furnished: Amueblado
+    not_furnished: Sin amueblar
+    reference: Referencia
+
+
   # helpers:
   #   submit:
   #     update: Actualizar

@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
         #  , :confirmable
-  has_many :bookings
-  has_many :incidents
+
+  has_many :bookings, dependent: :destroy
+  has_many :incidents, dependent: :destroy
   has_one_attached :photo
   belongs_to :company
 

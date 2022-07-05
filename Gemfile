@@ -29,6 +29,8 @@ gem "geocoder"
 gem 'administrate-field-active_storage'
 gem "image_processing"
 
+gem "simple_calendar", "~> 2.4"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'csv'
@@ -46,6 +48,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.3'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

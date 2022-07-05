@@ -1,7 +1,7 @@
 <%= image_tag 'equinox_logo.png', class: "avatar-large" %>
 
 <ul class="sidebar-links">
-  <%= link_to root_path do %>
+  <%= link_to  user_root_path do %>
     <li><%= image_tag 'home.png' %> <%= t('.dashboard') %> </li>
   <% end %>
   <%= link_to bookings_path do  %>
@@ -22,7 +22,7 @@
   <%= link_to flats_path do %>
     <li><%= image_tag 'package.png' %> <%= t('.flats') %> </li>
   <% end %>
-  <li class="small-text"><%= image_tag 'package.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
+  <li class="small-text"><%= image_tag 'bar-chart.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
 </ul>
 
 <div class="sidebar-footer">

@@ -1,5 +1,5 @@
 <div class="wrapper-header">
-  <h1> <%= t('.tenants') %></h1>
+  <h1> <%= t('shared.sidebar.tenants') %></h1>
   <div class="urbanist-form">
     <%= form_tag tenants_path, method: :get do %>
     <%= text_field_tag :query,
@@ -10,7 +10,7 @@
     <%= submit_tag t('search'), class: "button-secondary" %>
     <% end %>
   </div>
-  <%= link_to t('tenant.new_tenant'), new_tenant_path, class: "button-primary" %>
+  <%= link_to t('tenants.new_tenant'), new_tenant_path, class: "button-primary" %>
 </div>
 
 <div class="card-wrapper">

@@ -2,9 +2,9 @@ class LandlordsController < ApplicationController
 
   def index
     if params[:query].present?
-      @landlords = Landlord.search_by_first_name_and_last_name_and_address(params[:query])
+      @landlords = Landlord.search_by_first_name_and_last_name_and_address(params[:query]).paginate(page: params[:page])
     else
-      @landlords = Landlord.all
+      @landlords = Landlord.paginate(page: params[:page], per_page: 15)
     end
 
     respond_to do |format|

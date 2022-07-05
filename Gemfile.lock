@@ -287,6 +287,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -331,6 +333,7 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -374,6 +377,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selectize-rails
   selenium-webdriver
+  simple_calendar (~> 2.4)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -382,6 +386,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  will_paginate (~> 3.3)
 
 RUBY VERSION
    ruby 2.6.3p62

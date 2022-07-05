@@ -1,10 +1,11 @@
 .button-primary {
   background-color: $primary-color !important;
-  border-radius: 45px;
+  border-radius: 7px;
   color: white !important;
   padding: 10px 30px;
   height: fit-content;
   border: none;
+  font-weight: bold;
   &:hover {
     background-color: $primary-color !important;
     color: white !important;
@@ -18,7 +19,8 @@
 
 .button-secondary {
   background-color: transparent !important;
-  border-radius: 45px;
+  font-weight: bold;
+  border-radius: 7px;
   color: $primary-color !important;
   padding: 10px 30px;
   border: solid 1px $primary-color !important;

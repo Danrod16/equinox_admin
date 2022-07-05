@@ -1,2 +1,69 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner-wrapper">
+  <div class="banner">
+    <div class="main-container">
+      <div class="banner-body">
+        <div class="banner-body-text">
+
+        <h1>Simple property management platform for<br><span>rental agencies</span></h1>
+        <p>Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents.</p>
+        <div>
+          <%= link_to "Register for free*", new_user_registration_path, class: "button-primary" %>
+        </div>
+          <br>
+        <p class="small-text">*Free forever if you register your agency before 01/09/2022</p>
+        </div>
+          <%= image_tag "banner-illustration.png", alt: "Property management for rental agencies" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- How it works section -->
+<section class="how-it-works">
+  <div class="main-container">
+    <h2>How it <span>works</span>?</h2>
+    <div class="home-cards">
+      <div class="home-card">
+        <%= image_tag "table-card", alt: "Customised bookings dashboard", style:"margin-top: -22px;" %>
+        <h3>Easy booking management</h3>
+        <p>Bookings easily generate PDF booking confirmations and invoices. Goodbye excels and word documents</p>
+      </div>
+      <div class="home-card">
+        <%= image_tag "graph-card", alt: "Customised statistics about booking revenews" %>
+        <h3>KPI & stats</h3>
+        <p>Which property is generating most of your revenues? How much sales did you
+ do this year?</p>
+      </div>
+      <div class="home-card">
+        <%= image_tag "flats-card", alt: "Customised cards for each flat ready to book" %>
+        <h3>Property information</h3>
+        <p>Keep your team informed at any moment on important information about your properties. No more lost keys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Value proposition section -->
+<div class="main-container">
+<section class="value-proposition">
+    <div class="value-illustration">
+      <%= image_tag "value-illustration.svg", alt: "alttext" %>
+    </div>
+    <div class="value-body">
+      <h2>Created with <span>agencies</span> for agencies</h2>
+      <p >We are working with several real estate agencies to define the most important challenges of running a rental service. <br> <br>After observing for months, we have pin pointed the most painful tasks and developed an easy solution to make your life as an agent easier. </p>
+      <strong>Avenist aims at <span>modernising</span> real estate administration</strong><br>
+      <div class="value-button">
+        <%= link_to "Register your agency", new_user_registration_path, class: "button-primary" %>
+      </div>
+    </div>
+</section>
+
+<section class="cta-last">
+  <div class="cta-last-body">
+    <%= image_tag "rocket.svg", alt: "Free memberships for booking management patform" %>
+    <h2><span>Free</span> membership</h2>
+    <h3>Join today and get access to our Beta version.</h3>
+    <p>Beta version users will be rewarded with a lifetime free membership, access to all premium features from today and on!</p>
+    <%= link_to "Register your agency for free", new_user_registration_path, class: "button-primary" %>
+  </div>
+</section>
+</div>

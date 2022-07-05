@@ -59,6 +59,14 @@ class Flat < ApplicationRecord
     self.address = self.map_address
   end
 
+  def furnished?
+    self.furnished
+  end
+
+  def available?
+    self.available
+  end
+
   private
 
   def self.assign_from_row(row)
