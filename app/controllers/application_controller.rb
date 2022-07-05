@@ -53,8 +53,6 @@ class ApplicationController < ActionController::Base
     Time.zone = current_user.time_zone
   end
 
-end
-
   def after_sign_out_path_for(resource)
     root_url
   end

@@ -17,13 +17,12 @@
   </head>
 
   <body>
-    <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <% if (controller_name == "sessions" && controller.params[:action] == "new") || (controller_name == "registrations" && controller.params[:action] == "new") || controller_name == "companies" %>
-    <%# if !user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" %>
-     <%= render 'shared/navbar' %>
+    <%# if !user_signed_in? && (controller_name == "sessions" && controller.params[:action] == "new") || (controller_name == "registrations" && controller.params[:action] == "new") || controller_name == "companies" %>
+    <% if !user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions" && params[:controller] != "companies" %>
+      <%= render 'shared/navbar' %>
       <%= yield %>
-    <%= render 'shared/footer' %>
+      <%= render 'shared/footer' %>
     <% elsif user_signed_in? && params[:controller] != "devise/registrations" && params[:controller] != "devise/sessions"%>
       <div class="main-wrapper">
         <div class="sidebar-wrapper">
@@ -37,8 +36,8 @@
       <%= yield %>
     <% end %>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
