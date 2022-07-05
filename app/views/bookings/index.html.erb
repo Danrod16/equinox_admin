@@ -1,8 +1,34 @@
 <div class="wrapper-header">
   <h1> <%= t('shared.sidebar.bookings') %> </h1>
+  <div class="d-flex">
   <%= link_to t('bookings.new_booking'), new_booking_path, class: "button-primary" %>
+  <ul class="nav" id="myTab" role="tablist">
+    <li class="button-small btn-left">
+      <a class="active" id="calendar-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="true"> <%= image_tag "list.svg", alt: "list icon" %> </a>
+    </li>
+    <li class="button-small btn-right">
+      <a id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false"><%= image_tag "calendar.svg", alt: "calendar icon" %></a>
+    </li>
+  </ul>
+  </div>
 </div>
 
 <div class="card-wrapper">
-  <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+    <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
+  </div>
+  <div class="tab-pane fade" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
+    <%= week_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
+      <%= date %>
+      <% bookings.each do |booking| %>
+        <div class="horizontal-card">
+          <%= link_to booking_path(booking) do %>
+            <%= booking.tenant.first_name %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 </div>

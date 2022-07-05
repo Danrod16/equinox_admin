@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    week: Semana
   shared:
     sidebar:
       bookings: Reservas
