@@ -11,7 +11,6 @@
     <% end %>
   </div>
   <div class="d-flex">
-    <%= link_to t('landlords.new_landlord'), new_landlord_path, class: "button-primary" %>
     <%= button_to landlords_path("csv"), method: :get, class: "button-small btn-left" do %>
       <%= image_tag 'download.png' %>
     <% end %>
@@ -19,6 +18,7 @@
     <button type="button" class="button-small btn-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <%= image_tag 'upload.png' %>
     </button>
+    <%= link_to t('landlords.new_landlord'), new_landlord_path, class: "button-primary", style: "margin-left: 10px" %>
   </div>
 
   <!-- Modal -->
