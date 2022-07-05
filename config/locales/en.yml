@@ -29,6 +29,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 en:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    week: Wemana
   see_more: See more
   search: Search
   dashboard: Dashboard
