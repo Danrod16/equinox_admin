@@ -37,10 +37,13 @@
   background-color: transparent !important;
   border-radius: 7px;
   padding: 6px 15px;
+  max-width: 35%;
+  margin-bottom: 8px;
   font-size: 12px;
   border: solid 1px $secondary-text-color !important;
   height: fit-content;
   border: none;
+
   &:hover {
     background-color: $primary-color !important;
     color: white !important;
