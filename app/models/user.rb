@@ -1,12 +1,16 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+        #  , :confirmable
+
   has_many :bookings, dependent: :destroy
   has_many :incidents, dependent: :destroy
   has_one_attached :photo
+  belongs_to :company
 
+  before_create :update_admin
 
   def agent?
     self.role == "Agente"
@@ -22,5 +26,13 @@ class User < ApplicationRecord
 
   def table_attribute
     return self.full_name
+  end
+
+  private
+
+  def update_admin
+    if User.where(company: self.company).count == 0
+      self.role = "Admin"
+    end
   end
 end

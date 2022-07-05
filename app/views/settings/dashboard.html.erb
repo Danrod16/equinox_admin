@@ -13,7 +13,7 @@
       </div>
       <div class="horizontal-card">
         <p> <%= t('dashboard.this_year_sales') %> </p>
-        <h3>€ <%= @sales_this_year %></h3>
+        <h3>€ <%= number_with_delimiter(@sales_this_year, :delimiter => ',') %></h3>
         <canvas width="200" height="200" data-controller="stats" data-stats-sales-value="<%= @sales_monthly.to_json %>" data-stats-target="salesChart"></canvas>
       </div>
       <div class="horizontal-card">

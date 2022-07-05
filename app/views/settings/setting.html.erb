@@ -1,0 +1,12 @@
+<h1>Setting</h1>
+<div class="card-wrapper">
+  <div class="d-flex justify-content-between align-items-center">
+    <h4 class="m-0">Team Members</h4>
+    <%= link_to "Invite User", new_user_invitation_path(company_id: current_user.company.id), class: "button-primary" %>
+  </div>
+  <hr>
+
+  <% @members.each do |member| %>
+    <p><%= member.role %> | <%= member.first_name.present? ? "#{member.first_name} #{member.last_name}" : "#{member.email}" %> | <%= "Status: Invited" if member.created_by_invite? %> | <%= member.invitation_accepted? ? "Invitation Accepted" : "Pending" %></p>
+  <% end %>
+</div>
