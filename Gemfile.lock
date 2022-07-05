@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/influitive/apartment.git
+  revision: f266f73e58835f94e4ec7c16f28443fe5eada1ac
+  branch: development
+  specs:
+    apartment (2.2.1)
+      activerecord (>= 3.1.2, < 6.1)
+      parallel (>= 0.7.1)
+      public_suffix (>= 2)
+      rack (>= 1.3.6)
+
+GIT
   remote: https://github.com/mimemagicrb/mimemagic.git
   revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
   ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
@@ -115,6 +126,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.6)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -188,6 +202,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.22.1)
     pdf-core (0.8.1)
     pg (1.2.3)
     pg_search (2.3.5)
@@ -329,6 +344,7 @@ PLATFORMS
 DEPENDENCIES
   administrate
   administrate-field-active_storage
+  apartment!
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
@@ -338,6 +354,7 @@ DEPENDENCIES
   comma
   csv
   devise
+  devise_invitable (~> 2.0.0)
   dotenv-rails
   faker
   font-awesome-sass
@@ -375,4 +392,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.3.15
+   2.3.13

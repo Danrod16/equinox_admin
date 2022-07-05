@@ -1,47 +1,62 @@
-<div class="row">
-  <div class="devise-box col-lg-6 col-sm-12">
-    <div class="sign-in-form">
-      <%= image_tag('https://uploads-ssl.webflow.com/5eafe775b41a94c727c302e5/5ee23ff0abd872292227d6f6_EQUINOX%20LOGO%20-01%20(1)-p-500.png', class: "logo-home") %>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <div class="form-field">
+<div class="register-container">
+  <h1>Register new user <%= "for #{@company.name}" if @company.present? %></h1>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <div class="form-field">
+        <%= f.input :company_id,
+                  as: :hidden,
+                  input_html: { value: @company.id },
+                  required: true,
+                  placeholder: 'Company name',
+                  label: false,
+                  autofocus: true %>
+        </div>
+        <hr>
+        <div class="form-field">
+          <%= f.input :first_name,
+                    required: true,
+                    placeholder: 'First name',
+                    label: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "first-name" } %>
+        </div>
+        <hr>
+        <div class="form-field">
+          <%= f.input :last_name,
+                    required: true,
+                    placeholder: 'Last name',
+                    label: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "last-name" } %>
+        </div>
+        <hr>
+        <div class="form-field">
           <%= f.input :email,
+                    required: true,
+                    placeholder: 'Email',
+                    label: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        </div>
+        <hr>
+        <div class="form-field">
+          <%= f.input :password,
                       required: true,
-                      placeholder: 'email',
+                      placeholder: 'Contraseña',
                       label: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
-          </div>
-          <hr>
-          <div class="form-field">
-            <%= f.input :password,
-                        required: true,
-                        placeholder: 'Contraseña',
-                        label: false,
-                        input_html: { autocomplete: "new-password" } %>
-          </div>
-          <hr>
-          <div class="form-field">
-          <%= f.input :password_confirmation,
-                      required: true,
-                      label: false,
-                      placeholder: 'Confrimar contraseña',
                       input_html: { autocomplete: "new-password" } %>
-          </div>
-          <hr>
         </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Registrarse", class: 'button-primary' %>
+        <hr>
+        <div class="form-field">
+          <%= f.input :password_confirmation,
+                    required: true,
+                    label: false,
+                    placeholder: 'Confrimar contraseña',
+                    input_html: { autocomplete: "new-password" } %>
         </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
-    </div>
-  </div>
-  <div class="col-lg-6 col-sm-12">
-    <div class="hero-banner">
-    </div>
-  </div>
+        <hr>
+      </div>
+      <%= f.button :submit, class: "button-primary" %>
+    <% end %>
 </div>
-

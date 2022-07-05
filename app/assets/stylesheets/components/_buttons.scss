@@ -1,27 +1,33 @@
 .button-primary {
-  background-color: $primary-color;
+  background-color: $primary-color !important;
   border-radius: 7px;
   color: white !important;
   padding: 10px 30px;
   height: fit-content;
+  border: none;
   font-weight: bold;
   &:hover {
-    background-color: $primary-color;
+    background-color: $primary-color !important;
     color: white !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  &:disabled {
+    background-color: rgba(100, 100, 100, 0.5) !important;
   }
 }
 
 .button-secondary {
-  background-color: none;
+  background-color: transparent !important;
   font-weight: bold;
   border-radius: 7px;
   color: $primary-color !important;
   padding: 10px 30px;
-  border: solid 1px $primary-color;
+  border: solid 1px $primary-color !important;
   height: fit-content;
+  border: none;
   &:hover {
-    background-color: $primary-color;
+    background-color: $primary-color !important;
     color: white !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
   }

@@ -1,8 +1,17 @@
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::NumberHelper
   include Pundit
   before_action :authenticate_user!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   before_action :set_locale
+  before_action :check_subdomain
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def check_subdomain
+    if user_signed_in? && request.subdomain != current_user.company.subdomain
+      redirect_to root_url(subdomain: current_user.company.subdomain)
+    end
+  end
 
   def set_locale
     if user_signed_in?
@@ -23,9 +32,8 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :language, :role, :photo, :company_id])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :language, :photo, :role])
-
   end
 
   def user_not_authorized
@@ -33,10 +41,21 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  def after_sign_up_path_for(resource)
+    root_url(subdomain: resource.company.subdomain)
+  end
 
-    def set_time_zone
-      Time.zone = current_user.time_zone
-    end
+  def after_sign_in_path_for(resource)
+    root_url(subdomain: resource.company.subdomain)
+  end
+
+  def set_time_zone
+    Time.zone = current_user.time_zone
+  end
 
 end
 
+  def after_sign_out_path_for(resource)
+    root_url
+  end
+end

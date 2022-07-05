@@ -24,4 +24,8 @@ class SettingsController < ApplicationController
                         .distinct
                         .limit(5)
   end
+
+  def setting
+    @members = User.where(company: current_user.company)
+  end
 end

@@ -1,0 +1,38 @@
+.register-container {
+  width: 700px;
+  margin: 32px auto;
+}
+
+.category-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 24px 0px;
+}
+
+.category-item {
+  flex: 0 0 45%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  padding: 30px 20px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.category-selector:checked + label {
+  background-color: $primary-color;
+  color: white !important;
+}
