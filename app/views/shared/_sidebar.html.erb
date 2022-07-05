@@ -26,7 +26,7 @@
 </ul>
 
 <div class="sidebar-footer">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn border" %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-logout" %>
   <%= form_tag set_language_path, class: "language-pill" do %>
     <%= select_tag :lang, options_for_select([["🇬🇧 EN", :en], ["🇪🇸 ES", :es]], I18n.locale), :onchange => "this.form.submit();", style: "border: none; padding: 0px 5px; border-radius: 10px; border: 1px solid #ddd;" %>
   <% end %>

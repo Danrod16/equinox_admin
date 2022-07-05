@@ -225,7 +225,7 @@ ActiveRecord::Schema.define(version: 2022_07_04_034659) do
     t.string "last_name"
     t.string "photo"
     t.string "language", default: "en"
-    t.bigint "company_id", null: false
+    t.bigint "company_id"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

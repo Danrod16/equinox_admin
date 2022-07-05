@@ -14,11 +14,16 @@ Rails.application.routes.draw do
   get "/company", to: "companies#find", as: :find_company
   post "/company", to: "companies#join", as: :join_company
 
+  authenticated :user do
+    root to: 'settings#dashboard', as: :user_root
+  end
+
+  root to: "pages#home"
   constraints SubdomainConstraint do
     resources :companies do
       resources :company_user, path: :users, module: :companies
     end
-    root to: 'settings#dashboard'
+
     get 'setting', to: "settings#setting", as: :setting
     get 'statistics/index'
     get 'pdf/booking_pdf'
@@ -37,7 +42,7 @@ Rails.application.routes.draw do
       resources :custom_invoices
       root to: "users#index"
     end
-    
+
     resources :bookings
     resources :incidents
     resources :deposits, only: [:create]
