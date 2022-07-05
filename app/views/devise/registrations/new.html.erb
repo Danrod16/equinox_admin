@@ -1,10 +1,9 @@
 <div class="register-container">
-  <h1>Register new user</h1>
+  <h1>Register new user <%= "for #{@company.name}" if @company.present? %></h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
         <div class="form-field">
-        <p><%= request.subdomain %></p>
         <%= f.input :company_id,
                   as: :hidden,
                   input_html: { value: @company.id },

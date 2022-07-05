@@ -7,6 +7,6 @@
   <hr>
 
   <% @members.each do |member| %>
-    <p><%= member.role %> | <%= member.first_name %> <%= member.last_name %></p>
+    <p><%= member.role %> | <%= member.first_name.present? ? "#{member.first_name} #{member.last_name}" : "#{member.email}" %> | <%= "Status: Invited" if member.created_by_invite? %> | <%= member.invitation_accepted? ? "Invitation Accepted" : "Pending" %></p>
   <% end %>
 </div>
