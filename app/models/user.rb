@@ -2,8 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-        #  , :confirmable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :bookings, dependent: :destroy
   has_many :incidents, dependent: :destroy
@@ -33,6 +32,7 @@ class User < ApplicationRecord
   def update_admin
     if User.where(company: self.company).count == 0
       self.role = "Admin"
+      self.skip_confirmation!
     end
   end
 end

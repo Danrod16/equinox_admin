@@ -3,8 +3,9 @@ class Users::InvitationsController < Devise::InvitationsController
   skip_before_action :verify_authenticity_token
 
   def after_invite_path_for(resource)
-    root_url(subdomain: resource.company.subdomain)
+    setting_path
   end
+
 
   protected
 

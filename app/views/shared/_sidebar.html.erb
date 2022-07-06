@@ -23,10 +23,12 @@
     <li><%= image_tag 'package.png' %> <%= t('.flats') %> </li>
   <% end %>
   <li class="small-text"><%= image_tag 'bar-chart.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
+  <%= link_to setting_path do %>
+    <li><%= image_tag 'setting.png' %> Settings </li>
+  <% end %>
 </ul>
 
 <div class="sidebar-footer">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-logout" %>
   <%= form_tag set_language_path, class: "language-pill" do %>
     <%= select_tag :lang, options_for_select([["🇬🇧 EN", :en], ["🇪🇸 ES", :es]], I18n.locale), :onchange => "this.form.submit();", style: "border: none; padding: 0px 5px; border-radius: 10px; border: 1px solid #ddd;" %>
   <% end %>
