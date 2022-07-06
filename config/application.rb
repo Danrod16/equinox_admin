@@ -26,5 +26,8 @@ module EquinoxAdmin
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.hosts << /(.*\.)?lvh.me/
+    config.hosts << /(.*\.)?equinox-admin.herokuapp.com/
+    config.hosts << /(.*\.)?avenist.com/
+
   end
 end
