@@ -90,7 +90,24 @@
   text-decoration: underline;
 }
 
+.card-member {
+  h6 {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
 
+  .button-primary {
+    font-weight: normal;
+    text-align: center;
+    padding: 8px 15px;
+    width: fit-content;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+  align-items: baseline;
+}
 
 
 // Smallest device
