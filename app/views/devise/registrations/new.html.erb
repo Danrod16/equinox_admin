@@ -1,4 +1,18 @@
 <div class="register-container">
+  <div id="stepProgressBar">
+    <div class="step">
+      <p class="step-text">Select Mode</p>
+      <div class="bullet completed" data-wizard-target="bullet">1</div>
+    </div>
+    <div class="step">
+      <p class="step-text">Company Profile</p>
+      <div class="bullet completed" data-wizard-target="bullet">2</div>
+    </div>
+    <div class="step">
+      <p class="step-text">User Profile</p>
+      <div class="bullet" data-wizard-target="bullet">3</div>
+    </div>
+  </div>
   <h1>Register new user <%= "for #{@company.name}" if @company.present? %></h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -12,7 +26,6 @@
                   label: false,
                   autofocus: true %>
         </div>
-        <hr>
         <div class="form-field">
           <%= f.input :first_name,
                     required: true,
@@ -21,7 +34,6 @@
                     autofocus: true,
                     input_html: { autocomplete: "first-name" } %>
         </div>
-        <hr>
         <div class="form-field">
           <%= f.input :last_name,
                     required: true,
@@ -30,7 +42,6 @@
                     autofocus: true,
                     input_html: { autocomplete: "last-name" } %>
         </div>
-        <hr>
         <div class="form-field">
           <%= f.input :email,
                     required: true,
@@ -39,7 +50,6 @@
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
         </div>
-        <hr>
         <div class="form-field">
           <%= f.input :password,
                       required: true,
@@ -47,7 +57,6 @@
                       label: false,
                       input_html: { autocomplete: "new-password" } %>
         </div>
-        <hr>
         <div class="form-field">
           <%= f.input :password_confirmation,
                     required: true,
@@ -55,7 +64,6 @@
                     placeholder: 'Confrimar contraseña',
                     input_html: { autocomplete: "new-password" } %>
         </div>
-        <hr>
       </div>
       <%= f.button :submit, class: "button-primary" %>
     <% end %>

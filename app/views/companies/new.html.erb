@@ -1,8 +1,21 @@
-<div class="register-container">
-  <div data-controller="wizard">
+<div class="register-container" data-controller="wizard">
+  <div id="stepProgressBar">
+    <div class="step">
+      <p class="step-text">Select Mode</p>
+      <div class="bullet" data-wizard-target="bullet">1</div>
+    </div>
+    <div class="step">
+      <p class="step-text">Company Profile</p>
+      <div class="bullet" data-wizard-target="bullet">2</div>
+    </div>
+    <div class="step">
+      <p class="step-text">User Profile</p>
+      <div class="bullet" data-wizard-target="bullet">3</div>
+    </div>
+  </div>
+  <div>
     <div data-wizard-target="step">
       <h1>Join or create a company</h1>
-      <hr>
       <%= simple_form_for :other do |o| %>
         <%= o.input :category,
             as: :radio_buttons,
@@ -30,31 +43,33 @@
     <div data-wizard-target="step" class="d-none">
       <div data-wizard-target="create">
         <h1>Create create a company</h1>
-        <hr>
-          <%= simple_form_for @company do |f| %>
-            <%= f.input :name, collection_wrapper_class: 'category-wrapper' %>
-            <div class="d-flex justify-content-between">
-              <%= button_tag "Previous", type: "button", class: "button-secondary",
-                data: {
-                  action: "click->wizard#goToPrevious",
-                  previous_step: "1"
-                } %>
-              <%= f.submit "Create Company", class: "button-primary" %>
-            </div>
-          <% end %>
+        <%= simple_form_for @company do |f| %>
+          <div class="form-field">
+            <%= f.input :name, placeholder: 'Company name', label: false, autofocus: true %>
+          </div>
+          <div class="d-flex justify-content-between">
+            <%= button_tag "Previous", type: "button", class: "button-secondary",
+              data: {
+                action: "click->wizard#goToPrevious",
+                previous_step: "1"
+              } %>
+            <%= f.submit "Create Company", class: "button-primary" %>
+          </div>
+        <% end %>
       </div>
       <div data-wizard-target="join">
         <h1>Find your company</h1>
-        <hr>
         <%= simple_form_for @company, url: join_company_path, method: :post, data: { controller: "search"} do |f| %>
-          <%= text_field_tag :name,
-                params[:name],
-                class: "form-control",
-                placeholder: "Find your company",
-                data: {
-                  action: "keyup->search#searchCompany"
-                }
-          %>
+          <div class="form-field">
+            <%= text_field_tag :name,
+                  params[:name],
+                  class: "form-control",
+                  placeholder: "Input your company name",
+                  data: {
+                    action: "keyup->search#searchCompany"
+                  }
+            %>
+          </div>
           <p data-search-target="output"></p>
           <div class="d-flex justify-content-between">
             <%= button_tag "Previous", type: "button", class: "button-secondary",

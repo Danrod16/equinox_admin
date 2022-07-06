@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between">
   <h1>Settings</h1>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary" %>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary" %>
 </div>
 <div class="card-wrapper">
   <div class="d-flex justify-content-between align-items-center">
@@ -17,7 +17,7 @@
     <h6>Invitation Status</h6>
     <h6>Confirmation Status</h6>
   </div>
-<% @members.each do |member| %>
+  <% @members.each do |member| %>
     <div class="card-member">
       <p><%= member.first_name.present? ? "#{member.first_name} #{member.last_name}" : "#{member.email}" %></p>
       <p><%= member.role %></p>
