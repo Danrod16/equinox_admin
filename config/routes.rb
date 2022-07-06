@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    invitations: 'users/invitations'
+    invitations: 'users/invitations',
+    confirmations: 'users/confirmations'
   }
   get "/company", to: "companies#find", as: :find_company
   post "/company", to: "companies#join", as: :join_company

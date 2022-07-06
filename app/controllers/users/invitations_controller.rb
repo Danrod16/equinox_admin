@@ -6,7 +6,6 @@ class Users::InvitationsController < Devise::InvitationsController
     setting_path
   end
 
-
   protected
 
   # Permit the new params here.
