@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :new, :create, :find, :join ]
-
+  skip_before_action :verify_authenticity_token
   def new
     @company = Company.new
   end
