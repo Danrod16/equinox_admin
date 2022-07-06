@@ -17,7 +17,7 @@
     <h6>Invitation Status</h6>
     <h6>Confirmation Status</h6>
   </div>
-  <% @members.each do |member| %>
+<% @members.each do |member| %>
     <div class="card-member">
       <p><%= member.first_name.present? ? "#{member.first_name} #{member.last_name}" : "#{member.email}" %></p>
       <p><%= member.role %></p>
