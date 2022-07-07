@@ -15,12 +15,12 @@ class CompaniesController < ApplicationController
   end
 
   def find
-    @company = Company.find_by(name: params[:name])
+    @company = Company.where("lower(name) = ? AND validated = ?", params[:name].downcase, true).first
     render json: @company
   end
 
   def join
-    @company = Company.find_by(name: params[:name])
+    @company = Company.where("lower(name) = ? AND validated = ?", params[:name].downcase, true).first
     if @company.present?
       redirect_to new_user_registration_url(subdomain: @company.subdomain)
     end
