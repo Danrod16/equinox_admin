@@ -13,19 +13,10 @@ export default class extends Controller {
       if (data !== null) {
         this.outputTarget.innerText = "Company found ✅"
         this.submitTarget.disabled = false
-        // this.outputTarget.classList.add = "text-success"
       } else {
         this.outputTarget.innerText = "Company does not found"
         this.submitTarget.disabled = true
-        // this.outputTarget.classList.add = "text-danger"
       }
     })
   }
-
-  // goToSubdomain(event) {
-  //   event.preventDefault();
-  //   const subdomain = this.searchCompany()
-  //   const url = `${subdomain}.${this.element.action}`
-  //   console.log(url)
-  // }
 }
