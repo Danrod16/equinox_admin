@@ -93,6 +93,17 @@ input[type="checkbox"] {
   // }
 }
 
+.form-group-one-two {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 24px;
+
+  // input:focus {
+  //   color: black;
+  // }
+}
+
 .form-group-three {
   margin: 0;
   display: grid;
