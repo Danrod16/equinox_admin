@@ -59,13 +59,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       root_url(subdomain: resource.company.subdomain)
     else
       sign_out resource
-      flash[:notice] = "Your company will be reviewed"
+      flash[:notice] = "Thank you for registering. Your team is under review."
       root_path
     end
   end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_inactive_sign_up_path_for(resource)
+    flash[:notice] = "Your request has been sent. Waiting for the admin's confirmation."
+    root_path
+    # super(resource)
+  end
 end

@@ -14,25 +14,29 @@
   <div class="card-member">
     <h6>Full Name</h6>
     <h6>Role</h6>
-    <h6>Invitation Status</h6>
-    <h6>Confirmation Status</h6>
+    <% if current_user.role == "Admin" %>
+      <h6>Invitation Status</h6>
+      <h6>Confirmation Status</h6>
+    <% end %>
   </div>
   <% @members.each do |member| %>
     <div class="card-member">
       <p><%= member.first_name.present? ? "#{member.first_name} #{member.last_name}" : "#{member.email}" %></p>
       <p><%= member.role %></p>
-      <p>
-        <% if member.created_by_invite? && !member.invitation_accepted? %>
-          <%= "Invited" %>
-        <% elsif member.invitation_accepted? %>
-          <%= "Accepted" %>
-        <% else %>
-          <%= "-" %>
+      <% if current_user.role == "Admin" %>
+        <p>
+          <% if member.created_by_invite? && !member.invitation_accepted? %>
+            <%= "Invited" %>
+          <% elsif member.invitation_accepted? %>
+            <%= "Accepted" %>
+          <% else %>
+            <%= "-" %>
+          <% end %>
+        </p>
+        <p><%= member.confirmed? ? "Confirmed" : "Pending" %></p>
+        <% if !member.confirmed? && !member.created_by_invite? %>
+          <%= link_to "Accept User", confirmation_url(member, confirmation_token: member.confirmation_token), class:"button-primary" %>
         <% end %>
-      </p>
-      <p><%= member.confirmed? ? "Confirmed" : "Pending" %></p>
-      <% if !member.confirmed? && current_user.role == "Admin" && !member.created_by_invite? %>
-        <%= link_to "Accept User", confirmation_url(member, confirmation_token: member.confirmation_token), class:"button-primary" %>
       <% end %>
     </div>
   <% end %>

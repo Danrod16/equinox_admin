@@ -41,17 +41,6 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
-  # def after_sign_up_path_for(resource)
-  #   raise
-  #   if resource.company.validated
-  #     root_url(subdomain: resource.company.subdomain)
-  #   else
-  #     sign_out resource
-  #     flash[:notice] = "Your company will be reviewed"
-  #     root_url
-  #   end
-  # end
-
   def after_sign_in_path_for(resource)
     root_url(subdomain: resource.company.subdomain)
   end
