@@ -3,6 +3,8 @@ class Company < ApplicationRecord
   after_create :create_tenant
   has_many :users
 
+  has_one_attached :logo
+
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
 
   private

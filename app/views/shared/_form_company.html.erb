@@ -1,0 +1,7 @@
+<%= simple_form_for company do |f| %>
+  <div class="form-field">
+    <%= f.input :logo, as: :file %>
+  </div>
+  <br>
+  <%= f.submit "Edit Company", class: "button-primary" %>
+<% end %>

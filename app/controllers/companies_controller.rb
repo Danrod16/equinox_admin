@@ -14,6 +14,14 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def update
+    @company = current_user.company
+    @company.update(company_params)
+    if @company.save
+      redirect_to root_url(subdomain: @company.subdomain)
+    end
+  end
+
   def find
     @company = Company.where("lower(name) = ? AND validated = ?", params[:name].downcase, true).first
     render json: @company
@@ -29,6 +37,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name)
+    params.require(:company).permit(:name, :logo)
   end
 end

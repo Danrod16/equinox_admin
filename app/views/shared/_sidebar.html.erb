@@ -1,4 +1,8 @@
-<%= image_tag 'equinox_logo.png', class: "avatar-large" %>
+<% if current_user.company.logo.present? %>
+  <%= cl_image_tag(current_user.company.logo.key, class: "avatar-large") %>
+<% else %>
+  <%= image_tag 'urbanist-logo.png', class: "avatar-large" %>
+<% end %>
 
 <ul class="sidebar-links">
   <%= link_to  user_root_path do %>
@@ -22,7 +26,7 @@
   <%= link_to flats_path do %>
     <li><%= image_tag 'package.png' %> <%= t('.flats') %> </li>
   <% end %>
-  <li class="small-text"><%= image_tag 'bar-chart.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
+    <li><%= image_tag 'bar-chart.png' %> <div> <%= t('.statistics') %> <p><span class="pill-tag"> <%= t('.coming_soon') %> </span></p></div></li>
   <%= link_to setting_path do %>
     <li><%= image_tag 'setting.png' %> Settings </li>
   <% end %>
