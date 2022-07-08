@@ -46,6 +46,8 @@
         <%= simple_form_for @company do |f| %>
           <div class="form-field">
             <%= f.input :name, placeholder: 'Company name', label: false, autofocus: true %>
+            <%= f.label :logo %>
+            <%= f.input :logo, as: :file, label: false %>
           </div>
           <div class="d-flex justify-content-between">
             <%= button_tag "Previous", type: "button", class: "button-secondary",

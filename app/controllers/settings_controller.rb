@@ -27,5 +27,6 @@ class SettingsController < ApplicationController
 
   def setting
     @members = User.where(company: current_user.company)
+    @company = current_user.company
   end
 end
