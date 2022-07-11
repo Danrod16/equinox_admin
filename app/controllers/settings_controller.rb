@@ -34,6 +34,7 @@ class SettingsController < ApplicationController
   def update_user
     @user = current_user
     if @user.update(user_params)
+      flash[:notice] = "Your profile has been updated."
       redirect_to setting_path
     else
       render :setting

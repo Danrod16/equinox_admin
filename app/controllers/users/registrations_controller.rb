@@ -70,9 +70,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     root_path
     # super(resource)
   end
-
-  def after_update_path_for(resource)
-    flash[:notice] = "Your profile has been updated."
-    setting_path
-  end
 end
