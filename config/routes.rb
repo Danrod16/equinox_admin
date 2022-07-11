@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     end
 
     get 'setting', to: "settings#setting", as: :setting
+    put 'update_user', to: "settings#update_user", as: :update_user
     get 'statistics/index'
     get 'pdf/booking_pdf'
 

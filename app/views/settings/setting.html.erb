@@ -5,7 +5,10 @@
 <div class="card-wrapper">
   <ul class="nav nav-tabs mb-4" id="myTab" role="tabcompany">
     <li class="nav-item">
-      <a class="nav-link active" id="member-tab" data-toggle="tab" href="#member" role="tab" aria-controls="member" aria-selected="true">Members</a>
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="member-tab" data-toggle="tab" href="#member" role="tab" aria-controls="member" aria-selected="true">Members</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false">Company</a>
@@ -14,7 +17,27 @@
 
 
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="member" role="tabpanel" aria-labelledby="member-tab">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <h4 class="mb-3"><strong>Profile Settings</strong></h4>
+      <%= simple_form_for(@user, url: update_user_path, html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :first_name,
+                  required: true,
+                  placeholder: 'First name',
+                  autofocus: true,
+                  input_html: { autocomplete: "first-name" } %>
+        <%= f.input :last_name,
+                  required: true,
+                  placeholder: 'Last name',
+                  autofocus: true,
+                  input_html: { autocomplete: "last-name" } %>
+        <%= f.input :photo, as: :file, class:"button-secondary" %>
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class: "button-primary" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="tab-pane fade show" id="member" role="tabpanel" aria-labelledby="member-tab">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="m-0"><strong>Team Members</strong></h4>
         <% if current_user.role == "Admin" %>
