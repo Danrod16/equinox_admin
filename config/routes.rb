@@ -61,7 +61,6 @@ Rails.application.routes.draw do
     end
 
     resources :statistics, only: [:index]
-    post "/update_language", to: "pages#set_language", as: :set_language
     get "/booking_pdf", to: "pdf#booking_pdf"
     get "/invoice_pdf", to: "pdf#invoice_pdf"
     get "/incident_pdf", to: "pdf#incident_pdf"
@@ -71,4 +70,5 @@ Rails.application.routes.draw do
     get "/landlord_csv", to: "pdf#generate_landlord_csv", :defaults => { :format => 'csv' }
     get '/styleguide', to: "pages#styleguide"
   end
+    post "/update_language", to: "pages#set_language", as: :set_language
 end

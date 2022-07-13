@@ -30,6 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  home:
+    banner_title: "Plataforma de gestion de <br><span>alquiler temporal</span> para agencias"
+    banner_description: "Se acabaron los excels largos! Con Avenist podrás gestionar todos los aspectos de llevar una agenica de alquiler temporal. Desde reservas hasta gestion de incidencias, lo tenemos cubierto."
   simple_calendar:
     previous: "<<"
     next: ">>"

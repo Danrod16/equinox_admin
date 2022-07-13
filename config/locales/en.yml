@@ -29,6 +29,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 en:
+  home:
+    banner_title: "Simple property management platform for<br><span>rental agencies</span>"
+    banner_description: "Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents."
   simple_calendar:
     previous: "<<"
     next: ">>"

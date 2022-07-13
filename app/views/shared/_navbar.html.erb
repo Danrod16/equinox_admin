@@ -27,6 +27,11 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= form_tag set_language_path, class: "language-pill" do %>
+            <%= select_tag :lang, options_for_select([["🇬🇧 EN", :en], ["🇪🇸 ES", :es]], I18n.locale), :onchange => "this.form.submit();", style: "border: none; padding: 0px 5px; border-radius: 10px; border: 1px solid #ddd;" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Register", new_company_path, class: "button-secondary" %>
         </li>
       <% end %>
