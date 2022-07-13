@@ -1,7 +1,6 @@
 <div class="wrapper-header">
   <h1> <%= t('shared.sidebar.bookings') %> </h1>
   <div class="d-flex">
-  <%= link_to t('bookings.new_booking'), new_booking_path, class: "button-primary" %>
   <ul class="nav" id="myTab" role="tablist">
     <li class="button-small btn-left">
       <a class="active" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true"><%= image_tag "calendar.svg", alt: "calendar icon" %></a>
@@ -10,6 +9,7 @@
       <a id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"> <%= image_tag "list.svg", alt: "list icon" %> </a>
     </li>
   </ul>
+  <%= link_to t('bookings.new_booking'), new_booking_path, class: "button-primary" %>
   </div>
 </div>
 

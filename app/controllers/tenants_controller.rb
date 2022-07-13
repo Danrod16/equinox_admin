@@ -25,10 +25,16 @@ class TenantsController < ApplicationController
     end
   end
 
-
   def show
     @tenant = Tenant.find(params[:id])
     @bookings = @tenant.bookings
+  end
+
+  def destroy
+    @tenant = Tenant.find(params[:id])
+    if @tenant.destroy
+      redirect_to tenants_path
+    end
   end
 
   private
