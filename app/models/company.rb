@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  CURRENCIES = ["EUR", "USD"]
+
   before_create :create_subdomain
   after_create :create_tenant
   has_many :users
@@ -6,6 +8,7 @@ class Company < ApplicationRecord
   has_one_attached :logo
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :currency, inclusion: { in: CURRENCIES }
 
   private
 
@@ -14,7 +17,7 @@ class Company < ApplicationRecord
   end
 
   def create_subdomain
-    self.subdomain =  map_name
+    self.subdomain = map_name
   end
 
   def create_tenant
