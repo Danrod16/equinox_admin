@@ -1,5 +1,6 @@
 class Flat < ApplicationRecord
-  belongs_to :landlord
+  has_many :flat_landlord
+  has_many :landlords, through: :flat_landlord
   has_many :bookings, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   validates :street, presence: true

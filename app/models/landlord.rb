@@ -1,5 +1,6 @@
 class Landlord < ApplicationRecord
-  has_many :flats, dependent: :destroy
+  has_many :flat_landlord
+  has_many :flats, through: :flat_landlord, dependent: :destroy
   has_many :bookings, through: :flats
   has_one_attached :photo
   ID = ["Pasaporte", "DNI", "NIE", "Otro"]
