@@ -56,7 +56,7 @@ class Flat < ApplicationRecord
   end
 
   def create_address
-    self.address = self.map_address
+    self.address = map_address
   end
 
   def furnished?
