@@ -30,9 +30,26 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  navbar:
+    register: "registrate"
+    login: "conectate"
   home:
     banner_title: "Plataforma de gestion de <br><span>alquiler temporal</span> para agencias"
-    banner_description: "Se acabaron los excels largos! Con Avenist podrás gestionar todos los aspectos de llevar una agenica de alquiler temporal. Desde reservas hasta gestion de incidencias, lo tenemos cubierto."
+    banner_description: "¡Se acabaron los excels largos! Con Avenist podrás gestionar todos los aspectos de llevar una agenica de alquiler temporal. Desde reservas hasta gestion de incidencias, lo tenemos cubierto."
+    register: "Registrate gratis"
+    free_forever: "*Gratis de por vida para agencias que se registren antes del 01/09/2022"
+    how_works: "¿Porque <span>Avenist</span>?"
+    easy_management: "Gestiona facilmente tus reservas"
+    easy_management_body: "Genera facilmente documentos pdf a partir de tus reservas, confirmación de reserva, factura, recibo de deposito y mucho más."
+    kpi: "Estadisticas"
+    kpi_body: "¿Que propiedades es la más popular? ¿Cuantos ingresos has generado este año?"
+    flat_info: "Fichas de propiedades"
+    flat_info_body: "Manten tu equipo informado en todo momento sobre información relevante, incidencias, direcciones y contactos de cada propiedad."
+    value: "Creado con <span>agencies</span> para agencias"
+    value_body: "Trabajamos con varías agencias de alquiler temporal para definir los desafios mas comunes en la industria. <br> <br>Trás meses de prueba y error, hemos desarollado una solución para facilitar las tareas de tus agentes</p> <strong>Nuestra visión es <span>modernizar</span> la gestion de alquileres para agencias.</strong>"
+    free_membership: "¡Hazte miembro <span>Gratis</span>!"
+    free_membership_sub: "Registrate hoy y se de los primeros en acceder la version Beta de Avenist."
+    free_membership_body: "Usuarios de las version Beta podrán beneficiar de acceso gratis de por vida. ¡Acceso a todas las funcionalidades premium como numero illimitado de cuentas de equipo y mucho más!"
   simple_calendar:
     previous: "<<"
     next: ">>"

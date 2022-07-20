@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     if @user&.update!(language: params[:lang]) && user_signed_in?
       redirect_back fallback_location: root_path
     else
-      redirect_to root_path(params[:lang])
+      redirect_to root_path(lang: params[:lang])
     end
   end
 end

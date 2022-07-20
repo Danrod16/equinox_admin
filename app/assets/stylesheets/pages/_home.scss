@@ -68,3 +68,73 @@ section {
   // animation-direction: alternate-reverse;
   animation-timing-function: ease-in-out;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .banner-body {
+    display: block;
+  }
+
+  .banner-wrapper {
+    padding: 60px 15px;
+  }
+
+  .banner {
+    padding: 39px 15px;
+    img {
+      height: 400px;
+    }
+  }
+
+  .banner-body-text{
+    max-width: 100%;
+  }
+
+  .how-it-works h2 {
+    padding-bottom: 40px;
+  }
+
+  .home-cards {
+    grid-template-columns: 1fr !important;
+    padding: 0px 15px;
+    img {
+      margin-left: 30px;
+    }
+  }
+
+  .value-proposition {
+    padding: 0px 15px;
+    display: block;
+    margin: 80px 0px;
+    img {
+      height: 300px;
+    }
+  }
+
+  .value-body {
+    max-width: 100%;
+    padding-top: 30px;
+  }
+}
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+
+// }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+
+
+
+// }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+
+// }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+
+// }
