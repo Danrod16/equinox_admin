@@ -29,10 +29,31 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 en:
+  navbar:
+    register: "register"
+    login: "login"
+  home:
+    banner_title: "Simple property management platform for<br><span>rental agencies</span>"
+    banner_description: "Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents."
+    register: "Register for free"
+    free_forever: "*Free forever if you register your agency before 01/09/2022"
+    how_works: "How it <span>works</span>?"
+    easy_management: "Easy booking management"
+    easy_management_body: "Easily generate PDF booking confirmations and invoices. Goodbye excels and word documents"
+    kpi: "KPI & stats"
+    kpi_body: "Which property is generating most of your revenues? How much sales did you
+ do this year?"
+    flat_info: "Property information"
+    flat_info_body: "Keep your team informed at any moment on important information about your properties. No more untracked incidents."
+    value: "Created with <span>agencies</span> for agencies"
+    value_body: "We are working with several real estate agencies to define the most important challenges of running a rental service. <br> <br>After observing for months, we have pin pointed the most painful tasks and developed an easy solution to make your life as an agent easier. </p> <strong>Avenist aims at <span>modernising</span> real estate administration</strong>"
+    free_membership: "<span>Free</span> membership"
+    free_membership_sub: "Join today and get access to our Beta version."
+    free_membership_body: "Beta version users will be rewarded with a lifetime free membership, access to all premium features from today and on!"
   simple_calendar:
     previous: "<<"
     next: ">>"
-    week: Wemana
+    week: Weeek
   see_more: See more
   search: Search
   dashboard: Dashboard

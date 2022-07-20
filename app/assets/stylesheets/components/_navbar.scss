@@ -13,3 +13,19 @@
 .navbar-lewagon .navbar-brand img {
   height: 100%;
 }
+
+.navbar-link {
+  color: #212529;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-right: 15px;
+  &:hover{
+    color: $primary-color !important;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .navbar-lewagon {
+    padding: 0px 15px !important;
+  }
+}

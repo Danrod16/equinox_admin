@@ -4,13 +4,13 @@
       <div class="banner-body fadeInOut">
         <div class="banner-body-text">
 
-        <h1>Simple property management platform for<br><span>rental agencies</span></h1>
-        <p>Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents.</p>
+        <h1> <%= raw t('home.banner_title') %></h1>
+        <p> <%= raw t('home.banner_description') %> </p>
         <div>
-          <%= link_to "Register for free*", new_company_path, class: "button-primary" %>
+          <%= link_to "#{raw t("home.register")}*", new_company_path, class: "button-primary" %>
         </div>
           <br>
-        <p class="small-text">*Free forever if you register your agency before 01/09/2022</p>
+        <p class="small-text"> <%= t('home.free_forever') %> </p>
         </div>
           <%= image_tag "banner-illustration.png", alt: "Property management for rental agencies" %>
       </div>
@@ -20,23 +20,22 @@
 <!-- How it works section -->
 <section class="how-it-works fadeInOut">
   <div class="main-container">
-    <h2>How it <span>works</span>?</h2>
+    <h2> <%= raw t('home.how_works') %> </h2>
     <div class="home-cards">
       <div class="home-card">
         <%= image_tag "table-card.svg", alt: "Customised bookings dashboard", style:"margin-top: -22px;" %>
-        <h3>Easy booking management</h3>
-        <p>Bookings easily generate PDF booking confirmations and invoices. Goodbye excels and word documents</p>
+        <h3><%= t('home.easy_management') %></h3>
+        <p> <%= t('home.easy_management_body') %> </p>
       </div>
       <div class="home-card">
         <%= image_tag "graph-card.svg", alt: "Customised statistics about booking revenews" %>
-        <h3>KPI & stats</h3>
-        <p>Which property is generating most of your revenues? How much sales did you
- do this year?</p>
+        <h3><%= t('home.kpi') %></h3>
+        <p><%= t('home.kpi_body') %></p>
       </div>
       <div class="home-card">
         <%= image_tag "flats-card.svg", alt: "Customised cards for each flat ready to book" %>
-        <h3>Property information</h3>
-        <p>Keep your team informed at any moment on important information about your properties. No more lost keys.</p>
+        <h3><%= t('home.flat_info') %></h3>
+        <p><%= t('home.flat_info_body') %></p>
       </div>
     </div>
   </div>
@@ -48,11 +47,10 @@
       <%= image_tag "value-illustration.svg", alt: "alttext" %>
     </div>
     <div class="value-body">
-      <h2>Created with <span>agencies</span> for agencies</h2>
-      <p >We are working with several real estate agencies to define the most important challenges of running a rental service. <br> <br>After observing for months, we have pin pointed the most painful tasks and developed an easy solution to make your life as an agent easier. </p>
-      <strong>Avenist aims at <span>modernising</span> real estate administration</strong><br>
+      <h2><%= raw t('home.value') %></h2>
+      <p><%= raw t('home.value_body') %><br>
       <div class="value-button">
-        <%= link_to "Register your agency", new_company_path, class: "button-primary" %>
+        <%= link_to t("home.register"), new_company_path, class: "button-primary" %>
       </div>
     </div>
 </section>
@@ -60,10 +58,10 @@
 <section class="cta-last fadeInOut">
   <div class="cta-last-body">
     <%= image_tag "rocket.svg", alt: "Free memberships for booking management patform" %>
-    <h2><span>Free</span> membership</h2>
-    <h3>Join today and get access to our Beta version.</h3>
-    <p>Beta version users will be rewarded with a lifetime free membership, access to all premium features from today and on!</p>
-    <%= link_to "Register your agency for free", new_company_path, class: "button-primary" %>
+    <h2><%= raw t('home.free_membership') %></h2>
+    <h3><%= t('home.free_membership_sub') %></h3>
+    <p><%= raw t('home.free_membership_body') %></p>
+    <%= link_to t("home.register"), new_company_path, class: "button-primary" %>
   </div>
 </section>
 </div>
