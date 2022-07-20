@@ -1,4 +1,7 @@
 {
+  "scripts": {
+   "start": "node index.js"
+  },
   "name": "equinox_admin",
   "private": true,
   "dependencies": {
@@ -21,9 +24,6 @@
     "node": "14.x"
   },
   "version": "0.1.0",
-  "scripts": {
-   "start": "node index.js"
-  },
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
   }
