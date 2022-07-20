@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_20_044126) do
+ActiveRecord::Schema.define(version: 2022_07_20_085746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(version: 2022_07_20_044126) do
     t.index ["booking_id"], name: "index_deposits_on_booking_id"
   end
 
+  create_table "flat_landlords", force: :cascade do |t|
+    t.bigint "flat_id", null: false
+    t.bigint "landlord_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flat_id"], name: "index_flat_landlords_on_flat_id"
+    t.index ["landlord_id"], name: "index_flat_landlords_on_landlord_id"
+  end
+
   create_table "flats", force: :cascade do |t|
     t.string "celula"
     t.string "catastral"
@@ -105,7 +114,6 @@ ActiveRecord::Schema.define(version: 2022_07_20_044126) do
     t.string "photos"
     t.string "video"
     t.boolean "furnished"
-    t.bigint "landlord_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "available"
@@ -123,7 +131,6 @@ ActiveRecord::Schema.define(version: 2022_07_20_044126) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.index ["landlord_id"], name: "index_flats_on_landlord_id"
   end
 
   create_table "incidents", force: :cascade do |t|
@@ -252,7 +259,8 @@ ActiveRecord::Schema.define(version: 2022_07_20_044126) do
   add_foreign_key "bookings", "tenants"
   add_foreign_key "bookings", "users", name: "fk_bookings_users"
   add_foreign_key "deposits", "bookings"
-  add_foreign_key "flats", "landlords"
+  add_foreign_key "flat_landlords", "flats"
+  add_foreign_key "flat_landlords", "landlords"
   add_foreign_key "incidents", "bookings"
   add_foreign_key "incidents", "users"
   add_foreign_key "invoices", "bookings"
