@@ -8,7 +8,7 @@ class SettingsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude,
         info_window: render_to_string(partial: "flats/info_window", locals: { flat: flat }),
-        image_url: helpers.asset_url("urbanist-logo.png")
+        image_url: helpers.asset_url("map-pin.svg")
       }
     end
     @sales_monthly = Booking.where("start_date >= ?", "01-01-#{Time.now.year}").group("SUBSTRING(start_date, 6, 2)").sum(:agency_fee)
