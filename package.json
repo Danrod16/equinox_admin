@@ -1,4 +1,7 @@
 {
+  "scripts": {
+   "start": "node index.js"
+  },
   "name": "equinox_admin",
   "private": true,
   "dependencies": {

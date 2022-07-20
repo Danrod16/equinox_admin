@@ -48,7 +48,7 @@ class Flat < ApplicationRecord
   end
 
   def map_address
-     "#{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
+     "Carrer #{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
   end
 
   def table_attribute
@@ -56,7 +56,8 @@ class Flat < ApplicationRecord
   end
 
   def create_address
-    self.address = self.map_address
+    puts "creating address"
+    self.address = map_address
   end
 
   def furnished?
