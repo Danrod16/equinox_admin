@@ -7,7 +7,7 @@ class Flat < ApplicationRecord
   validates :number, presence: true
   validates :postal_code, presence: true
 
-  # before_save :create_address
+  before_save :create_address
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -48,7 +48,7 @@ class Flat < ApplicationRecord
   end
 
   def map_address
-     " Carrer #{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
+     "Carrer #{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
   end
 
   def table_attribute
