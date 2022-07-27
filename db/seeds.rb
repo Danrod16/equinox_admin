@@ -41,7 +41,6 @@
       keys: rand(1..3),
       equinox_costs: rand(100..500),
       furnished: true,
-      landlord: landlord,
       available: true,
       name: Faker::Address.street_name,
       reference: Faker::Address.street_name,
@@ -50,6 +49,11 @@
       postal_code: Faker::Address.zip_code,
       city: Faker::Address.city,
       country: Faker::Address.country,
+      )
+
+    flat_landlord = FlatLandlord.create!(
+      landlord: landlord,
+      flat: flat
       )
 
     tenant = Tenant.create!(

@@ -8,6 +8,12 @@
   background-position: -100px;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  --bs-gutter-x: 0px;
+}
+
 .logo-home {
   height: 150px;
   // margin-bottom: 20px;

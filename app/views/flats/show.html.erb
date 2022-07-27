@@ -23,7 +23,7 @@
 
           </ul>
           <ul>
-            <li> <strong> <%= t('show.landlord') %>:</strong> <%= @flat.landlords.first.full_name %> </li>
+            <li> <strong> <%= t('show.landlord') %>:</strong> <%= @flat.landlords.pluck(:full_name).join(", ") %> </li>
             <li> <strong><%= t('show.keys') %>:</strong> <%= @flat.keys %> </li>
             <li> <strong> <%= t('show.costs') %>:</strong> <%= @flat.equinox_costs %> </li>
             <li> <strong> <%=  @flat.available? ? " ✅ #{t('show.available')}" : " ❌ #{t('show.not_available')}" %></strong> </li>
