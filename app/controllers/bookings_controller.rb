@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.paginate(page: params[:page], per_page: 15)
   end
 
   def show

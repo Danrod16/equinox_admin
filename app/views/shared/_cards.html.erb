@@ -1,17 +1,17 @@
- <div class="cards">
-    <% records.each do |record| %>
-      <%= link_to "/#{record.class.to_s.downcase}s/#{record.id}" do  %>
-        <div class="horizontal-card">
-          <% if record.respond_to?(:photo) && record.photo.attached? %>
-            <%= image_tag record.photo, class: "avatar" %>
-          <% else %>
-            <%= image_tag "urbanist-logo.png", class: "avatar" %>
-          <% end %>
-          <%= truncate(record.table_attribute, length: 20) %>
-        </div>
-      <% end %>
+<div class="cards">
+  <% records.each do |record| %>
+    <%= link_to "/#{record.class.to_s.downcase}s/#{record.id}" do  %>
+      <div class="horizontal-card">
+        <% if record.respond_to?(:photo) && record.photo.attached? %>
+          <%= image_tag record.photo, class: "avatar" %>
+        <% else %>
+          <%= image_tag "urbanist-logo.png", class: "avatar" %>
+        <% end %>
+        <%= truncate(record.table_attribute, length: 20) %>
+      </div>
     <% end %>
-  </div>
-    <div class="apple_pagination">
-      <%= will_paginate records %>
-    </div>
+  <% end %>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate records %>
+</div>

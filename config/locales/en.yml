@@ -99,3 +99,8 @@ en:
   flats:
     new_flat: New property
     find_flat: Find property
+  show:
+    available: Available
+    not_available: Not available
+    furnished: Furnished
+    not_furnished: Not furnished

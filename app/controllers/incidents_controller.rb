@@ -1,9 +1,9 @@
 class IncidentsController < ApplicationController
   def index
     if params[:query].present?
-      @incidents = Incident.search_by_title_user_or_state(params[:query])
+      @incidents = Incident.search_by_title_user_or_state(params[:query]).paginate(page: params[:page], per_page: 15)
     else
-      @incidents = Incident.all
+      @incidents = Incident.all.paginate(page: params[:page], per_page: 15)
     end
   end
 

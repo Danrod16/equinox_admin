@@ -9,9 +9,9 @@
 }
 
 .row {
-  margin-left: 0px;
-  margin-right: 0px;
-  --bs-gutter-x: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  --bs-gutter-x: 0px !important;
 }
 
 .logo-home {
