@@ -25,6 +25,13 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 0px;
+  gap: 24px;
+
+  .personal-details-info {
+    flex-grow: 1;
+    display: flex;
+    gap: 24px;
+  }
 }
 
 .pill-tag {

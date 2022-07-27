@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
   require 'faker'
   puts "destroying data"
+  FlatLandlord.destroy_all
   Flat.destroy_all
   Landlord.destroy_all
   Tenant.destroy_all
+
   puts "Creating Data"
   15.times do
     landlord = Landlord.create!(

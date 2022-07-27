@@ -9,26 +9,28 @@
 
       <div class="card-top-body">
         <div class="personal-details">
-        <% if @flat.respond_to?(:photo) && @flat.photo.attached? %>
-          <%= image_tag @flat.photo, class: "avatar-bordered" %>
-        <% else %>
-          <%= image_tag "urbanist-logo.png", class: "avatar-bordered" %>
-        <% end %>
-          <ul>
-            <li> <strong> <%= t('show.reference') %>:</strong> <%= @flat.reference %> </li>
-            <li> <strong> <%= t('show.address') %>:</strong> <%= @flat.full_address %> </li>
-            <li> <strong> <%= t('show.celula') %>:</strong> <%= @flat.celula %> </li>
-            <li> <strong> <%= t('show.catastral') %>:</strong> <%= @flat.catastral %> </li>
-            <li> <strong> <%= t('show.cee') %>:</strong> <%= @flat.cee %> </li>
+          <% if @flat.respond_to?(:photo) && @flat.photo.attached? %>
+            <%= image_tag @flat.photo, class: "avatar-bordered" %>
+          <% else %>
+            <%= image_tag "urbanist-logo.png", class: "avatar-bordered" %>
+          <% end %>
+          <div class="personal-details-info">
+            <ul>
+              <li> <strong> <%= t('show.reference') %>:</strong> <%= @flat.reference %> </li>
+              <li> <strong> <%= t('show.address') %>:</strong> <%= @flat.full_address %> </li>
+              <li> <strong> <%= t('show.celula') %>:</strong> <%= @flat.celula %> </li>
+              <li> <strong> <%= t('show.catastral') %>:</strong> <%= @flat.catastral %> </li>
+              <li> <strong> <%= t('show.cee') %>:</strong> <%= @flat.cee %> </li>
 
-          </ul>
-          <ul>
-            <li> <strong> <%= t('show.landlord') %>:</strong> <%= @flat.landlords.pluck(:full_name).join(", ") %> </li>
-            <li> <strong><%= t('show.keys') %>:</strong> <%= @flat.keys %> </li>
-            <li> <strong> <%= t('show.costs') %>:</strong> <%= @flat.equinox_costs %> </li>
-            <li> <strong> <%=  @flat.available? ? " ✅ #{t('show.available')}" : " ❌ #{t('show.not_available')}" %></strong> </li>
-            <li> <strong> <%=  @flat.furnished? ? " ✅ #{t('show.furnished')}" : " ❌ #{t('show.not_furnished')}" %></strong> </li>
-          </ul>
+            </ul>
+            <ul>
+              <li> <strong> <%= t('show.landlord') %>:</strong> <%= @flat.landlords.pluck(:first_name, :last_name).map { |name| name.join(' ') }.join(", ") %> </li>
+              <li> <strong><%= t('show.keys') %>:</strong> <%= @flat.keys %> </li>
+              <li> <strong> <%= t('show.costs') %>:</strong> <%= @flat.equinox_costs %> </li>
+              <li> <strong> <%=  @flat.available? ? " ✅ #{t('show.available')}" : " ❌ #{t('show.not_available')}" %></strong> </li>
+              <li> <strong> <%=  @flat.furnished? ? " ✅ #{t('show.furnished')}" : " ❌ #{t('show.not_furnished')}" %></strong> </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
