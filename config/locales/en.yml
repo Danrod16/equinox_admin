@@ -53,7 +53,7 @@ en:
   simple_calendar:
     previous: "<<"
     next: ">>"
-    week: Weeek
+    week: Week
   see_more: See more
   search: Search
   dashboard: Dashboard

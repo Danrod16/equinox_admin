@@ -22,9 +22,9 @@
     <%= week_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
       <%= date %>
       <% bookings.each do |booking| %>
-        <div class="horizontal-card card-start">
+        <div class="calendar-card<%= " calendar-card-start" if date.to_s == booking.start_date %><%= " calendar-card-end" if date.to_s == booking.end_date %>">
           <%= link_to booking_path(booking) do %>
-            <%= booking.tenant.first_name %>
+            <p class="<%= "opacity-0" unless date.to_s == booking.start_date || date.monday? %>"><%= booking.tenant.first_name %></p>
           <% end %>
         </div>
       <% end %>
