@@ -22,7 +22,7 @@
     <%= week_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
       <%= date %>
       <% bookings.each do |booking| %>
-        <div class="horizontal-card">
+        <div class="horizontal-card card-start">
           <%= link_to booking_path(booking) do %>
             <%= booking.tenant.first_name %>
           <% end %>

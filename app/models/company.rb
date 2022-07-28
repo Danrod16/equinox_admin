@@ -23,5 +23,8 @@ class Company < ApplicationRecord
   def create_tenant
     # self.update(subdomain: map_name)
     Apartment::Tenant.create(self.subdomain) # unless User.where(subdomain: self.subdomain).count > 1
+    Apartment::Tenant.switch!(self.subdomain)
+    ActiveRecord::Base.connection.exec_query("ALTER TABLE bookings DROP CONSTRAINT fk_bookings_users")
+    ActiveRecord::Base.connection.exec_query("ALTER TABLE bookings ADD CONSTRAINT fk_bookings_users FOREIGN KEY (user_id) REFERENCES public.users (id);")
   end
 end

@@ -16,7 +16,10 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # Apartment:Tenant.switch!("public")
     @booking = Booking.new(booking_params)
+    # @booking.user = User.find(booking_params[:booking][:user_id])
+    # Apartment:Tenant.switch!(current_user.company.subdomain)
     if @booking.save
       redirect_to bookings_path
     else
@@ -30,6 +33,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :flat_id, :tenant_id, :deposit_registry, :deposit_paid, :deposit_amount, :contract_type, :rent, :payments, :state, :obligatory_complience, :appliences, :agency_fee, :itp, :check_in_notes, deposit_attributes: [:state, :amount, :token_payment])
+    params.require(:booking).permit(:start_date, :end_date, :flat_id, :user_id, :tenant_id, :deposit_registry, :deposit_paid, :deposit_amount, :contract_type, :rent, :payments, :state, :obligatory_complience, :appliences, :agency_fee, :itp, :check_in_notes, deposit_attributes: [:state, :amount, :token_payment])
   end
 end
