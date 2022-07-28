@@ -104,3 +104,27 @@ en:
     not_available: Not available
     furnished: Furnished
     not_furnished: Not furnished
+  bookings:
+    booking_for: Booking for
+  settings:
+    profile: Profile
+    members: Members
+    company: Company
+    photo: Photo
+    update: Update
+    profile_settings: Profile settings
+    team_members: Team members
+    full_name: name
+    role: Role
+    invitation_status: Invitation status
+    confirmation_status: Confirmation status
+    invite_user: Invite member
+    company_porfile_settings: Company settings
+    edit_company: Edit company
+    log_out: Log out
+    invited: Invitado/a
+    accepted: Acceptado/a
+    rejected: Rejected
+    confirmed: Confirmed
+    pending: Pending
+    accept_user: Accept member

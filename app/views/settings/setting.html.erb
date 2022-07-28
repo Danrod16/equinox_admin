@@ -1,17 +1,19 @@
 <div class="d-flex justify-content-between">
   <h1>Settings</h1>
-  <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary" %>
+  <%= button_to t("settings.log_out"), destroy_user_session_path, method: :delete, class: "button-secondary" %>
 </div>
 <div class="card-wrapper">
   <ul class="nav nav-tabs mb-4" id="myTab" role="tabcompany">
     <li class="nav-item">
-      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+        <%= t("settings.profile") %>
+          </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="member-tab" data-toggle="tab" href="#member" role="tab" aria-controls="member" aria-selected="true">Members</a>
+      <a class="nav-link" id="member-tab" data-toggle="tab" href="#member" role="tab" aria-controls="member" aria-selected="true"><%= t("settings.members") %></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false">Company</a>
+      <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false"><%= t("settings.company") %></a>
     </li>
   </ul>
 
@@ -33,24 +35,24 @@
                   input_html: { autocomplete: "last-name" } %>
         <%= f.input :photo, as: :file, class:"button-secondary" %>
         <div class="form-actions">
-          <%= f.button :submit, "Update", class: "button-primary" %>
+          <%= f.button :submit, t("settings.update"), class: "button-primary" %>
         </div>
       <% end %>
     </div>
     <div class="tab-pane fade show" id="member" role="tabpanel" aria-labelledby="member-tab">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="m-0"><strong>Team Members</strong></h4>
+        <h4 class="m-0"><strong><%= t("settings.team_members") %></strong></h4>
         <% if current_user.role == "Admin" %>
-          <%= link_to "Invite User", new_user_invitation_path(company_id: current_user.company.id), class: "button-primary" %>
+          <%= link_to t("settings.invite_user"), new_user_invitation_path(company_id: current_user.company.id), class: "button-primary" %>
         <% end %>
       </div>
 
       <div class="card-member">
-        <h6>Full Name</h6>
-        <h6>Role</h6>
+        <h6><%= t("settings.full_name") %></h6>
+        <h6><%= t("settings.role") %></h6>
         <% if current_user.role == "Admin" %>
-          <h6>Invitation Status</h6>
-          <h6>Confirmation Status</h6>
+          <h6><%= t("settings.invitation_status") %></h6>
+          <h6><%= t("settings.confirmation_status") %></h6>
         <% end %>
       </div>
       <% @members.each do |member| %>
@@ -60,23 +62,23 @@
           <% if current_user.role == "Admin" %>
             <p>
               <% if member.created_by_invite? && !member.invitation_accepted? %>
-                <%= "Invited" %>
+                <%= t("settings.invited") %>
               <% elsif member.invitation_accepted? %>
-                <%= "Accepted" %>
+                <%= t("settings.accepted") %>
               <% else %>
                 <%= "-" %>
               <% end %>
             </p>
-            <p><%= member.confirmed? ? "Confirmed" : "Pending" %></p>
+            <p><%= member.confirmed? ? t("settings.confirmed") : t("settings.pending") %></p>
             <% if !member.confirmed? && !member.created_by_invite? %>
-              <%= link_to "Accept User", confirmation_url(member, confirmation_token: member.confirmation_token), class:"button-primary" %>
+              <%= link_to t("accept_user"), confirmation_url(member, confirmation_token: member.confirmation_token), class:"button-primary" %>
             <% end %>
           <% end %>
         </div>
       <% end %>
     </div>
     <div class="tab-pane fade show" id="company" role="tabpanel" aria-labelledby="company-tab">
-      <h4 class="mb-3"><strong>Company Profile Settings</strong></h4>
+      <h4 class="mb-3"><strong><%= t("settings.company_profile_settings") %></strong></h4>
       <%= render 'shared/form_company', company: @company %>
     </div>
   </div>

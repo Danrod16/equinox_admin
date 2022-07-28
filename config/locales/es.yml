@@ -54,6 +54,13 @@ es:
     previous: "<<"
     next: ">>"
     week: Semana
+    mon: Lunes
+    Tue: Martes
+    Wed: Miercoles
+    Thu: Jueves
+    Fri: Viernes
+    Sat: Sabado
+    Sun: Domingo
   shared:
     sidebar:
       bookings: Reservas
@@ -73,7 +80,7 @@ es:
     email: Email
     remember_me: Recordar
   dashboard:
-    your_bookings: Tus abiertas
+    your_bookings: Tus reservas abiertas
     this_year_bookings: Reservas de este año
     this_year_sales: Total de ventas
     this_year_top_5: Top 5 propiedades en ventas
@@ -121,196 +128,218 @@ es:
     furnished: Amueblado
     not_furnished: Sin amueblar
     reference: Referencia
+  bookings:
+    booking_for: Reserva para
+  settings:
+    profile: Perfil
+    members: Miembros
+    company: Empresa
+    photo: Foto
+    update: Guardar
+    profile_settings: Ajustes
+    team_members: Miembros del equipo
+    full_name: Nombre
+    role: Rol
+    invitation_status: Estado de la invitación
+    confirmation_status: Estado de la confirmación
+    invite_user: Invitar miembro
+    company_profile_settings: Ajustes del equipo
+    edit_company: Editar equipo
+    log_out: Desconectarse
+    invited: Invitado/a
+    accepted: Acceptado/a
+    rejected: Rechazada
+    confirmed: Confirmado
+    pending: En proceso
+    accept_user: Acceptar miembro
+  simple_form:
+    submit:
+      update: Actualizar
+      create: Crear
+    labels:
+      booking:
+        id: Id
+        flat: Piso
+        flat_id: Piso
+        user: Agente
+        user_id: Agente
+        tenant: Inquilino
+        tenant_id: Inquilino
+        state: Estado
+        deposit: Depósito
+        start_date: Fecha de inicio
+        end_date: Fecha de fin
+        deposit_registry: Registro de depósito
+        contract_type: Tipo de contrato
+        rent: Alquiler
+        appliences: Suministros
+        itp: ITP
+        agency_fee: Honorarios
+        payments: Número de mensualidades
+        check_in_notes: Notas de check in
+        incidents: Incidencias
+        invoices: Facturas
+        receipts: Recibos
+        token_payment: Anticipo
+        amount: Cantidad
+        booking: Reserva
+        created_at: Fecha de creación
+        updated_at: Fecha de actualizado
 
+      user:
+        bookings: Reservas
+        incidents: Incidencias
+        id: Id
+        email: Email
+        photo: Foto de firma
+        first_name: Nombre
+        last_name: Apellido
+        role: Rol
+        password: Contraseña
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  # helpers:
-  #   submit:
-  #     update: Actualizar
-  #     create: Crear
-  #   label:
-  #     booking:
-  #       id: Id
-  #       flat: Piso
-  #       flat_id: Piso
-  #       user: Agente
-  #       user_id: Agente
-  #       tenant: Inquilino
-  #       tenant_id: Inquilino
-  #       state: Estado
-  #       deposit: Depósito
-  #       start_date: Fecha de inicio
-  #       end_date: Fecha de fin
-  #       deposit_registry: Registro de depósito
-  #       contract_type: Tipo de contrato
-  #       rent: Alquiler
-  #       appliences: Suministros
-  #       itp: ITP
-  #       agency_fee: Honorarios
-  #       payments: Número de mensualidades
-  #       check_in_notes: Notas de check in
-  #       incidents: Incidencias
-  #       invoices: Facturas
-  #       receipts: Recibos
-  #       token_payment: Anticipo
-  #       amount: Cantidad
-  #       booking: Reserva
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualizado
+      incident:
+        booking: Reserva
+        booking_id: Reserva
+        user: Agente
+        user_id: Agente
+        id: Id
+        state: Estado
+        sequence: Número de factura
+        title: Título
+        total_hours: Total de horas
+        description: Descripción
+        photo: Foto
+        hourly_fee: Honorarios
+        total_cost: Costo total
+        notes: Notas
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     user:
-  #       bookings: Reservas
-  #       incidents: Incidencias
-  #       id: Id
-  #       email: Email
-  #       photo: Foto de firma
-  #       first_name: Nombre
-  #       last_name: Apellido
-  #       role: Rol
-  #       password: Contraseña
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      receipt:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        flat_id: Piso
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     incident:
-  #       booking: Reserva
-  #       booking_id: Reserva
-  #       user: Agente
-  #       user_id: Agente
-  #       id: Id
-  #       state: Estado
-  #       sequence: Número de factura
-  #       title: Título
-  #       total_hours: Total de horas
-  #       description: Descripción
-  #       photo: Foto
-  #       hourly_fee: Honorarios
-  #       total_cost: Costo total
-  #       notes: Notas
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      landlord:
+        flats: Pisos
+        id: Id
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone: Movíl
+        company_name: Empresa
+        nationality: Nacionalidad
+        id_number: Número de identificación
+        id_type: Tipo de indentificación
+        cif: CIF
+        street: Calle
+        street_2: Calle línea 2
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        notes: Notas
+        photo: Foto
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     receipt:
-  #       booking: Reserva
-  #       booking_id: Reserva
-  #       id: Id
-  #       flat_id: Piso
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      invoice:
+        booking: Reserva
+        id: Id
+        sequence: Número de factura
+        state: Estado
+        total: Total
+        fianza: Fianza
+        supplements: Suplidos
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     landlord:
-  #       flats: Pisos
-  #       id: Id
-  #       first_name: Nombre
-  #       last_name: Apellido
-  #       email: Email
-  #       phone: Movíl
-  #       company_name: Empresa
-  #       nationality: Nacionalidad
-  #       id_number: Número de identificación
-  #       id_type: Tipo de indentificación
-  #       cif: CIF
-  #       street: Calle
-  #       street_2: Calle línea 2
-  #       number: Número de calle
-  #       postal_code: Código postal
-  #       city: Ciudad
-  #       country: País
-  #       notes: Notas
-  #       photo: Foto
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      flat:
+        id: Id
+        name: Nombre
+        available: Disponible
+        landlord: Propietarios
+        landlord_id: Propietario
+        bookings: Reservas
+        street: Calle
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        celula: Cédula de habitabilidad
+        catastral: Información catastral
+        catastral_number: Referencia catastral
+        index: Indice
+        cee: CEE
+        reference_rent: Alquiler de referencia
+        expenses: Consumos
+        insurance: Seguro
+        insurance_phone: Teléfono de la aseguradora
+        keys: Llaves
+        letter_box: Buzón
+        equinox_costs: Porcentage de gestion
+        photos: Fotos
+        video: Video
+        furnished: Amueblado
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     invoice:
-  #       booking: Reserva
-  #       id: Id
-  #       sequence: Número de factura
-  #       state: Estado
-  #       total: Total
-  #       fianza: Fianza
-  #       supplements: Suplidos
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      deposit:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        state: Estado
+        amount: Cantidad
+        token_payment: Paga y señal
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     flat:
-  #       id: Id
-  #       name: Nombre
-  #       available: Disponible
-  #       landlord: Propietarios
-  #       landlord_id: Propietario
-  #       bookings: Reservas
-  #       street: Calle
-  #       number: Número de calle
-  #       postal_code: Código postal
-  #       city: Ciudad
-  #       country: País
-  #       celula: Cédula de habitabilidad
-  #       catastral: Información catastral
-  #       catastral_number: Referencia catastral
-  #       index: Indice
-  #       cee: CEE
-  #       reference_rent: Alquiler de referencia
-  #       expenses: Consumos
-  #       insurance: Seguro
-  #       insurance_phone: Teléfono de la aseguradora
-  #       keys: Llaves
-  #       letter_box: Buzón
-  #       equinox_costs: Porcentage de gestion
-  #       photos: Fotos
-  #       video: Video
-  #       furnished: Amueblado
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      tenant:
+        bookings: Reservas
+        id: Id
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        nationality: Nacionalidad
+        id_number: Número de identificación
+        id_type: Tipo de indentificación
+        cif: CIF
+        street: Calle
+        street_2: Calle línea 2
+        number: Número de calle
+        postal_code: Código postal
+        city: Ciudad
+        country: País
+        phone: Teléfono
+        description: Descripción
+        photo: Foto
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     deposit:
-  #       booking: Reserva
-  #       booking_id: Reserva
-  #       id: Id
-  #       state: Estado
-  #       amount: Cantidad
-  #       token_payment: Paga y señal
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      settlement:
+        booking: Reserva
+        booking_id: Reserva
+        id: Id
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
-  #     tenant:
-  #       bookings: Reservas
-  #       id: Id
-  #       first_name: Nombre
-  #       last_name: Apellido
-  #       email: Email
-  #       nationality: Nacionalidad
-  #       id_number: Número de identificación
-  #       id_type: Tipo de indentificación
-  #       cif: CIF
-  #       street: Calle
-  #       street_2: Calle línea 2
-  #       number: Número de calle
-  #       postal_code: Código postal
-  #       city: Ciudad
-  #       country: País
-  #       phone: Teléfono
-  #       description: Descripción
-  #       photo: Foto
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
-
-  #     settlement:
-  #       booking: Reserva
-  #       booking_id: Reserva
-  #       id: Id
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
-
-  #     custom_invoice:
-  #       id: Id
-  #       client: Cliente
-  #       address: Dirección
-  #       nif: NIF
-  #       title: Título
-  #       description: Descripción
-  #       sequence: Número de factura
-  #       total_cost: Coste total
-  #       agency_fee: Honorarios
-  #       created_at: Fecha de creación
-  #       updated_at: Fecha de actualización
+      custom_invoice:
+        id: Id
+        client: Cliente
+        address: Dirección
+        nif: NIF
+        title: Título
+        description: Descripción
+        sequence: Número de factura
+        total_cost: Coste total
+        agency_fee: Honorarios
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
 
   # time:
   #   formats:

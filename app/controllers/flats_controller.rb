@@ -19,7 +19,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
-    @bookings = @flat.bookings
+    @bookings = @flat.bookings.paginate(page: params[:page], per_page: 15)
   end
 
   def new
