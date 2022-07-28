@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_20_092100) do
+ActiveRecord::Schema.define(version: 2022_07_28_040426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -263,7 +263,7 @@ ActiveRecord::Schema.define(version: 2022_07_20_092100) do
   add_foreign_key "flat_landlords", "flats"
   add_foreign_key "flat_landlords", "landlords"
   add_foreign_key "incidents", "bookings"
-  add_foreign_key "incidents", "users"
+  add_foreign_key "incidents", "users", name: "fk_incidents_users"
   add_foreign_key "invoices", "bookings"
   add_foreign_key "receipts", "bookings"
   add_foreign_key "settlements", "bookings"
