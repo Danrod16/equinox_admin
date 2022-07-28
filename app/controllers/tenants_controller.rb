@@ -27,7 +27,7 @@ class TenantsController < ApplicationController
 
   def show
     @tenant = Tenant.find(params[:id])
-    @bookings = @tenant.bookings
+    @bookings = @tenant.bookings.paginate(page: params[:page], per_page: 15)
   end
 
   def destroy

@@ -15,7 +15,7 @@ class LandlordsController < ApplicationController
 
   def show
     @landlord = Landlord.find(params[:id])
-    @bookings = @landlord.flats.extract_associated(:bookings).first
+    @bookings = @landlord.flats.extract_associated(:bookings).first.paginate(page: params[:page], per_page: 15)
   end
 
   def new

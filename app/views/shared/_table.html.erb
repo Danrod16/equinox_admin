@@ -29,5 +29,7 @@
   <% end %>
 </table>
 <div class="apple_pagination">
-  <%= will_paginate records %>
+  <% unless records.nil? %>
+    <%= will_paginate records %>
+  <% end %>
 </div>
