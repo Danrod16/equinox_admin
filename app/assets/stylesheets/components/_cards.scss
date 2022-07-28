@@ -45,6 +45,29 @@
   }
 }
 
+.calendar-card {
+  background-color: white;
+  padding: 12px;
+  margin-left: -8px;
+  margin-right: -8px;
+  transition: .2s;
+
+  &:hover {
+    background-color: $bg-color;
+  }
+
+}
+
+.calendar-card-start {
+  border-radius: 10px 0px 0px 10px;
+  margin-left: 0px;
+}
+
+.calendar-card-end {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 0px;
+}
+
 .top-5-flats {
   display: flex;
   border-bottom: 1px solid #ddd;
