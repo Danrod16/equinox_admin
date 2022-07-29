@@ -7,6 +7,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
+    "@rails/actiontext": "^6.0.3-4",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
@@ -18,6 +19,7 @@
     "popper.js": "^1.16.1",
     "selectize": "^0.12.6",
     "stimulus": "^3.0.1",
+    "trix": "^1.2.0",
     "turbolinks": "^5.2.0"
   },
   "engines": {

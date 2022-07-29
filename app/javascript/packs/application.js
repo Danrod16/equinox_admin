@@ -40,3 +40,6 @@ document.addEventListener('turbolinks:load', () => {
 
 // Import selectize method from components/selectize.js
 import "controllers"
+
+require("trix")
+require("@rails/actiontext")
