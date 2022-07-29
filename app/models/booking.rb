@@ -14,6 +14,8 @@ class Booking < ApplicationRecord
   after_create :strip_date
   CONTRACT_TYPE = ['Largo Plazo', 'Temporal', 'Otro']
   TABLE_HEADERS = ["user", "flat", "tenant", "deposit", "state"]
+  COLORS = ['#7BDFF2', '#B2F7EF', '#EFF7F6', '#F7D6E0', '#F2B5D4']
+
   validates :start_date, :end_date, presence: true
 
   def create_invoice
