@@ -27,6 +27,8 @@ require("chart.js")
 require("jquery")
 require("selectize")
 
+import "trix"
+import "@rails/actiontext"
 import "bootstrap"
 import { selectize } from '../components/selectize';
 

@@ -15,6 +15,9 @@
     <li class="nav-item">
       <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false"><%= t("settings.company") %></a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="company-tab" data-toggle="tab" href="#templates" role="tab" aria-controls="templates" aria-selected="false"><%= t("settings.templates") %></a>
+    </li>
   </ul>
 
 
@@ -80,6 +83,14 @@
     <div class="tab-pane fade show" id="company" role="tabpanel" aria-labelledby="company-tab">
       <h4 class="mb-3"><strong><%= t("settings.company_profile_settings") %></strong></h4>
       <%= render 'shared/form_company', company: @company %>
+    </div>
+    <div class="tab-pane fade show" id="templates" role="tabpanel" aria-labelledby="templates-tab">
+      <h4 class="mb-3"><strong><%= t("settings.templates") %></strong></h4>
+      <%= simple_form_for @template do |f| %>
+        <%= f.input :title %>
+        <%= f.rich_text_area :rich_body %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>

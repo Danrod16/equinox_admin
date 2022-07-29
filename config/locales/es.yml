@@ -152,6 +152,7 @@ es:
     confirmed: Confirmado
     pending: En proceso
     accept_user: Acceptar miembro
+    templates: Plantillas
   simple_form:
     submit:
       update: Actualizar

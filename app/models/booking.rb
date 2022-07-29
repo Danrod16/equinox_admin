@@ -2,7 +2,6 @@ class Booking < ApplicationRecord
   belongs_to :flat
   belongs_to :user
   belongs_to :tenant
-  has_rich_text :rich_body
   has_one :settlement, dependent: :destroy
   has_one :deposit, dependent: :destroy
   accepts_nested_attributes_for :deposit

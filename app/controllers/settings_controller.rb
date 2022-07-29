@@ -29,6 +29,7 @@ class SettingsController < ApplicationController
     @members = User.where(company: current_user.company)
     @company = current_user.company
     @user = current_user
+    @template = DocumentTemplate.new
   end
 
   def update_user

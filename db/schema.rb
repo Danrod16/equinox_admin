@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_29_043705) do
+ActiveRecord::Schema.define(version: 2022_07_29_072624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,14 @@ ActiveRecord::Schema.define(version: 2022_07_29_043705) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "token_payment"
     t.index ["booking_id"], name: "index_deposits_on_booking_id"
+  end
+
+  create_table "document_templates", force: :cascade do |t|
+    t.string "title"
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_document_templates_on_company_id"
   end
 
   create_table "flat_landlords", force: :cascade do |t|
@@ -270,6 +278,7 @@ ActiveRecord::Schema.define(version: 2022_07_29_043705) do
   add_foreign_key "bookings", "tenants"
   add_foreign_key "bookings", "users", name: "fk_bookings_users"
   add_foreign_key "deposits", "bookings"
+  add_foreign_key "document_templates", "companies"
   add_foreign_key "flat_landlords", "flats"
   add_foreign_key "flat_landlords", "landlords"
   add_foreign_key "incidents", "bookings"

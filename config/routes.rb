@@ -44,7 +44,7 @@ Rails.application.routes.draw do
       resources :custom_invoices
       root to: "users#index"
     end
-
+    resources :document_templates
     resources :bookings
     resources :incidents
     resources :deposits, only: [:create]
