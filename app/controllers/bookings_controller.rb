@@ -16,10 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # Apartment:Tenant.switch!("public")
     @booking = Booking.new(booking_params)
-    # @booking.user = User.find(booking_params[:booking][:user_id])
-    # Apartment:Tenant.switch!(current_user.company.subdomain)
     if @booking.save
       redirect_to bookings_path
     else
