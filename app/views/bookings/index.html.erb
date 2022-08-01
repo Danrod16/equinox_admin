@@ -19,7 +19,7 @@
     <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
   </div>
   <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
-    <%= week_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
+    <%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
       <%= date %>
       <% bookings.each do |booking| %>
         <div style="background-color: <%= Booking::COLORS[booking.id % Booking::COLORS.length] %>;" class="calendar-card<%= " calendar-card-start" if date.to_s == booking.start_date %><%= " calendar-card-end" if date.to_s == booking.end_date %>">
