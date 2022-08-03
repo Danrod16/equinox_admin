@@ -115,19 +115,31 @@ input[type="checkbox"] {
   // }
 }
 
-// .form-group {
-//   display: grid;
-//   grid-template-columns: 1fr 2fr;
-//   margin-bottom: 12px;
-// }
+.form-group {
+  // display: grid;
+  // grid-template-columns: 1fr 2fr;
+  margin-bottom: 12px;
+
+  .label {
+    margin-bottom: 8px !important;
+  }
+}
+
+.form-control-file {
+  display: block;
+  width: 100%;
+}
 
 .boolean {
   align-self: flex-end;
 }
 
 .form-control {
-  padding: 0;
-  margin-right: 24px;
+  padding: 6px 12px;
+  background-color: white;
+  /* margin-right: 24px; */
+  margin: 0px !important;
+  border-radius: 4px;
 }
 
 .devise-box {
