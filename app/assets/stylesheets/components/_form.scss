@@ -119,6 +119,15 @@ input[type="checkbox"] {
   // display: grid;
   // grid-template-columns: 1fr 2fr;
   margin-bottom: 12px;
+
+  .label {
+    margin-bottom: 8px !important;
+  }
+}
+
+.form-control-file {
+  display: block;
+  width: 100%;
 }
 
 .boolean {
