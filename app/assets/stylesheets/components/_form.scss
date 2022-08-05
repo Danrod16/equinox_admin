@@ -118,10 +118,10 @@ input[type="checkbox"] {
 .form-group {
   // display: grid;
   // grid-template-columns: 1fr 2fr;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 
-  .label {
-    margin-bottom: 8px !important;
+  label {
+    margin-bottom: 4px !important;
   }
 }
 
@@ -136,10 +136,14 @@ input[type="checkbox"] {
 
 .form-control {
   padding: 6px 12px;
-  background-color: white;
+  background-color: transparent;
   /* margin-right: 24px; */
   margin: 0px !important;
   border-radius: 4px;
+}
+
+.form-actions {
+  margin-top: 12px !important;
 }
 
 .devise-box {
@@ -152,6 +156,40 @@ input[type="checkbox"] {
 
   .sign-in-form {
     text-align: center;
+  }
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 6px 12px;
+
+  .form-group {
+    border: none;
+    margin-bottom: 0px;
+  }
+  .form-control {
+    border: none;
+    padding: 6px 12px;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .password-eye {
+    opacity: .7;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:focus-within {
+    border-color: #93c4fd;
+    box-shadow: 0 0 0 0.2rem rgba(22, 127, 251, 0.24);
   }
 }
 
@@ -189,5 +227,14 @@ input {
 .deposit-box {
   border: 1px solid #d0d0d0;
   border-radius: 3px;
-  padding: 18px;
+  padding: 16px;
+  margin-bottom: 6px;
+
+  p {
+    margin-bottom: 6px;
+  }
+
+  .form-group {
+    margin-bottom: 0px;
+  }
 }

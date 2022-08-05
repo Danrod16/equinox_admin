@@ -2,7 +2,7 @@
     <div class="devise-box col-lg-6 col-sm-12">
       <div class="sign-in-form">
         <%= image_tag("urbanist-logo.png", class: "logo-home") %>
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { data: { controller: 'password-visibility' } } do |f| %>
           <div class="form-inputs">
             <div class="form-field">
               <%= f.input :email,
@@ -13,12 +13,20 @@
                           input_html: { autocomplete: "email" } %>
             </div>
             <hr>
-            <div class="form-field">
+            <div class="form-field password-field">
               <%= f.input :password,
                           placeholder: t('sessions_new.password'),
                           required: false,
                           label: false,
-                          input_html: { autocomplete: "current-password" } %>
+                          input_html: {
+                            autocomplete: "current-password",
+                            data: { password_visibility_target: "input" }
+                          }
+                          %>
+              <button type="button" data-action='password-visibility#toggle'>
+                <span data-password-visibility-target="icon"><%= image_tag 'view.png', class: "password-eye" %></span>
+                <span data-password-visibility-target="icon" class="hidden"><%= image_tag 'hide.png', class: "password-eye" %></span>
+              </button>
             </div>
             <hr>
               <%= f.input :remember_me, label: t('sessions_new.remember_me'), as: :boolean if devise_mapping.rememberable? %>

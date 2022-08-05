@@ -2,7 +2,7 @@
   <div class="form-group-three">
     <%= f.input :name, class: "urbanist-form-field" %>
     <div class="form-group">
-      <%= f.association :flat_landlord, label_method: lambda { |flat_landlord| "#{flat_landlord.landlord.first_name} #{flat_landlord.landlord.last_name}" }, input_html: { class: "selectize form-control" } %>
+      <%= f.association :flat_landlord, label_method: lambda { |flat_landlord| "#{flat_landlord.landlord.first_name} #{flat_landlord.landlord.last_name}" }, input_html: { class: "form-control selectize" } %>
       <%#= f.label :landlord %>
       <%#= f.select :landlord_id, Landlord.all.pluck(:first_name, :id), {}, { class: "urbanist-form-field", prompt: "Select Landlord" } %>
     </div>

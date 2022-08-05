@@ -17,3 +17,7 @@
 @import "components/index";
 @import "pages/index";
 @import "mapbox-gl/dist/mapbox-gl";
+
+.hidden {
+  display: none;
+}

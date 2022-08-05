@@ -18,6 +18,7 @@
     "popper.js": "^1.16.1",
     "selectize": "^0.12.6",
     "stimulus": "^3.0.1",
+    "stimulus-password-visibility": "^2.0.0",
     "turbolinks": "^5.2.0"
   },
   "engines": {

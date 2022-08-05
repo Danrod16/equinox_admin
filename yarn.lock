@@ -7290,6 +7290,11 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stimulus-password-visibility@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-password-visibility/-/stimulus-password-visibility-2.0.0.tgz#12f85d9bdc4fd683819cc4fd0b060984dad7ea2d"
+  integrity sha512-QMyjkpB7QykEHAdlzSIQ6UGgqS6s7xbroTD64vPvcA5kSMfTzLNDXGhQAyFtj3Sfn0aP0htqSqeQ0rqksqcMzA==
+
 stimulus@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-3.0.1.tgz#370e3054eb3b8068904af1888949821255d375d3"
