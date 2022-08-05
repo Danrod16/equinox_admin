@@ -9,14 +9,14 @@
   </div>
   <div class="form-group-three">
     <div class="form-group">
-      <%= f.association :flat, value_method: :id,input_html: { class: "selectize form-control" } %>
+      <%= f.association :flat, value_method: :id,input_html: { class: "form-control selectize" } %>
     </div>
     <div class="form-group">
-      <%= f.association :tenant, value_method: :id, label_method: lambda { |tenant| "#{tenant.first_name} #{tenant.last_name}" } , input_html: { class: "selectize form-control" } %>
+      <%= f.association :tenant, value_method: :id, label_method: lambda { |tenant| "#{tenant.first_name} #{tenant.last_name}" } , input_html: { class: "form-control selectize" } %>
     </div>
     <%= f.input :contract_type, class: "form-control", collection: Booking::CONTRACT_TYPE %>
   </div>
-  <div class="deposit-box mb-2">
+  <div class="deposit-box">
     <p><strong>Deposit</strong></p>
     <%= render 'shared/form_deposit.html.erb', { class_list: "", f: f } %>
   </div>
