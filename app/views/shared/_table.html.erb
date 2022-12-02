@@ -3,7 +3,22 @@
     <% headers.each do |header| %>
       <th class="urban-table-header"> <%= t("table.#{header}") %> </th>
     <% end %>
-      <th class="urban-table-header"> - </th>
+      <th class="urban-table-header"> </th>
+  </tr>
+  <tr>
+    <%= simple_form_for controller_name.singularize.to_sym, url: request.url do |f| %>
+      <% headers.each do |header| %>
+        <% if records.first.send(header.to_sym).respond_to?(:id) %>
+          <% collection = controller_name.singularize.capitalize.constantize.all.extract_associated(header.to_sym).map { |record| record.table_attribute } %>
+        <% else %>
+          <% collection = controller_name.singularize.capitalize.constantize.all.pluck(header.to_sym) %>
+        <% end %>
+        <th class="urban-table-header">
+          <%= f.input header.to_sym, label: false, collection: collection %>
+        </th>
+      <% end %>
+    <% end %>
+    <th class="urban-table-header"> </th>
   </tr>
   <% if records.any? %>
     <% records.each do |record| %>
@@ -33,3 +48,5 @@
     <%= will_paginate records %>
   <% end %>
 </div>
+
+<%= console %>

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
   require 'faker'
+
   puts "destroying data"
   FlatLandlord.destroy_all
   Flat.destroy_all

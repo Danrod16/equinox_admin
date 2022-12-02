@@ -3,10 +3,10 @@
   <div class="d-flex">
   <ul class="nav" id="myTab" role="tablist">
     <li class="button-small btn-left">
-      <a class="active" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true"><%= image_tag "calendar.svg", alt: "calendar icon" %></a>
+      <a class="active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"> <%= image_tag "list.svg", alt: "list icon" %> </a>
     </li>
     <li class="button-small btn-right">
-      <a id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"> <%= image_tag "list.svg", alt: "list icon" %> </a>
+      <a id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true"><%= image_tag "calendar.svg", alt: "calendar icon" %></a>
     </li>
   </ul>
   <%= link_to t('bookings.new_booking'), new_booking_path, class: "button-primary" %>
@@ -15,10 +15,10 @@
 
 <div class="card-wrapper">
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+  <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
     <%= render 'shared/table.html.erb', { headers: Booking::TABLE_HEADERS, records: @bookings } %>
   </div>
-  <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
+  <div class="tab-pane fade" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
     <%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
       <%= date.strftime('%d/%m') %>
       <% bookings.sort_by { |booking| -[(booking.end_date.to_date - date.beginning_of_week).to_i, (date.end_of_week - date.beginning_of_week).to_i].min }.each do |booking| %>
