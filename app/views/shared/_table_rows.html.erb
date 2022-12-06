@@ -1,0 +1,20 @@
+<% records.each do |record| %>
+  <tr>
+    <% headers.each do |header| %>
+      <td>
+        <% if record.send(header.to_sym).respond_to?(:id) %>
+          <%= link_to "/#{header}s/#{record.id}" do %>
+            <% if record.send(header.to_sym).class == String %>
+              <%= truncate(record.send(header.to_sym).table_attribute, :length => 17) %>
+            <% else %>
+              <%= record.send(header.to_sym).table_attribute %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= record.send(header.to_sym) %>
+        <% end %>
+      </td>
+    <% end %>
+    <td class="urban-table-last"> <%= link_to t('table.see_more'), "/#{record.class.to_s.downcase}s/#{record.id}", class: "button-secondary" %> </td>
+  </tr>
+<% end %>
