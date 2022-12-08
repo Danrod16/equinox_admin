@@ -36,7 +36,7 @@ en:
     banner_title: "Simple property management platform for<br><span>rental agencies</span>"
     banner_description: "Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents."
     register: "Register for free"
-    free_forever: "*Free forever if you register your agency before 01/09/2022"
+    free_forever: "*Free forever if you register your agency while in Beta"
     how_works: "How it <span>works</span>?"
     easy_management: "Easy booking management"
     easy_management_body: "Easily generate PDF booking confirmations and invoices. Goodbye excels and word documents"

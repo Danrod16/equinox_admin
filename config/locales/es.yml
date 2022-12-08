@@ -37,7 +37,7 @@ es:
     banner_title: "Plataforma de gestion de <br><span>alquiler temporal</span> para agencias"
     banner_description: "¡Se acabaron los excels largos! Con Avenist podrás gestionar todos los aspectos de llevar una agenica de alquiler temporal. Desde reservas hasta gestion de incidencias, lo tenemos cubierto."
     register: "Registrate gratis"
-    free_forever: "*Gratis de por vida para agencias que se registren antes del 01/09/2022"
+    free_forever: "*Gratis de por vida para agencias que se registren durante la fase Beta del lanzamiento"
     how_works: "¿Porque <span>Avenist</span>?"
     easy_management: "Gestiona facilmente tus reservas"
     easy_management_body: "Genera facilmente documentos pdf a partir de tus reservas, confirmación de reserva, factura, recibo de deposito y mucho más."
