@@ -58,6 +58,7 @@ $ rails db:seed
 $ rails s
 ```
 
+To login: Make sure to be on the rigtt subdomain: equinox.local:3000
 ## Credits
 
 This software uses the following open source packages:
