@@ -19,9 +19,7 @@ rental agencies <a href="http://avenist.com" target="_blank">Avenist</a>.</h4>
   <a href="#license">License</a>
 </p>
 
-<div align="center" height="300">
-    ![screenshot](https://github.com/Danrod16/equinox_admin/blob/master/app/assets/images/banner-illustration.png?raw=true)
-</div>
+ <img src="https://github.com/Danrod16/equinox_admin/blob/master/app/assets/images/banner-illustration.png?raw=true" alt="Avenist" width="200" align="center">
 
 ## Key Features
 
