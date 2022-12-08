@@ -58,7 +58,8 @@ $ rails db:seed
 $ rails s
 ```
 
-To login: Make sure to be on the rigtt subdomain: equinox.local:3000
+To login: Make sure to be on the correct subdomain: equinox.localhost:3000
+
 ## Credits
 
 This software uses the following open source packages:
@@ -66,6 +67,15 @@ This software uses the following open source packages:
 - [Apartment gem](https://github.com/influitive/apartment)
 - [Le wagon minimal template](https://github.com/lewagon/rails-templates#minimal)
 - ...
+
+## Contrinuting
+
+For every contribution, bug report or improvement please create an issue by following the for correct color code in the title:
+
+🔴 Urgent
+🟠 Important
+🟡 To be fixed when possible
+🟢 Good to have
 
 ## Team
 
