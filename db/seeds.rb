@@ -11,8 +11,30 @@
   Flat.destroy_all
   Landlord.destroy_all
   Tenant.destroy_all
+  User.destroy_all
+  Company.destroy_all
+  Apartment::Tenant.drop('equinox')
 
   puts "Creating Data"
+
+  admin = User.new(
+    first_name: "admin",
+    last_name: "admin",
+    email: "admin@avenist.com",
+    password: "123123",
+    role: "Admin"
+  )
+
+  equinox = Company.create(
+    name: "Equinox",
+    subdomain: "equinox",
+    validated: true,
+    currency: "EUR"
+  )
+  admin.company = equinox
+  admin.save
+
+
   15.times do
     landlord = Landlord.create!(
       first_name: Faker::Name.name,
@@ -76,111 +98,3 @@
 
   end
   puts "done!"
-
-  #  create_table "tenants", force: :cascade do |t|
- #    t.string "first_name"
- #    t.string "last_name"
- #    t.string "email"
- #    t.string "phone"
- #    t.text "description"
- #    t.string "photo"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.string "street"
- #    t.string "street_2"
- #    t.string "number"
- #    t.string "postal_code"
- #    t.string "city"
- #    t.string "country"
- #    t.string "id_number"
- #    t.string "id_type"
- #    t.string "cif"
- #    t.string "nationality"
- #  end
-
- # create_table "custom_invoices", force: :cascade do |t|
- #    t.string "client"
- #    t.string "address"
- #    t.string "nif"
- #    t.string "title"
- #    t.integer "sequence", default: 1
- #    t.float "total_cost"
- #    t.float "agency_fee"
- #    t.text "description"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #  end
-
- #  create_table "deposits", force: :cascade do |t|
- #    t.bigint "booking_id", null: false
- #    t.string "state"
- #    t.integer "amount"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.float "token_payment"
- #    t.index ["booking_id"], name: "index_deposits_on_booking_id"
- #  end
-
- #  create_table "incidents", force: :cascade do |t|
- #    t.bigint "booking_id", null: false
- #    t.bigint "user_id", null: false
- #    t.string "state"
- #    t.string "title"
- #    t.text "description"
- #    t.string "photo"
- #    t.float "total_cost"
- #    t.text "notes"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.integer "total_hours"
- #    t.float "hourly_fee"
- #    t.integer "sequence", default: 1
- #    t.index ["booking_id"], name: "index_incidents_on_booking_id"
- #    t.index ["user_id"], name: "index_incidents_on_user_id"
- #  end
-
- #  create_table "invoices", force: :cascade do |t|
- #    t.bigint "booking_id", null: false
- #    t.string "state"
- #    t.string "expirry_date"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.float "fianza"
- #    t.float "total"
- #    t.integer "sequence", default: 1
- #    t.float "supplements"
- #    t.index ["booking_id"], name: "index_invoices_on_booking_id"
- #  end
-
-
- #  create_table "receipts", force: :cascade do |t|
- #    t.bigint "booking_id", null: false
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.index ["booking_id"], name: "index_receipts_on_booking_id"
- #  end
-
- #  create_table "settlements", force: :cascade do |t|
- #    t.bigint "booking_id", null: false
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.index ["booking_id"], name: "index_settlements_on_booking_id"
- #  end
-
-
-
- #  create_table "users", force: :cascade do |t|
- #    t.string "email", default: "", null: false
- #    t.string "encrypted_password", default: "", null: false
- #    t.string "reset_password_token"
- #    t.datetime "reset_password_sent_at"
- #    t.datetime "remember_created_at"
- #    t.datetime "created_at", precision: 6, null: false
- #    t.datetime "updated_at", precision: 6, null: false
- #    t.string "role", default: "Agente"
- #    t.string "first_name"
- #    t.string "last_name"
- #    t.string "photo"
- #    t.index ["email"], name: "index_users_on_email", unique: true
- #    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
- #  end
