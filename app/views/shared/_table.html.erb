@@ -1,38 +1,40 @@
 <div data-controller="filter">
   <table class="urban-table">
-    <tr class="small-row">
-      <% headers.each do |header| %>
-        <th class="urban-table-header remove-border"> <%= t("table.#{header}") %> </th>
-      <% end %>
-        <th class="urban-table-header remove-border"> </th>
-    </tr>
-    <tr>
-      <%= simple_form_for controller_name.singularize.to_sym, url: request.url, data: { filter_target: "form" } do |f| %>
+    <tbody>
+      <tr class="header-row" data-filter-target="header">
         <% headers.each do |header| %>
-          <% if records.first.send(header.to_sym).respond_to?(:id) %>
-            <% collection = controller_name.singularize.capitalize.constantize.all.extract_associated(header.to_sym).map { |record| record.table_attribute }.uniq %>
-          <% else %>
-            <% collection = controller_name.singularize.capitalize.constantize.all.pluck(header.to_sym).uniq %>
-          <% end %>
-          <th class="urban-table-header ">
-            <%= f.input header.to_sym,
-                        label: false,
-                        collection: collection,
-                        input_html: {
-                          data: {
-                            action: "change->filter#filterRecords"
-                          }
-                        } %>
-          </th>
+          <th class="urban-table-header"> <%= t("table.#{header}") %> </th>
         <% end %>
+          <th class="urban-table-header last-row"><%= image_tag 'filter.png', width: "20px", data: { action: "click->filter#showFilters" } %></th>
+      </tr>
+      <tr class="header-row d-none" data-filter-target="filters">
+        <%= simple_form_for controller_name.singularize.to_sym, url: request.url, data: { filter_target: "form" } do |f| %>
+          <% headers.each do |header| %>
+            <% if records.present? && records.first.send(header.to_sym).respond_to?(:id) %>
+              <% collection = controller_name.singularize.capitalize.constantize.all.extract_associated(header.to_sym).map { |record| record.table_attribute }.uniq %>
+            <% elsif records.present? %>
+              <% collection = controller_name.singularize.capitalize.constantize.all.pluck(header.to_sym).uniq %>
+            <% end %>
+            <th class="urban-table-header ">
+              <%= f.input header.to_sym,
+                          label: false,
+                          collection: collection,
+                          input_html: {
+                            data: {
+                              action: "change->filter#filterRecords"
+                            }
+                          } %>
+            </th>
+          <% end %>
+        <% end %>
+        <th class="urban-table-header last-row"> </th>
+      </tr>
+    </tbody>
+    <tbody class="urban-table" data-filter-target="view">
+      <% if records.any? %>
+        <%= render 'shared/table_rows', headers: headers, records: records %>
       <% end %>
-      <th class="urban-table-header"> </th>
-    </tr>
-  </table>
-  <table class="urban-table" data-filter-target="view">
-    <% if records.any? %>
-      <%= render 'shared/table_rows', headers: headers, records: records %>
-    <% end %>
+    </tbody>
   </table>
   <div class="apple_pagination">
     <% unless records.nil? %>

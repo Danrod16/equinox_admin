@@ -2,7 +2,6 @@
   width: 100%;
   tr {
     width: 100%;
-    border-bottom: 1px solid #ddd;
     height: 65px;
     color: $secondary-text-color;
   }
@@ -12,7 +11,6 @@
 
   .urban-table-header {
     color: black;
-    border-bottom: 1px solid black;
   }
 }
 
@@ -27,4 +25,13 @@
 
 .small-row {
   height: auto !important;
+}
+
+.header-row {
+  border-bottom: 1px solid black;
+}
+
+.last-row {
+  text-align: end;
+  padding: 5px;
 }

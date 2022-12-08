@@ -22,9 +22,7 @@ class BookingsController < ApplicationController
       @bookings = @bookings.where(deposit: @deposit)
     end
 
-    if params[:status].present?
-      @bookings = @bookings.where(state: params[:status])
-    end
+    @bookings = @bookings.where(state: params[:status]) if params[:status].present?
 
     @bookings = @bookings.paginate(page: params[:page], per_page: 15)
 
