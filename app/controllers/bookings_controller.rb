@@ -1,6 +1,35 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all.paginate(page: params[:page], per_page: 15)
+    @bookings = Booking.all
+
+    if params[:user].present?
+      @user = User.where("CONCAT(first_name, ' ', last_name) = ?", params[:user])
+      @bookings = @bookings.where(user: @user)
+    end
+
+    if params[:flat].present?
+      @flat = Flat.where(name: params[:flat])
+      @bookings = @bookings.where(flat: @flat)
+    end
+
+    if params[:tenant].present?
+      @tenant = Tenant.where("CONCAT(first_name, ' ', last_name) = ?", params[:tenant])
+      @bookings = @bookings.where(tenant: @tenant)
+    end
+
+    if params[:deposit].present?
+      @deposit = Deposit.where(amount: params[:deposit])
+      @bookings = @bookings.where(deposit: @deposit)
+    end
+
+    @bookings = @bookings.where(state: params[:status]) if params[:status].present?
+
+    @bookings = @bookings.paginate(page: params[:page], per_page: 15)
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'shared/table_rows', locals: { headers: Booking::TABLE_HEADERS, records: @bookings }, formats: [:html] }
+    end
   end
 
   def show

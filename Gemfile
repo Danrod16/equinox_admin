@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -46,7 +46,7 @@ gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.3'
 
@@ -80,3 +80,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'selectize-rails'
 gem 'apartment', github: 'influitive/apartment', branch: 'development'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'psych', '< 4'
+gem 'net-smtp', require: false
