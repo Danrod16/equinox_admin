@@ -68,7 +68,8 @@ This software uses the following open source packages:
 - [Le wagon minimal template](https://github.com/lewagon/rails-templates#minimal)
 - ...
 
-## Contrinuting
+## Contrib
+uting
 
 For every contribution, bug report or improvement please create an issue by following the for correct color code in the title:
 
