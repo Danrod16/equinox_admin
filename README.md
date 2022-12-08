@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="http://www.avenist.com"><img src="https://github.com/Danrod16/equinox_admin/blob/read_me_v1/app/assets/images/urbanist-logo.png?raw=true" alt="Avenist" width="200"></a>
+  <a href="http://www.avenist.com"><img src="https://github.com/Danrod16/equinox_admin/blob/master/app/assets/images/urbanist-logo.png?raw=true" alt="Avenist" width="200"></a>
   <br>
   Avenist© 2022
   <br>
