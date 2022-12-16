@@ -43,7 +43,7 @@ gem 'groupdate'
 gem 'i18n-debug', '~> 1.2'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'psych', '< 4'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
