@@ -130,6 +130,8 @@ es:
     reference: Referencia
   bookings:
     booking_for: Reserva para
+    edit_booking: Editar
+    delete_booking: Delete
   settings:
     profile: Perfil
     members: Miembros

@@ -58,7 +58,7 @@ $ rails db:seed
 $ rails s
 ```
 
-To login: Make sure to be on the correct subdomain: equinox.localhost:3000
+To login: Make sure to be on the correct subdomain: equinox.lvh.me:3000
 
 ## Credits
 

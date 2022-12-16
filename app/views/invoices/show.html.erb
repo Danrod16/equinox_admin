@@ -1,19 +1,66 @@
 <div class="wrapper-header">
   <h1>Invoice #<%= @invoice.sequence %> </h1>
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Español</button>
+  <div class="d-flex">
+  <ul class="nav" id="myTab" role="tablist">
+    <li class="button-small btn-left">
+      <button class="active" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="false"><%= image_tag "google-forms.png", alt: "list icon" %> </button>
     </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">English</button>
+    <li class="button-small btn-right">
+      <button id="pdf-tab" data-toggle="tab" href="#pdf" role="tab" aria-controls="pdf" aria-selected="true"><%= image_tag "pdf-file.png", alt: "calendar icon" %></button>
     </li>
   </ul>
+  <%= link_to 'Edit', edit_invoice_path, class: "button-primary me-2" %>
+  <%= link_to 'Delete', invoice_path(@invoice), method: :delete, class: "button-secondary" %>
+  </div>
 </div>
-  <div class="tab-content pdf-preview" id="pills-tabContent">
-    <div class="tab-pane fade show active pdf-preview" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-      <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=es" frameborder="0" class="pdf-preview""></iframe>
+
+<div class="card-wrapper">
+  <%#= link_to t('invoices.edit_booking'), edit_booking_path, class: "button-secondary ms-auto " %>
+  <div class="tab-content height-100" id="myTabContent">
+    <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
+        <div class="form-group-two">
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Start date</p>
+            <p><%= @invoice.booking.id.present? ? @invoice.booking.id : "-" %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">End date</p>
+            <p><%= @invoice.supplements.present? ? @invoice.supplements : "-" %></p>
+          </div>
+        </div>
+        <div class="form-group-two">
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Flat name</p>
+            <p><%= @invoice.fianza.present? ? @invoice.fianza : "-" %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Tenant full name</p>
+            <p><%= @invoice.total.present? ? @invoice.total : "-" %></p>
+          </div>
+        </div>
+
     </div>
-    <div class="tab-pane fade pdf-preview" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=eng" frameborder="0" class="pdf-preview"></iframe>
+    <div class="tab-pane fade height-100" id="pdf" role="tabpanel" aria-labelledby="pdf-tab">
+      <div class="d-flex justify-content-end">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Español</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">English</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content pdf-preview" id="pills-tabContent">
+        <div class="tab-pane fade show active pdf-preview" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=es" frameborder="0" class="pdf-preview"></iframe>
+        </div>
+        <div class="tab-pane fade pdf-preview" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=eng" frameborder="0" class="pdf-preview"></iframe>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>

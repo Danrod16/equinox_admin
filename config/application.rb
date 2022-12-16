@@ -20,7 +20,7 @@ module EquinoxAdmin
     config.autoload_paths += %W(#{config.root}/lib)
     config.i18n.available_locales = [:en, :es]
     config.i18n.default_locale = :en
-    config.i18n.fallbacks = true
+    config.i18n.fallbacks = [I18n.default_locale]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

@@ -4,7 +4,8 @@ class Booking < ApplicationRecord
   belongs_to :tenant
   has_one :settlement, dependent: :destroy
   has_one :deposit, dependent: :destroy
-  accepts_nested_attributes_for :deposit
+  accepts_nested_attributes_for :deposit, update_only: true
+
   has_many :receipts, dependent: :destroy
   has_many :invoices, dependent: :destroy
   has_many :incidents, dependent: :destroy
@@ -18,30 +19,30 @@ class Booking < ApplicationRecord
   validates :start_date, :end_date, presence: true
 
   def create_invoice
-    Invoice.create(booking_id: self.id, state: self.state)
-    Receipt.create(booking_id: self.id)
+    Invoice.create(booking_id: id, state: state)
+    Receipt.create(booking_id: id)
   end
 
   def update_invoice
-    Invoice.update(booking_id: self.id, state: self.state)
+    Invoice.update(booking_id: id, state: state)
   end
 
   def contract_length
-    number_of_payments = (self.end_date.to_date - self.start_date.to_date).to_i / 30
-    self.update_column(:payments, number_of_payments)
+    number_of_payments = (end_date.to_date - start_date.to_date).to_i / 30
+    update_column(:payments, number_of_payments)
   end
 
   def table_attribute
-    self.id
+    id
   end
 
   private
 
   def booking_date_changed?
-    self.start_date_changed? || self.end_date_changed?
+    start_date_changed? || end_date_changed?
   end
 
   def strip_date
-    self.update(start_date: self.start_date.split(" ")[0], end_date: self.end_date.split(" ")[0])
+    update(start_date: start_date.split[0], end_date: end_date.split[0])
   end
 end

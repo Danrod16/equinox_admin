@@ -1,7 +1,17 @@
 class InvoicesController < ApplicationController
-
   def index
-    @invoices = Invoice.all.paginate(page: params[:page], per_page: 15)
+    @invoices = Invoice.all
+
+    @invoices = @invoices.where(sequence: params[:sequence]) if params[:sequence].present?
+    @invoices = @invoices.where(state: params[:state]) if params[:state].present?
+    @invoices = @invoices.where(booking_id: params[:booking]) if params[:booking].present?
+
+    @invoices = @invoices.paginate(page: params[:page], per_page: 15)
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'shared/table_rows', locals: { headers: Invoice::INVOICE_HEADERS, records: @invoices }, formats: [:html] }
+    end
   end
 
   def new
@@ -19,6 +29,24 @@ class InvoicesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @invoice = Invoice.find(params[:id])
+  end
+
+  def update
+    @invoice = Invoice.find(params[:id])
+    if @invoice.update(invoice_params)
+      redirect_to invoice_path(@invoice)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @invoice = Invoice.find(params[:id])
+    redirect_to invoices_path if @invoice.destroy
   end
 
   private

@@ -1,0 +1,62 @@
+<div class="wrapper-header">
+  <h1>Incident #<%= @incident.id %> </h1>
+  <div class="d-flex">
+    <%= link_to "Edit Incident", edit_incident_path, class: "button-primary" %>
+  </div>
+</div>
+
+<div class="card-wrapper">
+  <%#= link_to t('invoices.edit_booking'), edit_booking_path, class: "button-secondary ms-auto " %>
+  <div class="tab-content height-100" id="myTabContent">
+    <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
+        <div class="form-group-two-one">
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Title</p>
+            <p><%= @incident.title %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Photo</p>
+            <% if @incident.photo.attached? %>
+              <%= cl_image_tag @incident.photo.key, width:"100px" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-group-three">
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Booking Flat and Date</p>
+            <p><%= "#{@incident.booking.flat.name} | #{@incident.booking.start_date}" %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Agent name</p>
+            <p><%= @incident.user.full_name %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Status</p>
+            <p><%= @incident.state.present? ? @incident.state : "-" %></p>
+          </div>
+        </div>
+        <div class="form-group-three">
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Hourly fee</p>
+            <p><%= @incident.hourly_fee.present? ? @incident.hourly_fee : "-" %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Total hours</p>
+            <p><%= @incident.total_hours.present? ? @incident.total_hours : "-" %></p>
+          </div>
+          <div class="mb-3 form-group">
+            <p class="my-2 text-decoration-underline">Total cost</p>
+            <p><%= @incident.total_cost.present? ? @incident.total_cost : "-" %></p>
+          </div>
+        </div>
+        <div class="mb-3 form-group">
+          <p class="my-2 text-decoration-underline">Description</p>
+          <p><%= @incident.description.present? ? @incident.description : "-" %></p>
+        </div>
+    </div>
+
+    <%# iframe for PDF here! %>
+
+    </div>
+  </div>
+</div>

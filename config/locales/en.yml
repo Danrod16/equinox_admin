@@ -106,6 +106,8 @@ en:
     not_furnished: Not furnished
   bookings:
     booking_for: Booking for
+    edit_booking: Edit
+    delete_booking: Delete
   settings:
     profile: Profile
     members: Members
