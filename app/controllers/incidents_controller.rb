@@ -20,6 +20,10 @@ class IncidentsController < ApplicationController
     end
   end
 
+  def show
+    @incident = Incident.find(params[:id])
+  end
+
   def new
     @incident = Incident.new
   end
@@ -30,6 +34,19 @@ class IncidentsController < ApplicationController
       redirect_to incidents_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @incident = Incident.find(params[:id])
+  end
+
+  def update
+    @incident = Incident.find(params[:id])
+    if @incident.update(incident_params)
+      redirect_to incident_path(@incident)
+    else
+      render :edit
     end
   end
 

@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
     end
 
     @bookings = @bookings.where(state: params[:status]) if params[:status].present?
-
     @bookings = @bookings.paginate(page: params[:page], per_page: 15)
 
     respond_to do |format|
@@ -53,6 +52,26 @@ class BookingsController < ApplicationController
       @flat = Flat.new
       @tenant = Tenant.new
       render :new
+    end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    # @deposit = @booking.deposit
+    @user = @booking.user
+    @flat = @booking.flat
+    @tenant = @booking.tenant
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      @user = @booking.user
+      @flat = @booking.flat
+      @tenant = @booking.tenant
+      render :edit
     end
   end
 

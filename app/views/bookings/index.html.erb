@@ -3,10 +3,10 @@
   <div class="d-flex">
   <ul class="nav" id="myTab" role="tablist">
     <li class="button-small btn-left">
-      <a class="active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"> <%= image_tag "list.svg", alt: "list icon" %> </a>
+      <button class="active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"><%= image_tag "list.svg", alt: "list icon" %> </button>
     </li>
     <li class="button-small btn-right">
-      <a id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true"><%= image_tag "calendar.svg", alt: "calendar icon" %></a>
+      <button id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true"><%= image_tag "calendar.svg", alt: "calendar icon" %></button>
     </li>
   </ul>
   <%= link_to t('bookings.new_booking'), new_booking_path, class: "button-primary" %>

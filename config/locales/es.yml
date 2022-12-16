@@ -93,6 +93,7 @@ es:
     state: Estatus
     open: Abierta
     new_booking: Nueva reserva
+    edit_booking: Editar reserva
     sequence: Nº de factura
     booking: Nº de reserva
     status: Estado
