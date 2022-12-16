@@ -76,7 +76,6 @@ en:
     this_year_top_5: This year's top 5 properties
     welcome: Welcome %{name}!
     new_booking: New Booking
-    edit_booking: Edit Booking
   table:
     user: Team member
     flat: Property
@@ -107,6 +106,8 @@ en:
     not_furnished: Not furnished
   bookings:
     booking_for: Booking for
+    edit_booking: Edit
+    delete_booking: Delete
   settings:
     profile: Profile
     members: Members

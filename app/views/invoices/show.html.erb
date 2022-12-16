@@ -9,7 +9,8 @@
       <button id="pdf-tab" data-toggle="tab" href="#pdf" role="tab" aria-controls="pdf" aria-selected="true"><%= image_tag "pdf-file.png", alt: "calendar icon" %></button>
     </li>
   </ul>
-  <%= link_to t('invoices.edit_booking'), edit_invoice_path, class: "button-primary" %>
+  <%= link_to 'Edit', edit_invoice_path, class: "button-primary me-2" %>
+  <%= link_to 'Delete', invoice_path(@invoice), method: :delete, class: "button-secondary" %>
   </div>
 </div>
 
@@ -53,7 +54,7 @@
 
       <div class="tab-content pdf-preview" id="pills-tabContent">
         <div class="tab-pane fade show active pdf-preview" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-          <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=es" frameborder="0" class="pdf-preview""></iframe>
+          <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=es" frameborder="0" class="pdf-preview"></iframe>
         </div>
         <div class="tab-pane fade pdf-preview" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <iframe src="/invoice_pdf.pdf?id=<%= @invoice.id %>&language=eng" frameborder="0" class="pdf-preview"></iframe>
