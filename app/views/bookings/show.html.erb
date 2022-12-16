@@ -9,7 +9,8 @@
       <button id="pdf-tab" data-toggle="tab" href="#pdf" role="tab" aria-controls="pdf" aria-selected="true"><%= image_tag "pdf-file.png", alt: "calendar icon" %></button>
     </li>
   </ul>
-  <%= link_to t('bookings.edit_booking'), edit_booking_path, class: "button-primary" %>
+  <%= link_to t('bookings.edit_booking'), edit_booking_path, class: "button-primary me-2" %>
+  <%= link_to t('bookings.delete_booking'), booking_path(@booking), method: :delete, class: "button-secondary" %>
   </div>
 </div>
 

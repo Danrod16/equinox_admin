@@ -44,6 +44,11 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def destroy
+    @invoice = Invoice.find(params[:id])
+    redirect_to invoices_path if @invoice.destroy
+  end
+
   private
 
   def invoice_params
