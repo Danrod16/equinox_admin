@@ -167,3 +167,19 @@
   opacity: 0.5;
   margin-top: -2px;
 }
+
+.grid-one-one-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-gap: 16px;
+}
+
+.height-50 {
+  height: 50%;
+}
+
+.grid-col-one-one {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 16px;
+}
