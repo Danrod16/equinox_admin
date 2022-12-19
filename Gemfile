@@ -36,7 +36,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'csv'
 gem "comma"
 gem 'devise'
-gem 'administrate'
 gem 'prawn'
 gem "pundit"
 gem "chartkick"
@@ -44,11 +43,13 @@ gem 'groupdate'
 gem 'i18n-debug', '~> 1.2'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'psych', '< 4'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.3'
+gem 'platform-api'
+gem 'faraday'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
