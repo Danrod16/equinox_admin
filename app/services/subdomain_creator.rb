@@ -67,5 +67,3 @@ class SubdomainCreator < ApplicationService
         end
     end
 end
-
-SubdomainCreator.new("Helio-digital-studio").call
