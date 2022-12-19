@@ -13,7 +13,7 @@
       <div class="bullet" data-wizard-target="bullet">3</div>
     </div>
   </div>
-  <h1>Register new user <%= "for #{@company.name}" if @company.present? %></h1>
+  <h1><%= t.('new_user.create_header') %> <%= "for #{@company.name}" if @company.present? %></h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
@@ -29,7 +29,7 @@
         <div class="form-field">
           <%= f.input :first_name,
                     required: true,
-                    placeholder: 'First name',
+                    placeholder: t('new_user.first_name'),
                     label: false,
                     autofocus: true,
                     input_html: { autocomplete: "first-name" } %>
@@ -37,7 +37,7 @@
         <div class="form-field">
           <%= f.input :last_name,
                     required: true,
-                    placeholder: 'Last name',
+                    placeholder: t('new_user.last_name'),
                     label: false,
                     autofocus: true,
                     input_html: { autocomplete: "last-name" } %>
@@ -45,7 +45,7 @@
         <div class="form-field">
           <%= f.input :email,
                     required: true,
-                    placeholder: 'Email',
+                    placeholder: t('new_user.email'),
                     label: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
@@ -53,7 +53,7 @@
         <div class="form-field">
           <%= f.input :password,
                       required: true,
-                      placeholder: 'Contraseña',
+                      placeholder: t('new_user.password'),
                       label: false,
                       input_html: { autocomplete: "new-password" } %>
         </div>
@@ -61,10 +61,10 @@
           <%= f.input :password_confirmation,
                     required: true,
                     label: false,
-                    placeholder: 'Confrimar contraseña',
+                    placeholder: t('new_user.password_confirmation'),
                     input_html: { autocomplete: "new-password" } %>
         </div>
       </div>
-      <%= f.button :submit, class: "button-primary" %>
+      <%= f.submit value: t('new_user.create'), class: "button-primary" %>
     <% end %>
 </div>

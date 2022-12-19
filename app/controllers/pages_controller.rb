@@ -16,11 +16,12 @@ class PagesController < ApplicationController
   end
 
   def set_language
+    cookies[:lang] = params[:lang]
     @user = current_user
     if @user&.update!(language: params[:lang]) && user_signed_in?
-      redirect_back fallback_location: root_path
+      redirect_back fallback_location: root_path, lang: params[:lang]
     else
-      redirect_to root_path(lang: params[:lang])
+      redirect_back fallback_location: root_path, lang: params[:lang]
     end
   end
 end
