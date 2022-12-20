@@ -26,7 +26,6 @@ gem 'pg_search', '~> 2.3.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "geocoder"
-gem 'administrate-field-active_storage'
 gem "image_processing"
 
 gem "simple_calendar", "~> 2.4"
@@ -46,7 +45,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'psych', '< 4'
 gem 'matrix'
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 4.4.0'
+gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.3'
 gem 'platform-api'
@@ -80,7 +79,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'selectize-rails'
-gem 'apartment', github: 'influitive/apartment', branch: 'development'
 gem 'devise_invitable', '~> 2.0.0'
-gem 'psych', '< 4'
 gem 'net-smtp', require: false
