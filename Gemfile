@@ -81,5 +81,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'selectize-rails'
 gem 'apartment', github: 'influitive/apartment', branch: 'development'
 gem 'devise_invitable', '~> 2.0.0'
-gem 'psych', '< 4'
 gem 'net-smtp', require: false
