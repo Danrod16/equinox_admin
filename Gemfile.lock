@@ -403,6 +403,7 @@ DEPENDENCIES
   image_processing
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  matrix
   mimemagic!
   net-smtp
   pg (>= 0.18, < 2.0)
