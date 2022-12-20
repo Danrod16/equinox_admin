@@ -368,7 +368,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   faraday
-  font-awesome-sass (~> 4.4.0)
+  font-awesome-sass
   geocoder
   groupdate
   i18n-debug (~> 1.2)
