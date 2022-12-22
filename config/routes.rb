@@ -30,21 +30,6 @@ Rails.application.routes.draw do
     get 'statistics/index'
     get 'pdf/booking_pdf'
 
-    namespace :admin do
-      resources :users
-      resources :landlords
-      resources :invoices
-      resources :receipts
-      resources :flats
-      resources :incidents
-      resources :bookings
-      resources :tenants
-      resources :deposits
-      resources :settlements
-      resources :custom_invoices
-      root to: "users#index"
-    end
-
     resources :bookings
     resources :incidents
     resources :deposits, only: [:create]
