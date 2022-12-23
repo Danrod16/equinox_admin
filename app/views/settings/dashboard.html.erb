@@ -23,10 +23,10 @@
       <% end %>
     </div>
 
-    <div class="horizontal-card" style="width: 100%; height: auto; border:none;"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API'] %>">
+    <div
+      id="map"
+      class="horizontal-card" style="width: 100%; height: auto; border:none;"
+      data-markers="<%= @markers.to_json %>">
     </div>
   </div>
 
