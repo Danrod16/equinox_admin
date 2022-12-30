@@ -50,9 +50,20 @@ class FlatsController < ApplicationController
     # end
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    if @flat.update(flat_params)
+      redirect_to flat_path(@flat)
+    end
+  end
+
   private
 
   def flat_params
-    params.require(:flat).permit(:celula, :catastral, :index, :cee, :expenses, :insurance, :insurance_phone, :keys, :equinox_costs, :photos, :video, :furnished, :landlord_id, :available, :name, :reference, :street, :number, :postal_code, :city, :country, :letter_box, :reference_rent, :habitability_number, :catastral_number)
+    params.require(:flat).permit(:celula, :catastral, :index, :cee, :expenses, :insurance, :insurance_phone, :keys, :equinox_costs, :photos, :video, :furnished, :available, :name, :reference, :street, :number, :postal_code, :city, :country, :letter_box, :reference_rent, :habitability_number, :catastral_number, flat_landlord_ids: [].reject { |e| e == "" })
   end
 end
