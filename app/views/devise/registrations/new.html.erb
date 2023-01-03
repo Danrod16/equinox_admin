@@ -13,7 +13,7 @@
       <div class="bullet" data-wizard-target="bullet">3</div>
     </div>
   </div>
-  <h1><%= t.('new_user.create_header') %> <%= "for #{@company.name}" if @company.present? %></h1>
+  <h1><%= t('new_user.create_header') %> <%= "for #{@company.name}" if @company.present? %></h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">

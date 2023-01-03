@@ -32,7 +32,7 @@ en:
   navbar:
     register: "register"
     login: "login"
-  new_company: 
+  new_company:
     header_create: Join or create a team
     create: Create a new team
     join: Join a team
@@ -44,14 +44,14 @@ en:
     name: Company or Team name
     join_company: Join company
     find: Find your team
-  new_user: 
+  new_user:
     first_name: First name
     last_name: Last name
     email: email
     password: Password
     password_confirmation: Password confirmation
     create: Create profile
-    create_header: Register new user %>
+    create_header: Register new user
   home:
     banner_title: "Simple property management platform for<br><span>rental agencies</span>"
     banner_description: "Avenist is an all in one platform for agents to easily  administrate the rental of their properties’ bookings,  invoicing and incidents."
