@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :register, :set_language ]
   skip_before_action :verify_authenticity_token
-  def home
 
+  def home
   end
 
   def styleguide

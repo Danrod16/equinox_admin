@@ -1,5 +1,4 @@
 class SettingsController < ApplicationController
-
   def dashboard
     @flats = Flat.all
 
@@ -11,9 +10,10 @@ class SettingsController < ApplicationController
         image_url: helpers.asset_url("map-pin.svg")
       }
     end
+
     @sales_monthly = Booking.where("start_date >= ?", "01-01-#{Time.now.year}").group("SUBSTRING(start_date, 6, 2)").sum(:agency_fee)
     @sales_this_year = @sales_monthly.values.sum
-    @sales_monthly = @sales_monthly.map{|k,v| [k.to_i, v.to_i]}.to_h
+    @sales_monthly = @sales_monthly.map { |k, v| [k.to_i, v.to_i] }.to_h
     # state = open / closed
     @booking_status = Booking.group(:state).count
     @top_five_flats = Flat

@@ -10,8 +10,8 @@ class Flat < ApplicationRecord
 
   before_save :create_address
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :street
+  after_validation :geocode, if: :will_save_change_to_street?
 
   include PgSearch::Model
   pg_search_scope :search_by_name_or_street,
@@ -49,7 +49,7 @@ class Flat < ApplicationRecord
   end
 
   def map_address
-     "Carrer #{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
+    "Carrer #{self.street.gsub(/\d.+/, "").strip} #{self.number}, #{self.postal_code}, #{self.city}, #{self.country}"
   end
 
   def table_attribute
