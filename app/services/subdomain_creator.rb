@@ -1,6 +1,6 @@
 require_relative 'application_service'
 require 'faraday'
-require 'JSON'
+require 'json'
 
 class SubdomainCreator < ApplicationService
 
