@@ -17,6 +17,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem "json"
+
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -26,7 +28,6 @@ gem 'pg_search', '~> 2.3.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "geocoder"
-gem 'administrate-field-active_storage'
 gem "image_processing"
 
 gem "simple_calendar", "~> 2.4"
@@ -36,7 +37,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'csv'
 gem "comma"
 gem 'devise'
-gem 'administrate'
 gem 'prawn'
 gem "pundit"
 gem "chartkick"
@@ -44,11 +44,13 @@ gem 'groupdate'
 gem 'i18n-debug', '~> 1.2'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'psych', '< 4'
+gem 'matrix'
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.3'
+gem 'platform-api'
+gem 'faraday'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -80,7 +82,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'selectize-rails'
 gem 'apartment', github: 'influitive/apartment', branch: 'development'
 gem 'devise_invitable', '~> 2.0.0'
-gem 'psych', '< 4'
 gem 'net-smtp', require: false
 
 gem 'json'

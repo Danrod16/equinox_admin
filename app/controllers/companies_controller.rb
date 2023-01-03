@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
+      SubdomainCreator.new(@company.subdomain).call if Rails.env.production?
       redirect_to new_user_registration_url(subdomain: @company.subdomain)
     else
       render :new

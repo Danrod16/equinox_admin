@@ -30,9 +30,28 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  new_company: 
+    header_create: Únete o crea un nuevo equipo
+    create: Cear un nuevo equipo
+    join: Únirse a un equipo
+    select_mode: Únete o crea un equipo
+    profile: Perfil de equipo
+    user: Perfil de usuario
+    previous: Volver
+    next: Siguiente
+    name: Empresa or nombre de equipo
+    join_company: Únirse al equipo
+    find: Encuentra tu equipo
   navbar:
     register: "registrate"
     login: "conectate"
+  new_user: 
+      first_name: Nombre
+      last_name: Apellido
+      email: Correo electronico
+      password: Contraseña
+      password_confirmation: Confrimar contraseña 
+      create: Crear perfil
   home:
     banner_title: "Plataforma de gestion de <br><span>alquiler temporal</span> para agencias"
     banner_description: "¡Se acabaron los excels largos! Con Avenist podrás gestionar todos los aspectos de llevar una agenica de alquiler temporal. Desde reservas hasta gestion de incidencias, lo tenemos cubierto."
@@ -159,6 +178,12 @@ es:
       update: Actualizar
       create: Crear
     labels:
+      user:
+        first_name: Nombre
+        last_name: Apellido
+        email: Correo electronico
+        password: Contraseña
+        password_confirmation: Confrimar contraseña 
       booking:
         id: Id
         flat: Piso

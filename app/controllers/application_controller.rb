@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :check_subdomain
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  
   def check_subdomain
     if user_signed_in? && request.subdomain != current_user.company.subdomain
       redirect_to root_url(subdomain: current_user.company.subdomain)
@@ -17,17 +17,13 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       I18n.locale = current_user.language&.to_sym || I18n.default_locale
     else
-      I18n.locale = params[:lang] || locale_from_header || I18n.default_locale
+      I18n.locale =  cookies[:lang] || locale_from_header || I18n.default_locale
     end
   end
 
   def locale_from_header
     request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first
   end
-
-  # def after_sign_in_path_for(user)
-  #   bookings_user_root_path
-  # end
 
   private
 

@@ -1,21 +1,21 @@
 <div class="register-container" data-controller="wizard">
   <div id="stepProgressBar">
     <div class="step">
-      <p class="step-text">Select Mode</p>
+      <p class="step-text"><%= t('new_company.select_mode') %></p>
       <div class="bullet" data-wizard-target="bullet">1</div>
     </div>
     <div class="step">
-      <p class="step-text">Company Profile</p>
+      <p class="step-text"> <%= t('new_company.profile') %></p>
       <div class="bullet" data-wizard-target="bullet">2</div>
     </div>
     <div class="step">
-      <p class="step-text">User Profile</p>
+      <p class="step-text"><%= t('new_company.user') %></p>
       <div class="bullet" data-wizard-target="bullet">3</div>
     </div>
   </div>
   <div>
     <div data-wizard-target="step">
-      <h1>Join or create a company</h1>
+      <h1> <%= t('new_company.header_create') %></h1>
       <%= simple_form_for :other do |o| %>
         <%= o.input :category,
             as: :radio_buttons,
@@ -28,9 +28,9 @@
                   wizard_target: "category"
                 }
             },
-            collection: ["Create a Company", "Join a Company"] %>
+            collection: [t('new_company.create'), t('new_company.join')] %>
         <div class="d-flex justify-content-end">
-          <%= button_tag "Next", type: "button", class: "button-primary",
+          <%= button_tag t('new_company.next'), type: "button", class: "button-primary",
             data: {
               action: "click->wizard#goToNext",
               wizard_target: "next",
@@ -42,31 +42,31 @@
 
     <div data-wizard-target="step" class="d-none">
       <div data-wizard-target="create">
-        <h1>Create create a company</h1>
+        <h1><%= t('new_company.create') %></h1>
         <%= simple_form_for @company do |f| %>
           <div class="form-field">
-            <%= f.input :name, placeholder: 'Company name', label: false, autofocus: true %>
+            <%= f.input :name, placeholder: t('new_company.name'), label: false, autofocus: true %>
             <%= f.label :logo %>
             <%= f.input :logo, as: :file, label: false %>
           </div>
           <div class="d-flex justify-content-between">
-            <%= button_tag "Previous", type: "button", class: "button-secondary",
+            <%= button_tag t('new_company.previous'), type: "button", class: "button-secondary",
               data: {
                 action: "click->wizard#goToPrevious",
                 previous_step: "1"
               } %>
-            <%= f.submit "Create Company", class: "button-primary" %>
+            <%= f.submit t('new_company.create'), class: "button-primary" %>
           </div>
         <% end %>
       </div>
       <div data-wizard-target="join">
-        <h1>Find your company</h1>
+        <h1><%= t('new_company.find') %> </h1>
         <%= simple_form_for @company, url: join_company_path, method: :post, data: { controller: "search"} do |f| %>
           <div class="form-field">
             <%= text_field_tag :name,
                   params[:name],
                   class: "form-control",
-                  placeholder: "Input your company name",
+                  placeholder: t('new_company.name'),
                   data: {
                     action: "keyup->search#searchCompany"
                   }
@@ -74,12 +74,12 @@
           </div>
           <p data-search-target="output"></p>
           <div class="d-flex justify-content-between">
-            <%= button_tag "Previous", type: "button", class: "button-secondary",
+            <%= button_tag t('new_company.previous'), type: "button", class: "button-secondary",
               data: {
                 action: "click->wizard#goToPrevious",
                 previous_step: "1"
               } %>
-            <%= f.submit "Join Company", disabled: true, class: "button-primary", data: { search_target: "submit" } %>
+            <%= f.submit t('new_company.join_company'), disabled: true, class: "button-primary", data: { search_target: "submit" } %>
           </div>
         <% end %>
         <%= @company.id %>
