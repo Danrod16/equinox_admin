@@ -1,0 +1,21 @@
+.info-window {
+  padding: 0px;
+  min-height: 140px;
+  min-width: 140px;
+}
+
+.status {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.available {
+  background-color: rgba(20, 166, 6, 0.3);
+}
+
+.rent {
+  background-color: rgba(216, 30, 16, 0.3);
+}
