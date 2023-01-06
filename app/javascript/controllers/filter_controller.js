@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = [ "form", "view", "header", "filters" ]
 
   connect() {
+    console.log('hello from filter stimulus');
     this.formTarget.reset();
     console.log('reseting form');
     console.dir(this.formTarget);
