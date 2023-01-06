@@ -23,15 +23,15 @@ class SettingsController < ApplicationController
     @sales_monthly = @sales_monthly.map { |k, v| [k.to_i, v.to_i] }.to_h
     # state = open / closed
     @booking_status = Booking
-                        .where("start_date <= ? AND end_date >= ?", "31-12-#{Time.now.year}", "01-01-#{Time.now.year}")
+                        .where("start_date >= :this_year OR end_date >= :this_year", this_year: "#{Time.now.year}-01-01")
                         .group(:state)
                         .count
     @user_booking_status = Booking
-                        .where("user_id = ? AND start_date <= ? AND end_date >= ?", current_user.id, "31-12-#{Time.now.year}", "01-01-#{Time.now.year}")
+                        .where("user_id = :user AND (start_date >= :this_year OR end_date >= :this_year)", user: current_user.id, this_year: "#{Time.now.year}-01-01")
                         .group(:state)
                         .count
     @top_five_flats = Flat
-                        .select("flats.*, SUM(bookings.agency_fee) AS flats_count")
+                        .select("flats.*, COUNT(bookings.id) AS flats_count, SUM(bookings.agency_fee) AS flats_profit")
                         .joins(:bookings)
                         .group("flats.id")
                         .order("flats_count DESC")
