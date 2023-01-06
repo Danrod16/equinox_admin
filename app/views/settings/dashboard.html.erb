@@ -4,12 +4,38 @@
     <div class="grid-col-one-one">
       <div class="horizontal-card">
         <p> <%= t('dashboard.your_bookings') %> </p>
-        <h3> <%= current_user.bookings.count %> </h3>
+        <div class="grid-status">
+          <div>
+            <h3><%= @user_booking_status["Abierta"] || 0 %></h3>
+            <small><em>Open</em></small>
+          </div>
+          <div>
+            <h3><%= @user_booking_status["Cerrada"] || 0 %></h3>
+            <small><em>Closed</em></small>
+          </div>
+          <div>
+            <h3><%= @user_booking_status.values.sum || 0 %></h3>
+            <small><em>Total</em></small>
+          </div>
+        </div>
       </div>
 
       <div class="horizontal-card">
         <p> <%= t('dashboard.this_year_bookings') %> </p>
-        <h3><%= @booking_status["Abierta"] %>/<%= @booking_status.values.sum %></h3>
+        <div class="grid-status">
+          <div>
+            <h3><%= @booking_status["Abierta"] || 0 %></h3>
+            <small><em>Open</em></small>
+          </div>
+          <div>
+            <h3><%= @booking_status["Cerrada"] || 0 %></h3>
+            <small><em>Closed</em></small>
+          </div>
+          <div>
+            <h3><%= @booking_status.values.sum || 0 %></h3>
+            <small><em>Total</em></small>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -18,7 +44,7 @@
       <% @top_five_flats.each do |flat| %>
       <div class="top-5-flats">
         <p><%= flat.street %></p>
-        <p><%= flat.flats_count %></p>
+        <p><strong>€ <%= flat.bookings.pluck(:agency_fee).sum.round %></strong></p>
       </div>
       <% end %>
     </div>
