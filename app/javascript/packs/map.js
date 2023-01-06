@@ -12,8 +12,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const icon = {
       url: marker.image_url, // url
       scaledSize: new google.maps.Size(45, 45), // scaled size
-      origin: new google.maps.Point(0,0), // origin
-      anchor: new google.maps.Point(0, 0) // anchor
     };
 
     console.log(marker.info_window);
