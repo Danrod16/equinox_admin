@@ -29,6 +29,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.address = @flat.map_address
     if @flat.save
       if request.referer.include? "bookings"
         render json: @flat.attributes
@@ -57,6 +58,8 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     if @flat.update(flat_params)
+      @flat.address = @flat.map_address
+      @flat.save
       redirect_to flat_path(@flat)
     end
   end

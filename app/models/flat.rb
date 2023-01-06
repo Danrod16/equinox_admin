@@ -8,10 +8,10 @@ class Flat < ApplicationRecord
   validates :number, presence: true
   validates :postal_code, presence: true
 
-  before_save :create_address
+  # before_validation :create_address
 
-  geocoded_by :street
-  after_validation :geocode, if: :will_save_change_to_street?
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
   pg_search_scope :search_by_name_or_street,
