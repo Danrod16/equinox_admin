@@ -14,11 +14,12 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       scaledSize: new google.maps.Size(45, 45), // scaled size
     };
 
-    console.log(marker.info_window);
-    const mapMarker = map.addMarker({
+    map.addMarker({
       position: { lat: marker.lat, lng: marker.lng },
       icon: icon,
-      infoWindow: { content: marker.info_window }
+      infoWindow: {
+        content: marker.info_window,
+      }
     });
 
   })
