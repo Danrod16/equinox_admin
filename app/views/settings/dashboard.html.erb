@@ -44,7 +44,7 @@
       <% @top_five_flats.each do |flat| %>
       <div class="top-5-flats">
         <p><%= flat.street %></p>
-        <p><strong>€ <%= flat.bookings.pluck(:agency_fee).sum.round %></strong></p>
+        <p><strong><%= flat.flats_count %></strong></p>
       </div>
       <% end %>
     </div>
