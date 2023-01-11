@@ -20,22 +20,22 @@
     <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
         <div class="form-group-two">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Start date</p>
-            <p><%= @invoice.booking.id.present? ? @invoice.booking.id : "-" %></p>
+            <p class="my-2">Start date</p>
+            <p class="fw-bold"><%= @invoice.booking.id.present? ? @invoice.booking.id : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">End date</p>
-            <p><%= @invoice.supplements.present? ? @invoice.supplements : "-" %></p>
+            <p class="my-2">End date</p>
+            <p class="fw-bold"><%= @invoice.supplements.present? ? @invoice.supplements : "-" %></p>
           </div>
         </div>
         <div class="form-group-two">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Flat name</p>
-            <p><%= @invoice.fianza.present? ? @invoice.fianza : "-" %></p>
+            <p class="my-2">Flat name</p>
+            <p class="fw-bold"><%= @invoice.fianza.present? ? @invoice.fianza : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Tenant full name</p>
-            <p><%= @invoice.total.present? ? @invoice.total : "-" %></p>
+            <p class="my-2">Tenant full name</p>
+            <p class="fw-bold"><%= @invoice.total.present? ? @invoice.total : "-" %></p>
           </div>
         </div>
 

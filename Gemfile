@@ -83,3 +83,5 @@ gem 'selectize-rails'
 gem 'apartment', github: 'influitive/apartment', branch: 'development'
 gem 'devise_invitable', '~> 2.0.0'
 gem 'net-smtp', require: false
+gem "sidekiq"
+gem "sidekiq-failures", "~> 1.0"
