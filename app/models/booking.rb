@@ -51,7 +51,6 @@ class Booking < ApplicationRecord
   end
 
   def async_update_status
-    puts "================================================================================================================================================"
     if self.end_date.to_date.noon <= Date.today
       self.state = 'Cerrada'
     else
