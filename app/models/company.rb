@@ -28,5 +28,6 @@ class Company < ApplicationRecord
     ActiveRecord::Base.connection.exec_query("ALTER TABLE bookings ADD CONSTRAINT fk_bookings_users FOREIGN KEY (user_id) REFERENCES public.users (id);")
     ActiveRecord::Base.connection.exec_query("ALTER TABLE incidents DROP CONSTRAINT fk_incidents_users")
     ActiveRecord::Base.connection.exec_query("ALTER TABLE incidents ADD CONSTRAINT fk_incidents_users FOREIGN KEY (user_id) REFERENCES public.users (id);")
+    puts 'Tenant created'
   end
 end

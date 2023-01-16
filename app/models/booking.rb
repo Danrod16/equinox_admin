@@ -12,6 +12,9 @@ class Booking < ApplicationRecord
   after_create :create_invoice, :contract_length
   before_update :contract_length, if: :booking_date_changed?
   after_create :strip_date
+  before_save :async_update_status, if: :will_save_change_to_end_date?
+  # after_commit :async_update_status
+
   CONTRACT_TYPE = ['Largo Plazo', 'Temporal', 'Otro']
   TABLE_HEADERS = ["user", "flat", "tenant", "deposit", "state"]
   COLORS = ['#7BDFF2', '#B2F7EF', '#EFF7F6', '#F7D6E0', '#F2B5D4']
@@ -39,10 +42,20 @@ class Booking < ApplicationRecord
   private
 
   def booking_date_changed?
+    puts start_date_changed? || end_date_changed?
     start_date_changed? || end_date_changed?
   end
 
   def strip_date
     update(start_date: start_date.split[0], end_date: end_date.split[0])
+  end
+
+  def async_update_status
+    if self.end_date.to_date.noon <= Date.today
+      self.state = 'Cerrada'
+    else
+      self.state = 'Abierta' if self.state == 'Cerrada'
+      UpdateBookingJob.set(wait_until: self.end_date.to_date.noon).perform_later(self.user.id, self.id)
+    end
   end
 end

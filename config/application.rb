@@ -28,6 +28,6 @@ module EquinoxAdmin
     config.hosts << /(.*\.)?lvh.me/
     config.hosts << /(.*\.)?equinox-admin.herokuapp.com/
     config.hosts << /(.*\.)?avenist.com/
-
+    config.active_job.queue_adapter = :sidekiq
   end
 end

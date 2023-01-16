@@ -42,10 +42,10 @@
     <div class="horizontal-card">
       <p> <%= t('dashboard.this_year_top_5') %> </p>
       <% @top_five_flats.each do |flat| %>
-      <div class="top-5-flats">
-        <p><%= flat.street %></p>
-        <p><strong><%= flat.flats_count %></strong></p>
-      </div>
+        <div class="top-5-flats">
+          <p><%= flat.street %></p>
+          <p><strong><%= flat.flats_count %></strong></p>
+        </div>
       <% end %>
     </div>
 

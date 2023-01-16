@@ -20,53 +20,53 @@
     <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
         <div class="form-group-three">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Start date</p>
-            <p><%= @booking.start_date.present? ? @booking.start_date : "-" %></p>
+            <p class="my-2">Start date</p>
+            <p class="fw-bold"><%= @booking.start_date.present? ? @booking.start_date : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">End date</p>
-            <p><%= @booking.end_date.present? ? @booking.end_date : "-" %></p>
+            <p class="my-2">End date</p>
+            <p class="fw-bold"><%= @booking.end_date.present? ? @booking.end_date : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Agent full name</p>
-            <p><%= @booking.user.full_name.present? ? @booking.user.full_name : "-" %></p>
+            <p class="my-2">Agent full name</p>
+            <p class="fw-bold"><%= @booking.user.full_name.present? ? @booking.user.full_name : "-" %></p>
           </div>
         </div>
         <div class="form-group-three">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Flat name</p>
-            <p><%= @booking.flat.name.present? ? @booking.flat.name : "-" %></p>
+            <p class="my-2">Flat name</p>
+            <p class="fw-bold"><%= @booking.flat.name.present? ? @booking.flat.name : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Tenant full name</p>
-            <p><%= @booking.tenant.full_name.present? ? @booking.tenant.full_name : "-" %></p>
+            <p class="my-2">Tenant full name</p>
+            <p class="fw-bold"><%= @booking.tenant.full_name.present? ? @booking.tenant.full_name : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Contract type</p>
-            <p><%= @booking.contract_type.present? ? @booking.contract_type : "-" %></p>
+            <p class="my-2">Contract type</p>
+            <p class="fw-bold"><%= @booking.contract_type.present? ? @booking.contract_type : "-" %></p>
           </div>
         </div>
         <div class="deposit-box">
           <p><strong>Deposit</strong></p>
           <div class="form-group-three">
             <div class="mb-3 form-group">
-              <p class="my-2 text-decoration-underline">Deposit state</p>
-              <p><%= @booking.deposit.state %></p>
+              <p class="my-2">Deposit state</p>
+              <p class="fw-bold"><%= @booking.deposit.state %></p>
             </div>
             <div class="mb-3 form-group">
-              <p class="my-2 text-decoration-underline">Deposit amount</p>
-              <p><%= @booking.deposit.amount %></p>
+              <p class="my-2">Deposit amount</p>
+              <p class="fw-bold"><%= @booking.deposit.amount %></p>
             </div>
             <div class="mb-3 form-group">
-              <p class="my-2 text-decoration-underline">Token payment</p>
-              <p><%= @booking.deposit.token_payment %></p>
+              <p class="my-2">Token payment</p>
+              <p class="fw-bold"><%= @booking.deposit.token_payment %></p>
             </div>
           </div>
         </div>
         <div class="form-group-one-two">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Deposit registry</p>
-            <p><%= @booking.deposit_registry.present? ? @booking.deposit_registry : "-" %></p>
+            <p class="my-2">Deposit registry</p>
+            <p class="fw-bold"><%= @booking.deposit_registry.present? ? @booking.deposit_registry : "-" %></p>
           </div>
           <div class="d-flex align-items-center">
             <input type="checkbox" disabled <%= "checked" if @booking.deposit_paid %>>
@@ -75,35 +75,35 @@
         </div>
         <div class="form-group-three">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Rent</p>
-            <p><%= @booking.rent.present? ? @booking.rent : "-" %></p>
+            <p class="my-2">Rent</p>
+            <p class="fw-bold"><%= @booking.rent.present? ? @booking.rent : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Payments</p>
-            <p><%= @booking.payments.present? ? @booking.payments : "-" %></p>
+            <p class="my-2">Payments</p>
+            <p class="fw-bold"><%= @booking.payments.present? ? @booking.payments : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Agency fee</p>
-            <p><%= @booking.agency_fee.present? ? @booking.agency_fee : "-" %></p>
+            <p class="my-2">Agency fee</p>
+            <p class="fw-bold"><%= @booking.agency_fee.present? ? @booking.agency_fee : "-" %></p>
           </div>
         </div>
         <div class="form-group-three">
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Obligatory complience</p>
-            <p><%= @booking.obligatory_complience.present? ? @booking.obligatory_complience : "-" %></p>
+            <p class="my-2">Obligatory complience</p>
+            <p class="fw-bold"><%= @booking.obligatory_complience.present? ? @booking.obligatory_complience : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Appliences</p>
-            <p><%= @booking.appliences.present? ? @booking.appliences : "-" %></p>
+            <p class="my-2">Appliences</p>
+            <p class="fw-bold"><%= @booking.appliences.present? ? @booking.appliences : "-" %></p>
           </div>
           <div class="mb-3 form-group">
-            <p class="my-2 text-decoration-underline">Itp</p>
-            <p><%= @booking.itp.present? ? @booking.itp : "-" %></p>
+            <p class="my-2">Itp</p>
+            <p class="fw-bold"><%= @booking.itp.present? ? @booking.itp : "-" %></p>
           </div>
         </div>
         <div>
-          <p class="my-2 text-decoration-underline">Check in notes</p>
-          <p><%= @booking.check_in_notes.present? ? @booking.check_in_notes : "-" %></p>
+          <p class="my-2">Check in notes</p>
+          <p class="fw-bold"><%= @booking.check_in_notes.present? ? @booking.check_in_notes : "-" %></p>
         </div>
 
     </div>
